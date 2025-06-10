@@ -2,8 +2,11 @@ import React from 'react';
 import { Button } from '@headlessui/react';
 import SvgComponent from './ShowtimeLogoOutline';
 
-const TopBar: React.FC = () => {
+type TopBarProps = {
+    handleCreateShowtimeClick: () => void
+}
 
+const TopBar: React.FC<TopBarProps> = ({handleCreateShowtimeClick}) => {
     return (
         <div className='flex items-center justify-between w-full p-4 pl-10 pr-10 mx-auto bg-background'>
             <div>
@@ -12,7 +15,9 @@ const TopBar: React.FC = () => {
                 </Button>
             </div>
             <div className='flex justify-between gap-8'>
-                <Button className='items-center gap-2 text-l text-text-primary'>
+                <Button 
+                    onClick={handleCreateShowtimeClick}
+                    className='items-center gap-2 text-l text-text-primary'>
                     Create a showtime
                 </Button>
                 <Button className='items-center gap-2 text-l text-text-primary'>
