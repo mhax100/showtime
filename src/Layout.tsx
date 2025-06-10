@@ -8,7 +8,7 @@ const Layout = () => {
     const navigation = useNavigation();
     const location = useLocation();
   
-    // Close the modal when the navigation finishes and we're no longer on the page where the modal was opened
+    // if user opens movie form modal and submits to redirect, then close modal
     useEffect(() => {
       if (navigation.state === 'idle') {
         setIsMovieFormModalOpen(false);
