@@ -14,8 +14,12 @@ import ShowtimePage from "../pages/ShowtimePage";
       errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <App />},
-        { path: "/home", element: <Home />, action: newShowtimeAction},
-        { path: "/showtime/:showtimeID", element: <ShowtimePage />}
+        { path: "/home", element: <Home />},
+        { path: "/showtime/:showtimeID", element: <ShowtimePage />},
+        {
+          path: "/actions/new-showtime",
+          action: newShowtimeAction
+        }
       ]
     },
   ]);
