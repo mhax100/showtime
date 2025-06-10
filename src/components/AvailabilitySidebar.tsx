@@ -15,7 +15,7 @@ const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({numResponses, 
                 <h3 className='text-2xl font-heavy text-text-secondary'>Responses</h3>
                 <h5 className='text-2xl font-light text-text-secondary'>{`(${numResponses})`}</h5>
             </div>
-            <Button onClick={onAddClick} className='p-2 rounded cursor-pointer text-primary data-hover:bg-primary-soft/25 '>+ Add avaiability</Button>
+            {numResponses > 0 ? <Button onClick={onAddClick} className='p-2 rounded cursor-pointer text-primary data-hover:bg-primary-soft/25 '>+ Add avaiability</Button> : <div></div>}
         </div>
     )
 }

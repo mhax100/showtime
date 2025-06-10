@@ -7,12 +7,13 @@ import CalendarCell from './CalendarCell'
 
 type TimeTableProps = {
     dates: Date[]
+    selectedTimes: Date[]
+    setSelectedTimes: React.Dispatch<React.SetStateAction<Date[]>>
     mode: 'edit' | 'summary'
     availabilityData?: Record<string, number>
 }
 
-const TimeTable: React.FC<TimeTableProps> = ({ dates, mode, availabilityData }) => {
-    const [selectedTimes, setSelectedTimes] = useState<Date[]>([])
+const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData }) => {
     const [startIndex, setStartIndex] = useState(0)
     const maxVisibleDays = useMaxVisibleDays()
     const visibleDates = dates.slice(startIndex, startIndex + maxVisibleDays)
