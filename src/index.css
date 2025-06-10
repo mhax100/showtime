@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+    --color-background: oklch(20% 0 0);
+    --color-surface: oklch(27% 0 0);
+    --color-primary: #B08E38;
+    --color-primary-soft: #C8A753;
+    --color-primary-shift-red: #A3553C;
+    --color-primary-shift-green: #6AA34A;
+    --color-secondary: #AC1212;
+    --color-secondary-soft: oklch(60% 0.19 27);
+    --color-text-primary: oklch(85% 0 0);
+    --color-text-secondary: oklch(70% 0 0);
+}
+
+@utility scrollbar-hidden {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
