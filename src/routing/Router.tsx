@@ -7,6 +7,7 @@ import {
   import { newShowtimeAction } from "./actions/movieFormAction";
 import ErrorPage from "../pages/ErrorPage";
 import ShowtimePage from "../pages/ShowtimePage";
+import { submitAvailabilityAction } from "./actions/submitAvailabilityAction";
   
   const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ import ShowtimePage from "../pages/ShowtimePage";
         {
           path: "/actions/new-showtime",
           action: newShowtimeAction
+        },
+        {
+          path: "/actions/submit-availability",
+          action: submitAvailabilityAction
         }
       ]
     },

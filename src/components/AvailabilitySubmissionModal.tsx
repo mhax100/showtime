@@ -1,36 +1,66 @@
 import React, { useState } from "react"
 import { Form } from "react-router-dom"
-import { Fieldset, Input, Button } from "@headlessui/react"
+import { XMarkIcon } from "@heroicons/react/24/outline"
+import { Dialog, DialogPanel, Fieldset, Input, Button } from "@headlessui/react"
+import { formatISO } from "date-fns"
 
 
 type AvailabilitySubmissionModalProps  = {
-    onSubmissionClick: () => void
+    isOpen: boolean
+    onClose: () => void
+    selectedTimes: Date[]
 }
 
-const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = () => {
+const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = (
+    {
+        isOpen,
+        onClose,
+        selectedTimes
+    }
+) => {
     const [name, setName] = useState("");
 
     return (
-        <Form method='post' className='flex flex-col items-start w-1/4 p-5 lg:p-10 rounded-md min-w-[300px] bg-surface'>
-            <h2 className='text-2xl text-text-primary'>Continue as Guest</h2>
-            <Fieldset className='w-full mt-4'>
-                <Input
-                    name='movieName'
-                    className='w-full px-4 py-2 mt-1 mb-2 rounded-md bg-white/5 text-text-primary focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-primary-soft/50'
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    placeholder='Enter your name...'
-                />
-                <Button
-                    type='submit' 
-                    className='w-full p-2 text-center rounded bg-primary text-text-primary'
-                >
-                    Continue
-                </Button>
-            </Fieldset>
-        </Form>
+        <Dialog open={isOpen} onClose={onClose} className="relative z-50">
+              {/* Background overlay */}
+              <div className="fixed inset-0 bg-background/50" aria-hidden="true" />
+        
+              {/* Centered modal panel */}
+              <div className="fixed inset-0 flex items-center justify-center">
+                <DialogPanel className="relative w-full max-w-md rounded-lg bg-surface">
+                  {/* Close button */}
+                  <Button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 text-text-secondary hover:text-text-primary"
+                    aria-label="Close modal"
+                  >
+                    <XMarkIcon className="w-6 h-6" />
+                  </Button>
+                  <Form method='post' className='flex flex-col p-5 lg:p-10 rounded-md min-w-[200px] bg-surface gap-2'>
+                        <h2 className='text-2xl text-text-primary'>Continue as Guest</h2>
+                        <Fieldset className='w-full'>
+                            <Input
+                                name='name'
+                                className='w-full px-4 py-2 mt-1 mb-2 rounded-md bg-white/5 text-text-primary focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-primary-soft/50'
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                                placeholder='Enter your name...'
+                            />
+
+                            <Input type='hidden' name='availability_data' value={JSON.stringify(selectedTimes.map(d => formatISO(d)))}/>
+                        </Fieldset>
+                        <Button
+                            type='submit' 
+                            className='self-end w-1/4 p-2 text-center rounded bg-primary text-text-primary'
+                        >
+                            Continue
+                        </Button>
+                    </Form>
+                </DialogPanel>
+              </div>
+            </Dialog>
     )
 }
 
