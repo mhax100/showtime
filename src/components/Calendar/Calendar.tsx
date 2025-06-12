@@ -85,6 +85,32 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
         const colMin = Math.min(startCol, endCol);
         const colMax = Math.max(startCol, endCol);
 
+        const newDatesSet = new Set<string>();
+        for (let col = colMin; col <= colMax; col++) {
+            for (let row = rowMin; row <= rowMax; row++) {
+                const date = getDateFromPos(row, col);
+                newDatesSet.add(date.toISOString());
+            }
+        }
+
+        setSelectedTimes((prev) => {
+            const existing = prev || [];
+
+            if (dragIntent.current === 'add') {
+                // Combine and deduplicate
+                const combined = [...existing, ...Array.from(newDatesSet, iso => new Date(iso))];
+                const unique = Array.from(
+                    new Map(combined.map(d => [d.toISOString(), d])).values()
+                );
+                return unique;
+            } else {
+                // Filter out anything in newDatesSet
+                return existing.filter(
+                    time => !newDatesSet.has(time.toISOString())
+                );
+            }
+        });
+/*
         for (let col = colMin; col <= colMax; col++) {
             for (let row = rowMin; row <= rowMax; row++) {
                 const date = getDateFromPos(row, col)
@@ -101,6 +127,7 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
                 }
             }
         }
+*/
     }
 
     const handleTimeClick = (currentTime: Date) => {
