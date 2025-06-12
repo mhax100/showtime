@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Form } from "react-router-dom"
+import React, { useState, useEffect } from "react"
+import { useFetcher } from "react-router-dom"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 import { Dialog, DialogPanel, Fieldset, Input, Button } from "@headlessui/react"
 import { formatISO } from "date-fns"
@@ -21,6 +21,13 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
     }
 ) => {
     const [name, setName] = useState("");
+    const fetcher = useFetcher();
+    
+    useEffect(() => {
+        if (fetcher.state === "idle" && fetcher.data?.success) {
+          onClose();
+        }
+      }, [fetcher.state, fetcher.data, onClose]);
 
     return (
         <Dialog open={isOpen} onClose={onClose} className="relative z-50">
@@ -38,8 +45,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                   >
                     <XMarkIcon className="w-6 h-6" />
                   </Button>
-                  <Form 
-                    action="/actions/submit-availability"
+                  <fetcher.Form 
                     method='post' 
                     className='flex flex-col p-5 lg:p-10 rounded-md min-w-[200px] bg-surface gap-2'>
                         <h2 className='text-2xl text-text-primary'>Continue as Guest</h2>
@@ -63,7 +69,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                         >
                             Continue
                         </Button>
-                    </Form>
+                    </fetcher.Form>
                 </DialogPanel>
               </div>
             </Dialog>

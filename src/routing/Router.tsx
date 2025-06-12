@@ -16,14 +16,13 @@ import { submitAvailabilityAction } from "./actions/submitAvailabilityAction";
       children: [
         { path: "/", element: <App />},
         { path: "/home", element: <Home />},
-        { path: "/showtime/:showtimeID", element: <ShowtimePage />},
+        { path: "/showtime/:showtimeID", 
+          element: <ShowtimePage />,
+          action: submitAvailabilityAction
+        },
         {
           path: "/actions/new-showtime",
           action: newShowtimeAction
-        },
-        {
-          path: "/actions/submit-availability",
-          action: submitAvailabilityAction
         }
       ]
     },

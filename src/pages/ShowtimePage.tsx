@@ -11,6 +11,11 @@ import AvailabilitySubmissionModal from "../components/AvailabilitySubmissionMod
 
 function ShowtimePage() {
     const { showtimeID } = useParams();
+
+    if (!showtimeID) {
+        throw new Error("showtimeID param is required.");
+    }
+
     const [showtime, setShowtime] = useState<Showtime | null>(null);
     const [loading, setLoading] = useState(true);
     const [selectedTimes, setSelectedTimes] = useState<Date[]>([])
@@ -64,6 +69,7 @@ function ShowtimePage() {
     }
 
     const handleSubmitClick = () => {
+        console.log("firing submission button method")
         setIsSubmissionModalOpen(true)
     }
 
@@ -106,8 +112,15 @@ function ShowtimePage() {
     return (
         <div className="flex flex-col items-start justify-start h-full pl-6 pr-6 m-2">
             <AvailabilitySubmissionModal 
+                key={isSubmissionModalOpen ? 'open' : 'closed'}
                 isOpen={isSubmissionModalOpen} 
-                onClose={() => setIsSubmissionModalOpen(false)}
+                onClose={
+                    () => {
+                        setMode('summary')
+                        setSelectedTimes([])
+                        setIsSubmissionModalOpen(false)
+                    }
+                }
                 selectedTimes={selectedTimes}    
                 showtimeID={showtimeID}
             />

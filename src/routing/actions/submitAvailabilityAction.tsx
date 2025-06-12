@@ -37,8 +37,7 @@ export async function submitAvailabilityAction({ request }: { request: Request }
         name: name
     })
 
-    console.log(user_response)
-
+    
     const availability_id = await createAvailability({
         event_id: showtime_id,
         user_id: user_response.data.id,
@@ -46,6 +45,6 @@ export async function submitAvailabilityAction({ request }: { request: Request }
         role: "guest"
     })
 
-    console.log(availability_id)
+    return { success: true, availability_id}
 }
   
