@@ -211,7 +211,9 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
             const timeCopy = time
 
             stamps.push(
-                    <h2 className={`${cellHeightClasses} text-sm text-text-secondary`}>{format(timeCopy, 'h a')}</h2>
+                    <h2 
+                        key={timeCopy.toISOString()}
+                        className={`${cellHeightClasses} text-sm text-text-secondary`}>{format(timeCopy, 'h a')}</h2>
             )
             stamps.push(<div className={`${cellHeightClasses}`}></div>)
 

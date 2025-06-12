@@ -3,11 +3,15 @@ import { useParams } from "react-router-dom";
 import { format } from "date-fns";
 import { Button } from "@headlessui/react";
 import { fetchShowtimeByID } from "../api/showtime";
+import { fetchAvailabilitiesByID } from "../api/availabilities";
 import type { Showtime } from "../types/showtime";
+import type { Availability } from "../types/availability";
+import type { User } from "../types/user";
 import TimeTable from "../components/Calendar/Calendar";
 import AvailabilitySideBar from "../components/AvailabilitySidebar";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 import AvailabilitySubmissionModal from "../components/AvailabilitySubmissionModal";
+import { fetchUserByID } from "../api/users";
 
 function ShowtimePage() {
     const { showtimeID } = useParams();
@@ -17,9 +21,11 @@ function ShowtimePage() {
     }
 
     const [showtime, setShowtime] = useState<Showtime | null>(null);
+    const [availabilities, setAvailabilities] = useState<Availability[]>([]);
+    const [users, setUsers] = useState<User[]>([]);
+
     const [loading, setLoading] = useState(true);
     const [selectedTimes, setSelectedTimes] = useState<Date[]>([])
-    const [numResponses] = useState(0)
     const [mode, setMode] = useState<'edit' | 'summary'>('summary')
     const [copied, setCopied] = useState(false)
     const [isSubmissionModalOpen, setIsSubmissionModalOpen] = useState(false)
@@ -44,6 +50,69 @@ function ShowtimePage() {
         }
 
     }, [showtimeID]);
+
+    useEffect(() => {
+        let isMounted = true;
+
+        async function getAvailabilities() {
+            try {
+                if (!showtimeID) return;
+                const data = await fetchAvailabilitiesByID(showtimeID);
+                if (isMounted && data.length > 0) {
+                    setAvailabilities((prevAvailabilities) => {
+                        const merged = [...prevAvailabilities]
+
+                        data.forEach((availability) => {
+                            const index = merged.findIndex((a) => a.user_id === availability.user_id);
+                            if (index !== -1) {
+                                merged[index] = availability; // Replace if already present
+                            } else {
+                                merged.push(availability); // Append if new
+                            }
+                        })
+                        
+                        return merged
+                    })
+
+
+                    const newUsers = await Promise.all(
+                        data.map((availability) => fetchUserByID(availability.user_id))
+                    );
+                    setUsers((prevUsers) => {
+                        const merged = [...prevUsers];
+                    
+                        newUsers.forEach((user) => {
+                            const index = merged.findIndex((u) => u.id === user.id);
+                            if (index !== -1) {
+                                merged[index] = user; // Replace if already present
+                            } else {
+                                merged.push(user); // Append if new
+                            }
+                        });
+                    
+                        return merged;
+                    });
+
+                    setLoading(false);
+                }
+            } catch (err) {
+                console.error('Error fetching availabilities for showtime:', err);
+            }
+        }
+
+        // Fetch immediately
+        getAvailabilities();
+
+        // Poll every 10 seconds
+        const interval = setInterval(getAvailabilities, 10000);
+
+        // Cleanup
+        return () => {
+            isMounted = false;
+            clearInterval(interval);
+        };
+    }, [showtimeID])
+
       
 
     if (loading) return <p>Loading showtime...</p>;
@@ -69,7 +138,6 @@ function ShowtimePage() {
     }
 
     const handleSubmitClick = () => {
-        console.log("firing submission button method")
         setIsSubmissionModalOpen(true)
     }
 
@@ -169,7 +237,7 @@ function ShowtimePage() {
                         availabilityData={{}}    
                     />
                 </div>
-                <AvailabilitySideBar numResponses={numResponses} onAddClick={onAddClick} />
+                <AvailabilitySideBar userData={users} onAddClick={onAddClick} />
             </div>
         </div>
     )
