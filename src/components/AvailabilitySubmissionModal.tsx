@@ -9,13 +9,15 @@ type AvailabilitySubmissionModalProps  = {
     isOpen: boolean
     onClose: () => void
     selectedTimes: Date[]
+    showtimeID: string
 }
 
 const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = (
     {
         isOpen,
         onClose,
-        selectedTimes
+        selectedTimes,
+        showtimeID
     }
 ) => {
     const [name, setName] = useState("");
@@ -36,7 +38,10 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                   >
                     <XMarkIcon className="w-6 h-6" />
                   </Button>
-                  <Form method='post' className='flex flex-col p-5 lg:p-10 rounded-md min-w-[200px] bg-surface gap-2'>
+                  <Form 
+                    action="/actions/submit-availability"
+                    method='post' 
+                    className='flex flex-col p-5 lg:p-10 rounded-md min-w-[200px] bg-surface gap-2'>
                         <h2 className='text-2xl text-text-primary'>Continue as Guest</h2>
                         <Fieldset className='w-full'>
                             <Input
@@ -50,6 +55,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                             />
 
                             <Input type='hidden' name='availability_data' value={JSON.stringify(selectedTimes.map(d => formatISO(d)))}/>
+                            <Input type='hidden' name='showtime_id' value={showtimeID}/>
                         </Fieldset>
                         <Button
                             type='submit' 

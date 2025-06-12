@@ -109,6 +109,7 @@ function ShowtimePage() {
                 isOpen={isSubmissionModalOpen} 
                 onClose={() => setIsSubmissionModalOpen(false)}
                 selectedTimes={selectedTimes}    
+                showtimeID={showtimeID}
             />
             <div className='flex items-center justify-between w-full p-4 py-2'>
                 <div className='flex flex-col items-baseline'>

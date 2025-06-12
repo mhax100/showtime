@@ -1,5 +1,5 @@
-
-import { createShowtime } from "../../api/showtime";
+import { createUser } from "../../api/users";
+import { createAvailability } from "../../api/availabilities";
 
 export async function submitAvailabilityAction({ request }: { request: Request }) {
 
@@ -15,10 +15,12 @@ export async function submitAvailabilityAction({ request }: { request: Request }
     const formData = await request.formData();
     const name = formData.get("name");
     const availability = formData.get("availability_data")
+    const showtime_id = formData.get("showtime_id")
 
     if (
         typeof name !== 'string' ||
-        typeof availability !== 'string'
+        typeof availability !== 'string' ||
+        typeof showtime_id !== 'string'
     ) {
         throw new Error("Invalid form input");
     }
@@ -31,12 +33,19 @@ export async function submitAvailabilityAction({ request }: { request: Request }
         throw new Error("Could not parse dates");
     }
 
-    /*
-    await createShowtime({
-        
+    const user_response = await createUser({
+        name: name
     })
 
-    await create
-    */
+    console.log(user_response)
+
+    const availability_id = await createAvailability({
+        event_id: showtime_id,
+        user_id: user_response.data.id,
+        availability: parsedAvailability,
+        role: "guest"
+    })
+
+    console.log(availability_id)
 }
   
