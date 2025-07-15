@@ -9,7 +9,7 @@ type AvailabilitySubmissionModalProps  = {
     isOpen: boolean
     onClose: () => void
     selectedTimes: Date[]
-    showtimeID: string
+    eventID: string
 }
 
 const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = (
@@ -17,7 +17,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
         isOpen,
         onClose,
         selectedTimes,
-        showtimeID
+        eventID
     }
 ) => {
     const [name, setName] = useState("");
@@ -61,7 +61,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                             />
 
                             <Input type='hidden' name='availability_data' value={JSON.stringify(selectedTimes.map(d => formatISO(d)))}/>
-                            <Input type='hidden' name='showtime_id' value={showtimeID}/>
+                            <Input type='hidden' name='event_id' value={eventID}/>
                         </Fieldset>
                         <Button
                             type='submit' 

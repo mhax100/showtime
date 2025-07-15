@@ -6,7 +6,7 @@ import {
   import Home from "../pages/Home";
   import { newShowtimeAction } from "./actions/movieFormAction";
 import ErrorPage from "../pages/ErrorPage";
-import ShowtimePage from "../pages/ShowtimePage";
+import EventPage from "../pages/EventPage";
 import { submitAvailabilityAction } from "./actions/submitAvailabilityAction";
   
   const router = createBrowserRouter([
@@ -16,8 +16,8 @@ import { submitAvailabilityAction } from "./actions/submitAvailabilityAction";
       children: [
         { path: "/", element: <App />},
         { path: "/home", element: <Home />},
-        { path: "/showtime/:showtimeID", 
-          element: <ShowtimePage />,
+        { path: "/showtime/:eventID", 
+          element: <EventPage />,
           action: submitAvailabilityAction
         },
         {

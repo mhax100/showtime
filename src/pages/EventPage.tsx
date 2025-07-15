@@ -2,25 +2,25 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { format } from "date-fns";
 import { Button } from "@headlessui/react";
-import { fetchShowtimeByID } from "../api/showtime";
+import { fetchEventByID } from "../api/events";
 import { fetchAvailabilitiesByID } from "../api/availabilities";
-import type { Showtime } from "../types/showtime";
+import type { Event } from "../types/event";
 import type { Availability } from "../types/availability";
 import type { User } from "../types/user";
-import TimeTable from "../components/Calendar/Calendar";
+import Calendar from "../components/Calendar/Calendar";
 import AvailabilitySideBar from "../components/AvailabilitySidebar";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 import AvailabilitySubmissionModal from "../components/AvailabilitySubmissionModal";
 import { fetchUserByID } from "../api/users";
 
-function ShowtimePage() {
-    const { showtimeID } = useParams();
+function EventPage() {
+    const { eventID } = useParams();
 
-    if (!showtimeID) {
-        throw new Error("showtimeID param is required.");
+    if (!eventID) {
+        throw new Error("eventID param is required.");
     }
 
-    const [showtime, setShowtime] = useState<Showtime | null>(null);
+    const [event, setEvent] = useState<Event | null>(null);
     const [availabilities, setAvailabilities] = useState<Availability[]>([]);
     const [users, setUsers] = useState<User[]>([]);
 
@@ -31,33 +31,33 @@ function ShowtimePage() {
     const [isSubmissionModalOpen, setIsSubmissionModalOpen] = useState(false)
 
     useEffect(() => {
-        async function getShowtime() {
+        async function getEvent() {
             try {
-                if (!showtimeID) {
-                    return <p>No showtime selected.</p>;
+                if (!eventID) {
+                    return <p>No event selected.</p>;
                 }
-                const data = await fetchShowtimeByID(showtimeID)
-                setShowtime(data)
+                const data = await fetchEventByID(eventID)
+                setEvent(data)
             } catch (err) {
-                console.error('Error fetching showtime:', err);
+                console.error('Error fetching event:', err);
             } finally {
                 setLoading(false);
             }
         }
 
-        if (showtimeID) {
-            getShowtime();
+        if (eventID) {
+            getEvent();
         }
 
-    }, [showtimeID]);
+    }, [eventID]);
 
     useEffect(() => {
         let isMounted = true;
 
         async function getAvailabilities() {
             try {
-                if (!showtimeID) return;
-                const data = await fetchAvailabilitiesByID(showtimeID);
+                if (!eventID) return;
+                const data = await fetchAvailabilitiesByID(eventID);
                 if (isMounted && data.length > 0) {
                     setAvailabilities((prevAvailabilities) => {
                         const merged = [...prevAvailabilities]
@@ -96,7 +96,7 @@ function ShowtimePage() {
                     setLoading(false);
                 }
             } catch (err) {
-                console.error('Error fetching availabilities for showtime:', err);
+                console.error('Error fetching availabilities for event:', err);
             }
         }
 
@@ -111,12 +111,12 @@ function ShowtimePage() {
             isMounted = false;
             clearInterval(interval);
         };
-    }, [showtimeID])
+    }, [eventID])
 
       
 
-    if (loading) return <p>Loading showtime...</p>;
-    if (!showtime) return <p>Showtime not found</p>;
+    if (loading) return <p>Loading event...</p>;
+    if (!event) return <p>Event not found</p>;
     
     const onAddClick = () => {
         setMode('edit');
@@ -190,13 +190,13 @@ function ShowtimePage() {
                     }
                 }
                 selectedTimes={selectedTimes}    
-                showtimeID={showtimeID}
+                eventID={eventID}
             />
             <div className='flex items-center justify-between w-full p-4 py-2'>
                 <div className='flex flex-col items-baseline'>
-                    <h3 className='text-4xl font-light text-text-primary'>{showtime.title}</h3>
-                    <p className='text-lg font-light text-text-secondary'>{showtime.location}</p>
-                    <p className='text-lg font-light text-text-secondary'>{formatDateRanges(showtime.potential_dates)}</p>
+                    <h3 className='text-4xl font-light text-text-primary'>{event.title}</h3>
+                    <p className='text-lg font-light text-text-secondary'>{event.location}</p>
+                    <p className='text-lg font-light text-text-secondary'>{formatDateRanges(event.potential_dates)}</p>
                 </div>
                 <div className='flex gap-3 ml-auto'>
                     <Button
@@ -229,8 +229,8 @@ function ShowtimePage() {
             </div>
             <div className='flex flex-col items-center w-full gap-4 p-4 md:flex-row'>
                 <div className='w-5/6 h-full'>
-                    <TimeTable 
-                        dates={(showtime.potential_dates ?? []).map((d: string) => new Date(d))}
+                    <Calendar 
+                        dates={(event.potential_dates ?? []).map((d: string) => new Date(d))}
                         selectedTimes={selectedTimes}
                         setSelectedTimes={setSelectedTimes}
                         mode={mode}
@@ -243,4 +243,4 @@ function ShowtimePage() {
     )
 }
 
-export default ShowtimePage;
+export default EventPage;

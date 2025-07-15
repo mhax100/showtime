@@ -7,6 +7,9 @@
     --color-primary-soft: #C8A753;
     --color-primary-shift-red: #A3553C;
     --color-primary-shift-green: #6AA34A;
+    --color-primary-desaturated-1: #B49746;
+    --color-primary-desaturated-2: #B99F56;
+    --color-primary-desaturated-3: #BEA768;
     --color-secondary: #AC1212;
     --color-secondary-soft: oklch(60% 0.19 27);
     --color-text-primary: oklch(85% 0 0);

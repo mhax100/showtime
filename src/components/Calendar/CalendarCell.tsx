@@ -1,3 +1,5 @@
+import { CELL_HEIGHT_CLASSES } from "../../constants/layout";
+
 type CalendarCellProps = {
     date: Date
     isSelected: boolean
@@ -19,12 +21,11 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
     onMouseDown,
     onMouseEnter
     }) => {
-    const cellHeightClasses = "h-4 sm:h-4 md:h-5 lg:h-6 xl:h-7";
 
     if (isDisabled) {
         return (
         <div
-            className={`${cellHeightClasses} bg-surface border-1 border-surface`}
+            className={`${CELL_HEIGHT_CLASSES} bg-surface border-1 border-surface`}
             key={date.toISOString()}
         />
         );
@@ -49,7 +50,7 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
         <div
         key={date.toISOString()}
         className={`
-            ${cellHeightClasses}
+            ${CELL_HEIGHT_CLASSES}
             ${backgroundColor}
             border border-surface
             ${!isHalfHour ? '[border-bottom-style:dashed]' : '[border-top-style:dashed]'}

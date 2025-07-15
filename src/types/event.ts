@@ -1,4 +1,4 @@
-export type Showtime = {
+export type Event = {
     id: string;
     title: string;
     creator_id: string;
@@ -7,7 +7,7 @@ export type Showtime = {
     potential_dates: string[];
   };
   
-  export type ShowtimeFormData = {
+  export type EventFormData = {
     title: string;
     creator_id: string;
     location: string;

@@ -4,8 +4,10 @@ import { useState, useRef } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import useMaxVisibleDays from '../../hooks/useMaxVisibleDays'
 import CalendarCell from './CalendarCell'
+import { CELL_HEIGHT_CLASSES } from '../../constants/layout'
+import useCellHeight from '../../hooks/useCellHeight'
 
-type TimeTableProps = {
+type CalendarProps = {
     dates: Date[]
     selectedTimes: Date[]
     setSelectedTimes: React.Dispatch<React.SetStateAction<Date[]>>
@@ -13,11 +15,42 @@ type TimeTableProps = {
     availabilityData?: Record<string, number>
 }
 
-const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData }) => {
+const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData }) => {
     const [startIndex, setStartIndex] = useState(0)
     const maxVisibleDays = useMaxVisibleDays()
     const visibleDates = dates.slice(startIndex, startIndex + maxVisibleDays)
+    
+    const showtimeBlocks = [
+        {
+          id: 's1',
+          theater: 'Thornton Place',
+          start: new Date('2025-06-20T17:00:00'),
+          end: new Date('2025-06-20T19:00:00'),
+          availabilityPct: 83,
+        },
+        {
+          id: 's2',
+          theater: 'Thornton Place',
+          start: new Date('2025-06-20T18:30:00'),
+          end: new Date('2025-06-20T20:30:00'),
+          availabilityPct: 40,
+        },
+        {
+          id: 's3',
+          theater: 'Crossroads Cinemas',
+          start: new Date('2025-06-24T17:00:00'),
+          end: new Date('2025-06-24T20:00:00'),
+          availabilityPct: 65,
+        }
+    ];
 
+    const getAvailabilityShade = (pct: number): string => {
+        if (pct >= 80) return 'bg-primary';
+        if (pct >= 60) return 'bg-primary-desaturated-1';
+        if (pct >= 40) return 'bg-primary-desaturated-2';
+        if (pct >= 20) return 'bg-primary-desaturated-3';
+        return 'bg-primary/10';
+    }
 
     const gridColsClass = {
         1: 'grid-cols-1',
@@ -29,7 +62,7 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
         7: 'grid-cols-7'
       }[Math.min(dates.length, maxVisibleDays)] || 'grid-cols-1';
 
-    const cellHeightClasses = "h-4 sm:h-4 md:h-5 lg:h-6 xl:h-7"; 
+    const cellHeight = useCellHeight()
 
     const isDragging = useRef(false)
     const dragStart = useRef<{row: number, col: number} | null>(null)
@@ -110,24 +143,6 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
                 );
             }
         });
-/*
-        for (let col = colMin; col <= colMax; col++) {
-            for (let row = rowMin; row <= rowMax; row++) {
-                const date = getDateFromPos(row, col)
-                if (dragIntent.current == 'add') {
-                    setSelectedTimes((prev) => {
-                        const times = prev || []
-                        return [...times, date]
-                    })
-                } else {
-                    setSelectedTimes((prev) => {
-                        const times = prev || []
-                        return times.filter(time => !(isSameMinute(time, date) && isSameDay(time, date)))
-                    })
-                }
-            }
-        }
-*/
     }
 
     const handleTimeClick = (currentTime: Date) => {
@@ -143,7 +158,34 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
         })
     }
 
-
+    const renderOverlaysForDate = (date: Date, startHour: number) => {
+        const blocksForDay = showtimeBlocks.filter(block =>
+            block.start.toDateString() === date.toDateString()
+          );
+        
+          return blocksForDay.map(block => {
+            const startMinutes = block.start.getHours() * 60 + block.start.getMinutes();
+            const endMinutes = block.end.getHours() * 60 + block.end.getMinutes();
+            const startOffset = (startMinutes - startHour * 60) / 30;
+            const numRows = (endMinutes - startMinutes) / 30;
+        
+            return (
+                <div
+                    key={block.id}
+                    className={`flex flex-col items-start absolute left-0 right-0 mx-1 rounded p-1 ${getAvailabilityShade(block.availabilityPct)}`}
+                    style={{
+                    top: `${startOffset * cellHeight}px`,
+                    height: `${numRows * cellHeight}px`,
+                    zIndex: 20,
+                    }}
+                    title={`Available: ${block.availabilityPct}%`}
+                >
+                    <h3 className='text-md font-heavy text-text-primary'>{block.theater}</h3>
+                    <h5 className='text-sm font-light text-text-primary'>{`${format(block.start, 'h a')} - ${format(block.end, 'h a')}`}</h5>
+                </div>
+            );
+        });
+    }
 
     const renderDay = (date: Date, colIndex: number) => {
         const start = new Date(date)
@@ -166,17 +208,20 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
             const isHalfHour = getMinutes(currentTimeCopy) == 30
 
             day.push(
-                <CalendarCell
-                    key={currentTimeCopy.toISOString()}
+                    <CalendarCell
                     date={currentTimeCopy}
                     isSelected={isSelected}
                     isDisabled={isDisabled}
                     isHalfHour={isHalfHour}
                     mode={mode}
-                    availabilityPercentage={mode === 'summary' ? availabilityData?.[currentTimeCopy.toISOString()] : undefined}
+                    availabilityPercentage={
+                        mode === 'summary'
+                        ? availabilityData?.[currentTimeCopy.toISOString()]
+                        : undefined
+                    }
                     onMouseDown={() => handleMouseDown(row, colIndex)}
                     onMouseEnter={() => handleMouseEnter(row, colIndex)}
-                />    
+                    />
             )
 
             currentTime = addMinutes(currentTime, 30)
@@ -184,7 +229,10 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
         }
 
         return (
-            <div className='grid grid-cols-1'>{day}</div>
+            <div className='relative grid grid-cols-1'>
+                {day}
+                {mode == "summary" && renderOverlaysForDate(date, 9)}
+            </div>
         )
     }
 
@@ -213,9 +261,9 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
             stamps.push(
                     <h2 
                         key={timeCopy.toISOString()}
-                        className={`${cellHeightClasses} text-sm text-text-secondary`}>{format(timeCopy, 'h a')}</h2>
+                        className={`${CELL_HEIGHT_CLASSES} text-sm text-text-secondary`}>{format(timeCopy, 'h a')}</h2>
             )
-            stamps.push(<div className={`${cellHeightClasses}`}></div>)
+            stamps.push(<div className={`${CELL_HEIGHT_CLASSES}`}></div>)
 
             time = addMinutes(time, 60)
         }
@@ -293,4 +341,4 @@ const TimeTable: React.FC<TimeTableProps> = ({ dates, selectedTimes, setSelected
     )
 }
 
-export default TimeTable;
+export default Calendar;

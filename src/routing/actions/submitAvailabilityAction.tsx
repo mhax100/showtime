@@ -15,12 +15,12 @@ export async function submitAvailabilityAction({ request }: { request: Request }
     const formData = await request.formData();
     const name = formData.get("name");
     const availability = formData.get("availability_data")
-    const showtime_id = formData.get("showtime_id")
+    const event_id = formData.get("event_id")
 
     if (
         typeof name !== 'string' ||
         typeof availability !== 'string' ||
-        typeof showtime_id !== 'string'
+        typeof event_id !== 'string'
     ) {
         throw new Error("Invalid form input");
     }
@@ -39,7 +39,7 @@ export async function submitAvailabilityAction({ request }: { request: Request }
 
     
     const availability_id = await createAvailability({
-        event_id: showtime_id,
+        event_id: event_id,
         user_id: user_response.data.id,
         availability: parsedAvailability,
         role: "guest"
