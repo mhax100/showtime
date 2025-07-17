@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { format } from "date-fns";
-import { Button } from "@headlessui/react";
+import { Button, Switch, Field, Label } from "@headlessui/react";
 import { fetchEventByID } from "../api/events";
 import { fetchAvailabilitiesByID } from "../api/availabilities";
 import type { Event } from "../types/event";
 import type { Availability } from "../types/availability";
 import type { User } from "../types/user";
+import type { Showtime } from "../types/showtime";
 import Calendar from "../components/Calendar/Calendar";
+import ShowtimeList from "../components/ShowtimeList";
 import AvailabilitySideBar from "../components/AvailabilitySidebar";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 import AvailabilitySubmissionModal from "../components/AvailabilitySubmissionModal";
 import { fetchUserByID } from "../api/users";
+import { fetchShowtimesByID } from "../api/showtimes";
 
 function EventPage() {
     const { eventID } = useParams();
@@ -22,6 +25,7 @@ function EventPage() {
 
     const [event, setEvent] = useState<Event | null>(null);
     const [availabilities, setAvailabilities] = useState<Availability[]>([]);
+    const [showtimes, setShowtimes] = useState<Showtime[]>([]);
     const [users, setUsers] = useState<User[]>([]);
 
     const [loading, setLoading] = useState(true);
@@ -29,6 +33,7 @@ function EventPage() {
     const [mode, setMode] = useState<'edit' | 'summary'>('summary')
     const [copied, setCopied] = useState(false)
     const [isSubmissionModalOpen, setIsSubmissionModalOpen] = useState(false)
+    const [summaryMode, setSummaryMode] = useState(false)
 
     useEffect(() => {
         async function getEvent() {
@@ -53,6 +58,32 @@ function EventPage() {
 
     useEffect(() => {
         let isMounted = true;
+
+        async function getShowtimes() {
+            try {
+                if (!eventID) return;
+                const data = await fetchShowtimesByID(eventID);
+
+                if (isMounted && data.showtimes.length > 0) {
+                    setShowtimes((prevShowtimes) => {
+                        const merged = [...prevShowtimes]
+
+                        data.showtimes.forEach((showtime) => {
+                            const index = merged.findIndex((a) => a.id === showtime.id);
+                            if (index !== -1) {
+                                merged[index] = showtime; // Replace if already present
+                            } else {
+                                merged.push(showtime); // Append if new
+                            }
+                        })
+                        
+                        return merged
+                    })
+                }
+            } catch (err) {
+                console.error('Error fetching availabilities for event:', err);
+            }
+        }
 
         async function getAvailabilities() {
             try {
@@ -102,14 +133,17 @@ function EventPage() {
 
         // Fetch immediately
         getAvailabilities();
+        getShowtimes();
 
         // Poll every 10 seconds
         const interval = setInterval(getAvailabilities, 10000);
+        const interval2 = setInterval(getShowtimes, 10000);
 
         // Cleanup
         return () => {
             isMounted = false;
             clearInterval(interval);
+            clearInterval(interval2)
         };
     }, [eventID])
 
@@ -199,6 +233,16 @@ function EventPage() {
                     <p className='text-lg font-light text-text-secondary'>{formatDateRanges(event.potential_dates)}</p>
                 </div>
                 <div className='flex gap-3 ml-auto'>
+                    <Field className='flex items-center border-b border-primary'>
+                        <Label className='px-2 py-2 text-primary'>Summary View</Label>
+                        <Switch
+                            checked={summaryMode}
+                            onChange={setSummaryMode}
+                            className="inline-flex items-center h-6 mx-2 transition rounded-full bg-surface group w-11 data-checked:bg-primary"
+                        >
+                            <span className="transition translate-x-1 rounded-full bg-background size-4 group-data-checked:translate-x-6" />
+                        </Switch>
+                    </Field>
                     <Button
                         onClick={handleCopyClick} 
                         className='px-4 py-2 border rounded-md text-primary border-primary hover:bg-primary/10'>
@@ -227,8 +271,10 @@ function EventPage() {
                     
                 </div>
             </div>
-            <div className='flex flex-col items-center w-full gap-4 p-4 md:flex-row'>
+            <div className='flex flex-col items-start w-full gap-4 p-4 md:flex-row'>
                 <div className='w-5/6 h-full'>
+                {
+                    summaryMode ? <ShowtimeList showtimes={showtimes}/> : 
                     <Calendar 
                         dates={(event.potential_dates ?? []).map((d: string) => new Date(d))}
                         selectedTimes={selectedTimes}
@@ -236,6 +282,7 @@ function EventPage() {
                         mode={mode}
                         availabilityData={{}}    
                     />
+                }
                 </div>
                 <AvailabilitySideBar userData={users} onAddClick={onAddClick} />
             </div>

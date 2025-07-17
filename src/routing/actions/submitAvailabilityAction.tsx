@@ -1,5 +1,6 @@
 import { createUser } from "../../api/users";
 import { createAvailability } from "../../api/availabilities";
+import { createShowtimes } from "../../api/showtimes";
 
 export async function submitAvailabilityAction({ request }: { request: Request }) {
 
@@ -44,6 +45,17 @@ export async function submitAvailabilityAction({ request }: { request: Request }
         availability: parsedAvailability,
         role: "guest"
     })
+
+    const showtimes = await createShowtimes(
+        event_id,
+        {
+            location: "Seattle",
+            movie: "Superman",
+            duration: 120
+        }
+    )
+
+    console.log(showtimes)
 
     return { success: true, availability_id}
 }
