@@ -1,6 +1,7 @@
 import React from "react"
 import { Button } from "@headlessui/react"
 import type { User } from "../types/user"
+import UserListItem from "./UserListItem"
 
 
 type AvailabilitySideBarProps  = {
@@ -18,11 +19,7 @@ const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAd
             </div>
             {userData.map((user) => {
                 return (
-                    <div 
-                        key={user.id}
-                        className='text-text-secondary'>
-                        {user.name}
-                    </div>
+                    <UserListItem id={user.id} name={user.name} />
                 )
             })}
             {userData.length > 0 ? <Button onClick={onAddClick} className='p-2 mt-2 rounded cursor-pointer text-primary data-hover:bg-primary-soft/25 '>+ Add availability</Button> : <div></div>}
