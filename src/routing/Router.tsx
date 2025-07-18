@@ -8,6 +8,7 @@ import {
 import ErrorPage from "../pages/ErrorPage";
 import EventPage from "../pages/EventPage";
 import { submitAvailabilityAction } from "./actions/submitAvailabilityAction";
+import { eventPageLoader } from "./loaders/eventPageLoader";
   
   const router = createBrowserRouter([
     {
@@ -18,6 +19,7 @@ import { submitAvailabilityAction } from "./actions/submitAvailabilityAction";
         { path: "/home", element: <Home />},
         { path: "/showtime/:eventID", 
           element: <EventPage />,
+          loader: eventPageLoader,
           action: submitAvailabilityAction
         },
         {

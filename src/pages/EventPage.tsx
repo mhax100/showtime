@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 import { format } from "date-fns";
 import { Button, Switch, Field, Label } from "@headlessui/react";
-import { fetchEventByID } from "../api/events";
-import { fetchAvailabilitiesByID } from "../api/availabilities";
 import type { Event } from "../types/event";
 import type { Availability } from "../types/availability";
 import type { User } from "../types/user";
@@ -13,143 +11,41 @@ import ShowtimeList from "../components/ShowtimeList";
 import AvailabilitySideBar from "../components/AvailabilitySidebar";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 import AvailabilitySubmissionModal from "../components/AvailabilitySubmissionModal";
-import { fetchUserByID } from "../api/users";
-import { fetchShowtimesByID } from "../api/showtimes";
 
 function EventPage() {
     const { eventID } = useParams();
+    const loaderData = useLoaderData() as {
+        event: Event;
+        availabilities: Availability[];
+        showtimes: Showtime[];
+        users: User[];
+    };
 
     if (!eventID) {
         throw new Error("eventID param is required.");
     }
 
-    const [event, setEvent] = useState<Event | null>(null);
-    const [availabilities, setAvailabilities] = useState<Availability[]>([]);
-    const [showtimes, setShowtimes] = useState<Showtime[]>([]);
-    const [users, setUsers] = useState<User[]>([]);
+    const [event, setEvent] = useState<Event | null>(loaderData.event);
+    const [availabilities, setAvailabilities] = useState<Availability[]>(loaderData.availabilities);
+    const [showtimes, setShowtimes] = useState<Showtime[]>(loaderData.showtimes);
+    const [users, setUsers] = useState<User[]>(loaderData.users);
 
-    const [loading, setLoading] = useState(true);
     const [selectedTimes, setSelectedTimes] = useState<Date[]>([])
     const [mode, setMode] = useState<'edit' | 'summary'>('summary')
     const [copied, setCopied] = useState(false)
     const [isSubmissionModalOpen, setIsSubmissionModalOpen] = useState(false)
     const [summaryMode, setSummaryMode] = useState(false)
+    const [selectedUserIds, setSelectedUserIds] = useState<string[]>([])
 
+    // Update state when loader data changes (after revalidation)
     useEffect(() => {
-        async function getEvent() {
-            try {
-                if (!eventID) {
-                    return <p>No event selected.</p>;
-                }
-                const data = await fetchEventByID(eventID)
-                setEvent(data)
-            } catch (err) {
-                console.error('Error fetching event:', err);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        if (eventID) {
-            getEvent();
-        }
-
-    }, [eventID]);
-
-    useEffect(() => {
-        let isMounted = true;
-
-        async function getShowtimes() {
-            try {
-                if (!eventID) return;
-                const data = await fetchShowtimesByID(eventID);
-
-                if (isMounted && data.showtimes.length > 0) {
-                    setShowtimes((prevShowtimes) => {
-                        const merged = [...prevShowtimes]
-
-                        data.showtimes.forEach((showtime) => {
-                            const index = merged.findIndex((a) => a.id === showtime.id);
-                            if (index !== -1) {
-                                merged[index] = showtime; // Replace if already present
-                            } else {
-                                merged.push(showtime); // Append if new
-                            }
-                        })
-                        
-                        return merged
-                    })
-                }
-            } catch (err) {
-                console.error('Error fetching availabilities for event:', err);
-            }
-        }
-
-        async function getAvailabilities() {
-            try {
-                if (!eventID) return;
-                const data = await fetchAvailabilitiesByID(eventID);
-                if (isMounted && data.length > 0) {
-                    setAvailabilities((prevAvailabilities) => {
-                        const merged = [...prevAvailabilities]
-
-                        data.forEach((availability) => {
-                            const index = merged.findIndex((a) => a.user_id === availability.user_id);
-                            if (index !== -1) {
-                                merged[index] = availability; // Replace if already present
-                            } else {
-                                merged.push(availability); // Append if new
-                            }
-                        })
-                        
-                        return merged
-                    })
+        setEvent(loaderData.event);
+        setAvailabilities(loaderData.availabilities);
+        setShowtimes(loaderData.showtimes);
+        setUsers(loaderData.users);
+    }, [loaderData]);
 
 
-                    const newUsers = await Promise.all(
-                        data.map((availability) => fetchUserByID(availability.user_id))
-                    );
-                    setUsers((prevUsers) => {
-                        const merged = [...prevUsers];
-                    
-                        newUsers.forEach((user) => {
-                            const index = merged.findIndex((u) => u.id === user.id);
-                            if (index !== -1) {
-                                merged[index] = user; // Replace if already present
-                            } else {
-                                merged.push(user); // Append if new
-                            }
-                        });
-                    
-                        return merged;
-                    });
-
-                    setLoading(false);
-                }
-            } catch (err) {
-                console.error('Error fetching availabilities for event:', err);
-            }
-        }
-
-        // Fetch immediately
-        getAvailabilities();
-        getShowtimes();
-
-        // Poll every 10 seconds
-        const interval = setInterval(getAvailabilities, 10000);
-        const interval2 = setInterval(getShowtimes, 10000);
-
-        // Cleanup
-        return () => {
-            isMounted = false;
-            clearInterval(interval);
-            clearInterval(interval2)
-        };
-    }, [eventID])
-
-      
-
-    if (loading) return <p>Loading event...</p>;
     if (!event) return <p>Event not found</p>;
     
     const onAddClick = () => {
@@ -173,6 +69,14 @@ function EventPage() {
 
     const handleSubmitClick = () => {
         setIsSubmissionModalOpen(true)
+    }
+
+    const handleUserSelectionChange = (userId: string, checked: boolean) => {
+        setSelectedUserIds(prev => 
+            checked 
+                ? [...prev, userId]
+                : prev.filter(id => id !== userId)
+        )
     }
 
     const formatDateRanges = (dates: string[]): string => {
@@ -274,7 +178,11 @@ function EventPage() {
             <div className='flex flex-col items-start w-full gap-4 p-4 md:flex-row'>
                 <div className='w-5/6 h-full'>
                 {
-                    summaryMode ? <ShowtimeList showtimes={showtimes}/> : 
+                    summaryMode ? 
+                    <ShowtimeList 
+                        showtimes={showtimes}
+                        selectedUsers={selectedUserIds}
+                    /> : 
                     <Calendar 
                         dates={(event.potential_dates ?? []).map((d: string) => new Date(d))}
                         selectedTimes={selectedTimes}
@@ -284,7 +192,12 @@ function EventPage() {
                     />
                 }
                 </div>
-                <AvailabilitySideBar userData={users} onAddClick={onAddClick} />
+                <AvailabilitySideBar 
+                    userData={users} 
+                    onAddClick={onAddClick} 
+                    selectedUserIds={selectedUserIds}
+                    onUserSelectionChange={handleUserSelectionChange}
+                />
             </div>
         </div>
     )
