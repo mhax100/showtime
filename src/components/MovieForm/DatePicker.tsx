@@ -1,4 +1,4 @@
-import { format, startOfMonth, isBefore, startOfWeek, addMonths, isSameDay, addDays, subDays } from 'date-fns'
+import { format, startOfMonth, isBefore, startOfWeek, addMonths, isSameDay, addDays, subDays, differenceInCalendarDays } from 'date-fns'
 import { Button } from '@headlessui/react'
 
 type DatePickerProps = {
@@ -59,13 +59,14 @@ const DatePicker: React.FC<DatePickerProps> = ({ selectedDates, setSelectedDates
 
         const today = new Date()
         const startDate = startOfWeek(today)
+        const difference = differenceInCalendarDays(today, startDate)
         let days = []
         let day = startDate
 
         const formattedDates = [renderMonth(startDate)]
         formattedDates.push(renderWeekdays(startDate))
         
-        for (let i = 0; i < 21; i++) {
+        for (let i = 0; i < 7 + difference ; i++) {
             const currentDay = day
             const isSelected = selectedDates && selectedDates.some(date => isSameDay(date, currentDay))
             const isPrevSelected = selectedDates && selectedDates.some(date => isSameDay(date, subDays(currentDay, 1)))
