@@ -7,9 +7,11 @@ import UserListItem from "./UserListItem"
 type AvailabilitySideBarProps  = {
     userData: User[]
     onAddClick: () => void
+    selectedUserIds: string[]
+    onUserSelectionChange: (userId: string, checked: boolean) => void
 }
 
-const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAddClick}) => {
+const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAddClick, selectedUserIds, onUserSelectionChange}) => {
 
     return (
         <div className='flex flex-col items-start justify-around h-full overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden md:w-1/6'>
@@ -19,7 +21,13 @@ const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAd
             </div>
             {userData.map((user) => {
                 return (
-                    <UserListItem id={user.id} name={user.name} />
+                    <UserListItem 
+                        key={user.id}
+                        id={user.id} 
+                        name={user.name} 
+                        checked={selectedUserIds.includes(user.id)}
+                        onChange={onUserSelectionChange}
+                    />
                 )
             })}
             {userData.length > 0 ? <Button onClick={onAddClick} className='p-2 mt-2 rounded cursor-pointer text-primary data-hover:bg-primary-soft/25 '>+ Add availability</Button> : <div></div>}

@@ -1,22 +1,23 @@
-import React, { useState } from "react"
+import React from "react"
 import { Checkbox } from '@headlessui/react'
 
 
 type UserListItemProps  = {
     id: string;
     name: string;
+    checked: boolean;
+    onChange: (id: string, checked: boolean) => void;
 }
 
-const UserListItem: React.FC<UserListItemProps> = ({id, name}) => {
-    const [enabled, setEnabled] = useState(false)
+const UserListItem: React.FC<UserListItemProps> = ({id, name, checked, onChange}) => {
 
     return (
         <div 
             key={id}
             className='flex items-center gap-2 text-text-secondary'>
             <Checkbox
-                checked={enabled}
-                onChange={setEnabled}
+                checked={checked}
+                onChange={(isChecked) => onChange(id, isChecked)}
                 className="block border rounded bg-background group size-4 data-checked:bg-primary-soft data-checked:border-primary-soft"
                 >
                 {/* Checkmark icon */}
