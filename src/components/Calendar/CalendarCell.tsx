@@ -22,6 +22,15 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
     onMouseEnter
     }) => {
 
+    const getAvailabilityShade = (pct: number): string => {
+        if (pct >= 80) return 'bg-primary';
+        if (pct >= 60) return 'bg-primary-desaturated-1';
+        if (pct >= 40) return 'bg-primary-desaturated-2';
+        if (pct >= 20) return 'bg-primary-desaturated-3';
+        if (pct == 0) return 'bg-primary-desaturated-5';
+        return 'bg-primary-desaturated-4';
+    }
+
     if (isDisabled) {
         return (
         <div
@@ -40,10 +49,7 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
   
     if (mode === 'summary' && availabilityPercentage !== undefined) {
       // Use different background intensity based on % available
-      if (availabilityPercentage > 75) backgroundColor = 'bg-primary/5';
-      else if (availabilityPercentage > 50) backgroundColor = 'bg-primary/25';
-      else if (availabilityPercentage > 25) backgroundColor = 'bg-primary/50';
-      else backgroundColor = 'bg-surface';
+      backgroundColor = getAvailabilityShade(availabilityPercentage)
     }
 
     return (

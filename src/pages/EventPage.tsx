@@ -3,7 +3,7 @@ import { useParams, useLoaderData } from "react-router-dom";
 import { format } from "date-fns";
 import { Button, Switch, Field, Label } from "@headlessui/react";
 import type { Event } from "../types/event";
-import type { Availability } from "../types/availability";
+import type { Availability, UserAvailability } from "../types/availability";
 import type { User } from "../types/user";
 import type { Showtime } from "../types/showtime";
 import Calendar from "../components/Calendar/Calendar";
@@ -16,9 +16,10 @@ function EventPage() {
     const { eventID } = useParams();
     const loaderData = useLoaderData() as {
         event: Event;
-        availabilities: Availability[];
+        availabilities: UserAvailability[];
         showtimes: Showtime[];
         users: User[];
+        availabilitySummary: Availability[];
     };
 
     if (!eventID) {
@@ -26,7 +27,7 @@ function EventPage() {
     }
 
     const [event, setEvent] = useState<Event | null>(loaderData.event);
-    const [availabilities, setAvailabilities] = useState<Availability[]>(loaderData.availabilities);
+    const [availabilities, setAvailabilities] = useState<Availability[]>(loaderData.availabilitySummary);
     const [showtimes, setShowtimes] = useState<Showtime[]>(loaderData.showtimes);
     const [users, setUsers] = useState<User[]>(loaderData.users);
 
@@ -40,7 +41,7 @@ function EventPage() {
     // Update state when loader data changes (after revalidation)
     useEffect(() => {
         setEvent(loaderData.event);
-        setAvailabilities(loaderData.availabilities);
+        setAvailabilities(loaderData.availabilitySummary);
         setShowtimes(loaderData.showtimes);
         setUsers(loaderData.users);
     }, [loaderData]);
@@ -188,7 +189,7 @@ function EventPage() {
                         selectedTimes={selectedTimes}
                         setSelectedTimes={setSelectedTimes}
                         mode={mode}
-                        availabilityData={{}}    
+                        availabilityData={availabilities}    
                     />
                 }
                 </div>

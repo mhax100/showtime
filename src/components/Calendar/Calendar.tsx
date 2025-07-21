@@ -1,56 +1,24 @@
 import { Button } from '@headlessui/react'
-import { getMinutes, addMinutes, isWeekend, isBefore, format, isSameMinute, isSameDay } from 'date-fns'
+import { getMinutes, addMinutes, isBefore, format, isSameMinute, isSameDay } from 'date-fns'
 import { useState, useRef } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import useMaxVisibleDays from '../../hooks/useMaxVisibleDays'
 import CalendarCell from './CalendarCell'
 import { CELL_HEIGHT_CLASSES } from '../../constants/layout'
-import useCellHeight from '../../hooks/useCellHeight'
+import type { Availability } from '../../types/availability'
 
 type CalendarProps = {
     dates: Date[]
     selectedTimes: Date[]
     setSelectedTimes: React.Dispatch<React.SetStateAction<Date[]>>
     mode: 'edit' | 'summary'
-    availabilityData?: Record<string, number>
+    availabilityData: Availability[]
 }
 
 const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData }) => {
     const [startIndex, setStartIndex] = useState(0)
     const maxVisibleDays = useMaxVisibleDays()
     const visibleDates = dates.slice(startIndex, startIndex + maxVisibleDays)
-    
-    const showtimeBlocks = [
-        {
-          id: 's1',
-          theater: 'Thornton Place',
-          start: new Date('2025-06-20T17:00:00'),
-          end: new Date('2025-06-20T19:00:00'),
-          availabilityPct: 83,
-        },
-        {
-          id: 's2',
-          theater: 'Thornton Place',
-          start: new Date('2025-06-20T18:30:00'),
-          end: new Date('2025-06-20T20:30:00'),
-          availabilityPct: 40,
-        },
-        {
-          id: 's3',
-          theater: 'Crossroads Cinemas',
-          start: new Date('2025-06-24T17:00:00'),
-          end: new Date('2025-06-24T20:00:00'),
-          availabilityPct: 65,
-        }
-    ];
-
-    const getAvailabilityShade = (pct: number): string => {
-        if (pct >= 80) return 'bg-primary';
-        if (pct >= 60) return 'bg-primary-desaturated-1';
-        if (pct >= 40) return 'bg-primary-desaturated-2';
-        if (pct >= 20) return 'bg-primary-desaturated-3';
-        return 'bg-primary/10';
-    }
 
     const gridColsClass = {
         1: 'grid-cols-1',
@@ -61,8 +29,6 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         6: 'grid-cols-6',
         7: 'grid-cols-7'
       }[Math.min(dates.length, maxVisibleDays)] || 'grid-cols-1';
-
-    const cellHeight = useCellHeight()
 
     const isDragging = useRef(false)
     const dragStart = useRef<{row: number, col: number} | null>(null)
@@ -158,6 +124,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         })
     }
 
+    /*
     const renderOverlaysForDate = (date: Date, startHour: number) => {
         const blocksForDay = showtimeBlocks.filter(block =>
             block.start.toDateString() === date.toDateString()
@@ -186,6 +153,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
             );
         });
     }
+    */
 
     const renderDay = (date: Date, colIndex: number) => {
         const start = new Date(date)
@@ -194,8 +162,8 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         start.setHours(9, 0, 0, 0);
         end.setHours(24, 0, 0, 0);
 
-        const disabledCutoff = new Date(date).setHours(isWeekend(date) ? 9 : 17, 0, 0, 0)
-
+        // const disabledCutoff = new Date(date).setHours(isWeekend(date) ? 9 : 17, 0, 0, 0)
+        const disabledCutoff = new Date(date).setHours(9, 0, 0, 0)
         const day = []
 
         let currentTime = start
@@ -216,7 +184,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                     mode={mode}
                     availabilityPercentage={
                         mode === 'summary'
-                        ? availabilityData?.[currentTimeCopy.toISOString()]
+                        ? availabilityData.find(a => a.time_slot === currentTimeCopy.toISOString())?.availability_pct
                         : undefined
                     }
                     onMouseDown={() => handleMouseDown(row, colIndex)}
@@ -231,7 +199,6 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         return (
             <div className='relative grid grid-cols-1'>
                 {day}
-                {mode == "summary" && renderOverlaysForDate(date, 9)}
             </div>
         )
     }

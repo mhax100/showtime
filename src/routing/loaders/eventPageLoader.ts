@@ -1,5 +1,5 @@
 import { fetchEventByID } from "../../api/events";
-import { fetchAvailabilitiesByID } from "../../api/availabilities";
+import { fetchAvailabilitiesByID, fetchAvailabilitysummaryByID } from "../../api/availabilities";
 import { fetchShowtimesByID } from "../../api/showtimes";
 import { fetchUserByID } from "../../api/users";
 
@@ -10,20 +10,23 @@ export async function eventPageLoader({ params }: { params: { eventID?: string }
         throw new Error("Event ID is required");
     }
 
-    const [event, availabilities, showtimesResponse] = await Promise.all([
+    const [event, availabilities, showtimesResponse, availabilitySummary] = await Promise.all([
         fetchEventByID(eventID),
         fetchAvailabilitiesByID(eventID),
-        fetchShowtimesByID(eventID)
+        fetchShowtimesByID(eventID),
+        fetchAvailabilitysummaryByID(eventID)
     ]);
 
     const users = await Promise.all(
         availabilities.map((availability) => fetchUserByID(availability.user_id))
     );
 
+
     return {
         event,
         availabilities,
         showtimes: showtimesResponse.showtimes || [],
-        users
+        users,
+        availabilitySummary
     };
 }

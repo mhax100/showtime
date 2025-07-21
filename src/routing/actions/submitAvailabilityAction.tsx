@@ -1,6 +1,7 @@
 import { createUser } from "../../api/users";
 import { createAvailability } from "../../api/availabilities";
 import { createShowtimes } from "../../api/showtimes";
+import { fetchEventByID } from "../../api/events";
 
 export async function submitAvailabilityAction({ request }: { request: Request }) {
 
@@ -46,11 +47,13 @@ export async function submitAvailabilityAction({ request }: { request: Request }
         role: "guest"
     })
 
+    const event_data = await fetchEventByID(event_id)
+
     const showtimes = await createShowtimes(
         event_id,
         {
-            location: "Seattle",
-            movie: "Superman",
+            location: event_data.location,
+            movie: event_data.title,
             duration: 120
         }
     )
