@@ -189,7 +189,8 @@ function EventPage() {
                         selectedTimes={selectedTimes}
                         setSelectedTimes={setSelectedTimes}
                         mode={mode}
-                        availabilityData={availabilities}    
+                        availabilityData={availabilities}
+                        selectedUsers={selectedUserIds}    
                     />
                 }
                 </div>

@@ -18,10 +18,11 @@ const ShowtimeList: React.FC<ShowtimeListProps> = ({showtimes, selectedUsers}) =
     }
     
     const getAvailabilityShade = (pct: number): string => {
-        if (pct >= 75) return 'text-primary';
-        if (pct >= 50) return 'text-primary-desaturated-1';
-        if (pct >= 25) return 'text-primary-desaturated-2';
-        return 'text-primary-desaturated-3';
+        if (pct >= 80) return 'text-primary';
+        if (pct >= 60) return 'text-primary-desaturated-1';
+        if (pct >= 40) return 'text-primary-desaturated-2';
+        if (pct >= 20) return 'text-primary-desaturated-3';
+        return 'text-primary-desaturated-4';
     }
 
     

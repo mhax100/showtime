@@ -8,18 +8,30 @@ import { CELL_HEIGHT_CLASSES } from '../../constants/layout'
 import type { Availability } from '../../types/availability'
 
 type CalendarProps = {
-    dates: Date[]
-    selectedTimes: Date[]
-    setSelectedTimes: React.Dispatch<React.SetStateAction<Date[]>>
-    mode: 'edit' | 'summary'
-    availabilityData: Availability[]
+    dates: Date[];
+    selectedTimes: Date[];
+    setSelectedTimes: React.Dispatch<React.SetStateAction<Date[]>>;
+    mode: 'edit' | 'summary';
+    availabilityData: Availability[];
+    selectedUsers: string[];
 }
 
-const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData }) => {
+const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData, selectedUsers }) => {
     const [startIndex, setStartIndex] = useState(0)
     const maxVisibleDays = useMaxVisibleDays()
     const visibleDates = dates.slice(startIndex, startIndex + maxVisibleDays)
 
+    // Calculate percentages and sort in one chain
+    const filteredAvailabilities = availabilityData
+        .map(timeslot => {
+            let percentAvailable = timeslot.availability_pct;
+            if (selectedUsers.length > 0 && timeslot.available_user_ids) {
+                const filteredAvailableUsers = timeslot.available_user_ids.filter(userID => selectedUsers.includes(userID));
+                percentAvailable = Math.round((filteredAvailableUsers.length / selectedUsers.length) * 100);
+            }
+            return { ...timeslot, percentAvailable };
+        })
+    
     const gridColsClass = {
         1: 'grid-cols-1',
         2: 'grid-cols-2',
@@ -124,37 +136,6 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         })
     }
 
-    /*
-    const renderOverlaysForDate = (date: Date, startHour: number) => {
-        const blocksForDay = showtimeBlocks.filter(block =>
-            block.start.toDateString() === date.toDateString()
-          );
-        
-          return blocksForDay.map(block => {
-            const startMinutes = block.start.getHours() * 60 + block.start.getMinutes();
-            const endMinutes = block.end.getHours() * 60 + block.end.getMinutes();
-            const startOffset = (startMinutes - startHour * 60) / 30;
-            const numRows = (endMinutes - startMinutes) / 30;
-        
-            return (
-                <div
-                    key={block.id}
-                    className={`flex flex-col items-start absolute left-0 right-0 mx-1 rounded p-1 ${getAvailabilityShade(block.availabilityPct)}`}
-                    style={{
-                    top: `${startOffset * cellHeight}px`,
-                    height: `${numRows * cellHeight}px`,
-                    zIndex: 20,
-                    }}
-                    title={`Available: ${block.availabilityPct}%`}
-                >
-                    <h3 className='text-md font-heavy text-text-primary'>{block.theater}</h3>
-                    <h5 className='text-sm font-light text-text-primary'>{`${format(block.start, 'h a')} - ${format(block.end, 'h a')}`}</h5>
-                </div>
-            );
-        });
-    }
-    */
-
     const renderDay = (date: Date, colIndex: number) => {
         const start = new Date(date)
         const end = new Date(date)
@@ -184,7 +165,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                     mode={mode}
                     availabilityPercentage={
                         mode === 'summary'
-                        ? availabilityData.find(a => a.time_slot === currentTimeCopy.toISOString())?.availability_pct
+                        ? filteredAvailabilities.find(a => a.time_slot === currentTimeCopy.toISOString())?.percentAvailable
                         : undefined
                     }
                     onMouseDown={() => handleMouseDown(row, colIndex)}
