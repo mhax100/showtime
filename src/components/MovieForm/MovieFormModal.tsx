@@ -14,7 +14,7 @@ export default function MovieFormModal({ isOpen, onClose }: MovieFormModalProps)
       <div className="fixed inset-0 bg-background/50" aria-hidden="true" />
 
       {/* Centered modal panel */}
-      <div className="fixed inset-0 flex items-center justify-center">
+      <div className="fixed flex items-center justify-center inset-10">
         <DialogPanel className="relative w-full max-w-md rounded-lg bg-surface">
           {/* Close button */}
           <Button

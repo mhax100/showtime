@@ -40,15 +40,15 @@ const ShowtimeList: React.FC<ShowtimeListProps> = ({showtimes, selectedUsers}) =
         .sort((a, b) => b.percentAvailable - a.percentAvailable); // Sort descending by availability
 
     return (
-        <div className='flex flex-col items-start justify-around h-full overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden gap-2'>
+        <div className='flex flex-col items-start justify-around h-full overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden gap-2 '>
             {sortedShowtimes.map(showtime => {
                 return (
-                    <div className="flex-col w-full p-2 rounded-md bg-surface">
+                    <div className="flex-col w-full p-2 rounded-md bg-surface hover:bg-surface/50">
                         <div className="flex justify-between gap-2">
                             <h1 className="text-2xl text-text-primary">{format(new Date(showtime.start_time), "MMMM d - h:mmaaa")}</h1>
                             <h1 className={`text-2xl ${getAvailabilityShade(showtime.percentAvailable)}`}>{showtime.percentAvailable + "% available"}</h1>
                         </div>
-                        <h1 className="text-2xl text-text-primary">{showtime.theater_name}</h1>
+                        <h1 className="text-xl text-text-primary">{showtime.theater_name}</h1>
                         <h4 className="text-text-secondary">{showtime.theater_address}</h4>
                     </div>
                 )
