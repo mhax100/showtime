@@ -1,6 +1,6 @@
 import { Button } from '@headlessui/react'
 import { getMinutes, addMinutes, isBefore, format, isSameMinute, isSameDay } from 'date-fns'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import useMaxVisibleDays from '../../hooks/useMaxVisibleDays'
 import CalendarCell from './CalendarCell'
@@ -46,6 +46,22 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
     const dragStart = useRef<{row: number, col: number} | null>(null)
     const dragIntent = useRef<'add' | 'remove' | null>(null)
     const didDrag = useRef(false)
+
+    // Prevent scrolling during touch drag
+    useEffect(() => {
+        const preventScroll = (e: TouchEvent) => {
+            if (isDragging.current) {
+                e.preventDefault()
+            }
+        }
+
+        // Add with passive: false to allow preventDefault
+        document.addEventListener('touchmove', preventScroll, { passive: false })
+        
+        return () => {
+            document.removeEventListener('touchmove', preventScroll)
+        }
+    }, [])
     
     const handleMouseDown = (rowIndex: number, colIndex: number) => {
         isDragging.current = true
@@ -63,6 +79,39 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
     }
 
     const handleMouseUp = () => {
+        isDragging.current = false
+        dragStart.current = null
+        dragIntent.current = null
+        didDrag.current = false
+    }
+
+    const handleTouchStart = (e: React.TouchEvent, rowIndex: number, colIndex: number) => {
+        e.preventDefault() // Prevent scrolling
+        isDragging.current = true
+        dragStart.current = { row: rowIndex, col: colIndex }
+        const startDate = getDateFromPos(rowIndex, colIndex)
+        dragIntent.current = selectedTimes.some(time => isSameMinute(time, startDate) && isSameDay(time, startDate)) ? 'remove' : 'add'
+        updateSelection(rowIndex, colIndex)
+    }
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        e.preventDefault() // Prevent scrolling
+        if (!isDragging.current || !dragStart.current) return
+
+        const touch = e.touches[0]
+        const element = document.elementFromPoint(touch.clientX, touch.clientY)
+        if (element) {
+            const cellElement = element.closest('[data-row][data-col]')
+            if (cellElement) {
+                const row = parseInt(cellElement.getAttribute('data-row') || '0')
+                const col = parseInt(cellElement.getAttribute('data-col') || '0')
+                didDrag.current = true
+                updateSelection(row, col)
+            }
+        }
+    }
+
+    const handleTouchEnd = () => {
         isDragging.current = false
         dragStart.current = null
         dragIntent.current = null
@@ -170,6 +219,9 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                     }
                     onMouseDown={() => handleMouseDown(row, colIndex)}
                     onMouseEnter={() => handleMouseEnter(row, colIndex)}
+                    onTouchStart={(e) => handleTouchStart(e, row, colIndex)}
+                    row={row}
+                    col={colIndex}
                     />
             )
 
@@ -233,12 +285,14 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                                 onClick={() => setStartIndex(prev => Math.max(0, prev - maxVisibleDays))}
                                 disabled={startIndex == 0} 
                                 className='text-center disabled:opacity-0'>
-                                <ChevronLeftIcon className='size-10 text-text-primary'/>
+                                <ChevronLeftIcon className='size-10 text-text-secondary'/>
                             </Button>
                         </div>
                         <div
                             onMouseLeave={handleMouseUp}
-                            onMouseUp={handleMouseUp} 
+                            onMouseUp={handleMouseUp}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
                             className={`grid ${gridColsClass} w-full`}>
                             {curDates.map((date: Date) => 
                                 <div key={date.toISOString()} className='flex flex-col'>
@@ -251,17 +305,19 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                                 onClick={() => setStartIndex(prev => Math.min(dates.length - maxVisibleDays, prev + maxVisibleDays))}
                                 disabled={dates.length - maxVisibleDays <= startIndex}
                                 className='text-center disabled:opacity-0'>
-                                <ChevronRightIcon className='size-10 text-text-primary'/>
+                                <ChevronRightIcon className='size-10 text-text-secondary'/>
                             </Button>
                         </div>
                     </div>
-                    <div className='flex flex-grow overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden'>
+                    <div className='flex flex-grow overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden touch-pan-y'>
                         <div className="w-12 h-full">
                             {renderTimeStamps()}
                         </div>
                         <div
                             onMouseLeave={handleMouseUp}
-                            onMouseUp={handleMouseUp} 
+                            onMouseUp={handleMouseUp}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
                             className={`grid ${gridColsClass} w-full`}>
                             {curDates.map((date: Date, index: number) => {
                                 const calculatedIndex = index + startIndex

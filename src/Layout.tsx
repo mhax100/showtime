@@ -16,9 +16,9 @@ const Layout = () => {
     }, [navigation.state, location]);
 
     return (
-        <div className='flex flex-col min-h-screen bg-background'>
+        <div className='flex flex-col min-h-screen bg-background overflow-x-hidden'>
             <TopBar handleCreateShowtimeClick={() => setIsMovieFormModalOpen(true)}/>
-            <main className='flex-grow w-full'>
+            <main className='flex-grow w-full overflow-x-hidden'>
                 <Outlet />
             </main>
             <MovieFormModal isOpen={isMovieFormModalOpen} onClose={() => setIsMovieFormModalOpen(false)} />

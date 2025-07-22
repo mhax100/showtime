@@ -9,6 +9,9 @@ type CalendarCellProps = {
     availabilityPercentage?: number // only used in summary mode
     onMouseDown?: () => void
     onMouseEnter?: () => void
+    onTouchStart?: (e: React.TouchEvent) => void
+    row?: number
+    col?: number
 }
   
 const CalendarCell: React.FC<CalendarCellProps> = ({
@@ -19,7 +22,10 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
     mode,
     availabilityPercentage,
     onMouseDown,
-    onMouseEnter
+    onMouseEnter,
+    onTouchStart,
+    row,
+    col
     }) => {
 
     const getAvailabilityShade = (pct: number): string => {
@@ -60,10 +66,13 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
             ${backgroundColor}
             border border-surface
             ${!isHalfHour ? '[border-bottom-style:dashed]' : '[border-top-style:dashed]'}
-            ${mode === 'edit' ? 'cursor-pointer' : 'cursor-default'}
+            ${mode === 'edit' ? 'cursor-pointer touch-none' : 'cursor-default'}
         `}
+        data-row={row}
+        data-col={col}
         onMouseDown={mode === 'edit' ? onMouseDown: undefined}
         onMouseEnter={mode === 'edit' ? onMouseEnter: undefined}
+        onTouchStart={mode === 'edit' ? onTouchStart: undefined}
         />
     );
 };
