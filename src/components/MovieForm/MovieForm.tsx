@@ -7,6 +7,7 @@ import { formatISO } from 'date-fns';
 const MovieForm: React.FC = () => {
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
+    const [chain, setChain] = useState("")
     const [selectedDates, setSelectedDates] = useState<Date[]>([])
 
     return (
@@ -34,6 +35,14 @@ const MovieForm: React.FC = () => {
                     onChange={(e) => setLocation(e.target.value)}
                     required
                     placeholder='Location...'
+                />
+                <Input
+                    name='chain'
+                    className='w-full px-4 py-2 mt-1 mb-2 rounded-md bg-white/5 text-text-primary focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-primary-soft/50'
+                    type="text"
+                    value={chain}
+                    onChange={(e) => setChain(e.target.value)}
+                    placeholder='Theater chain filter (e.g. Regal, Cinemark)'
                 />
                 <DatePicker selectedDates={selectedDates} setSelectedDates={setSelectedDates} />
                 <Input type='hidden' name='dates' value={JSON.stringify(selectedDates.map(d => formatISO(d)))}/>

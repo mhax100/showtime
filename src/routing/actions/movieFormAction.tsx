@@ -5,11 +5,13 @@ export async function newShowtimeAction({ request }: { request: Request }) {
     const formData = await request.formData();
     const movieName = formData.get("movieName");
     const location = formData.get("location");
+    const chain = formData.get("chain");
     const dates = formData.get("dates")
 
     if (
         typeof movieName !== 'string' ||
         typeof location !== 'string' ||
+        typeof chain !== 'string' ||
         typeof dates !== 'string'
     ) {
         throw new Error("Invalid form input");
@@ -27,6 +29,7 @@ export async function newShowtimeAction({ request }: { request: Request }) {
         title: movieName,
         creator_id: "3018bbb8-7238-47f9-abcf-b7dfad28be34",
         location: location,
+        chain: chain,
         potential_dates: parsedDates
     })
   
