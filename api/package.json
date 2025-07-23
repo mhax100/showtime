@@ -1,0 +1,29 @@
+{
+  "name": "api-showtime.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "pg": "^8.16.0",
+    "serpapi": "^2.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0-rc.1",
+    "supertest": "^7.1.3"
+  }
+}

@@ -1,0 +1,2024 @@
+{
+    "search_metadata": {
+        "id": "686d9d1ff0114a918af33f06",
+        "status": "Success",
+        "json_endpoint": "https://serpapi.com/searches/8d30b7e24cbb5584/686d9d1ff0114a918af33f06.json",
+        "pixel_position_endpoint": "https://serpapi.com/searches/8d30b7e24cbb5584/686d9d1ff0114a918af33f06.json_with_pixel_position",
+        "created_at": "2025-07-08 22:35:11 UTC",
+        "processed_at": "2025-07-08 22:35:11 UTC",
+        "google_url": "https://www.google.com/search?q=F1+theater&oq=F1+theater&uule=w+CAIQICIgU2VhdHRsZSxXYXNoaW5ndG9uLFVuaXRlZCBTdGF0ZXM&hl=en&gl=us&sourceid=chrome&ie=UTF-8",
+        "raw_html_file": "https://serpapi.com/searches/8d30b7e24cbb5584/686d9d1ff0114a918af33f06.html",
+        "total_time_taken": 2.77
+    },
+    "search_parameters": {
+        "engine": "google",
+        "q": "F1 theater",
+        "location_requested": "Seattle, Washington, United States",
+        "location_used": "Seattle,Washington,United States",
+        "google_domain": "google.com",
+        "hl": "en",
+        "gl": "us",
+        "device": "desktop"
+    },
+    "search_information": {
+        "query_displayed": "F1 theater",
+        "total_results": 338000000,
+        "time_taken_displayed": 0.33,
+        "organic_results_state": "Results for exact spelling"
+    },
+    "showtimes": [
+        {
+            "day": "TodayJul 8",
+            "theaters": [
+                {
+                    "name": "Regal Meridian",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Meridian&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMXNovQiDWhUaEEhkxO6qZ_zIHzTDPorOYxCtwBwjZ48pYApjaMApyqOSUCAohc1ndD1xhmFPhiasiKD3Gu_Gexk7Xyyv5MGRBBMi8Q55VDHbj-jGb4mOqWdZcMN5L5W0HzRLvJik7Iq5k91mLOKew19QleBaEe3aeWE9lD4jH_Ai4921VJOUisj0X6lcwSvgOArj2sYm5WAcKqKccz5G6jHG3jqw&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QySZ6BQiSARAL",
+                    "distance": "0.4 mi",
+                    "address": "1501 7th Ave, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "5:00pm",
+                                "6:20pm",
+                                "8:40pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Pacific Place 11",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Pacific+Place+11&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-E53P4knenMd_OHdPU6ditlmxTUUbeCMAf7WzrSf8pLVPo_gv9ZoU9VIy9slyth1x-Wo7Az_Aw7oKxzASlBOVqv-358DIRDOjfwmDYNP32p1LVdmaSr4pFHZJsisxcFgABMhLZXQFIeIJWS0KdCIDV8BEvXcjGhVJc6U3DPh4nPlvRGMGGUc3qmuvHR6CHxSdQJ9PMY%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QySZ6BQiSARAS",
+                    "distance": "0.5 mi",
+                    "address": "Suite 400, 600 Pine Street, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "4:00pm",
+                                "6:30pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Boeing and PACCAR IMAX Theaters at Pacific Science Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Boeing+and+PACCAR+IMAX+Theaters+at+Pacific+Science+Center&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMedeQhw5C8cyfxnIgucLZ_pH2XFaEcJ-N0Koj_OqFhWIC169_sFmWMsE4rQ4nfOWRA73TKrkI5uAR25OrWAls3eF2Q82IJF-jcG6bSgezH2dcGWZZkIzqY5Miz2K5ziOR5RZ0a8Vq-9ujFD12ZjOJuemDfhv8V3puNbcPd0ivAP2QpdXnZgZnDjIjYmY0lew8whnTgJq8ctceUX6C3em6d_YF7Ll&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QySZ6BQiSARAY",
+                    "distance": "1.3 mi",
+                    "address": "200 Second Avenue North, Seattle, WA 98109",
+                    "showing": [
+                        {
+                            "time": [
+                                "4:00pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "4:00pm"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "Admiral Theater",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Admiral+Theater&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-LQ5ZyoeBwU336gT4B-5fwy176yiH9HiEmMijyY5cUyaqOkJ5lqFttGYPsHUR5oqPBymh6TvmXWVlR0sKiG8H_JrYypF2tSVR476KhHBYK2eYpBTtW7p4oNTfjtsdcf3dsxu2PbW-5GMT6Z4UaIV-zB45-Ghv9mVRFm8__Yd9d8EkRzgU0xv3wgeKxGZ-IAKBPd1068%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QySZ6BQiSARAd",
+                    "distance": "3.1 mi",
+                    "address": "2343 California Avenue SW, Seattle, WA 98116",
+                    "showing": [
+                        {
+                            "time": [
+                                "6:00pm",
+                                "8:50pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "The Varsity Theatre",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=The+Varsity+Theatre&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuluOWw9NRv4QiMjecRXrv3MNhxzUzkLTKNg534K0LXwlBx51Lnldx2rLLXXWdldDQAqdrylprqJIgosLLRw-Mj8jJnjCTxVGgOoogc1xRmQEmNUlBjjdKPUaoFiy3PxyA9HrCYm5FP_rf_5yFQ9O1hSq87FufhbkVgIVIZxbLE2m60QZsBHIt1Zf_9Q4QEDWota8Dmqw%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QySZ6BQiSARAi",
+                    "distance": "3.9 mi",
+                    "address": "4329 University Way Northeast, Seattle, WA 98105",
+                    "showing": [
+                        {
+                            "time": [
+                                "6:15pm",
+                                "9:30pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Majestic Bay Theatres",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Majestic+Bay+Theatres&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35MW4yhiJmTFlHqkzb5FFI3qY5dlkwdsJyN56H3IUaoMwFN5cM0SNFwcb-THOuBhupvJVtPf6Q_pWFiRXpufCWhtvyp-wf5ynChG7kCSYwuBIhSHQY1KP9ru444FCLw0Rf4YnbERl2GVVcaidJNqDvG8-nf60m15Hw1_QBvQapxkiy5OM-IR5Og1z5HOy3JuRm4kRYEk%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QySZ6BQiSARAn",
+                    "distance": "5.0 mi",
+                    "address": "2044 NW Market Street, Seattle, WA 98107",
+                    "showing": [
+                        {
+                            "time": [
+                                "6:15pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Reserve Lincoln Square — Dine-In 21+",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Reserve+Lincoln+Square+%E2%80%94+Dine-In+21%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNWxbaof5_mIdcIif5fPFh9YyVuYYxMmpno4RpRv84ujupWwwALuGkImFnsCmPBSsazy3IP83Rd5WACEYrsZoHi1YlKoe8dXpn3ManT-RMjFy2dZlPoKieIdiwdsxAaDzPEl0zRndwnTOCb4dB7f7tQA2HGoW1ZAnpuWZvTLlX9c6B8y2BbbaFR8Pul1v-G7McxWNdl5hfoDr7YWTN7IWmW6OZjua",
+                    "distance": "6.2 mi",
+                    "address": "Suite 340, 500 Bellevue Way Northeast, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "3:15pm",
+                                "5:45pm",
+                                "6:45pm",
+                                "9:00pm",
+                                "9:30pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Lincoln Square Cinemas and IMAX",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Lincoln+Square+Cinemas+and+IMAX&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMeHnUfhxC8I7wZ50iZILS8gl0yBXDhUmjOONpV1q_OvCF73s64nYcRkW9qq_h5g6YHzqMPykYABjksCy8JNg60c5PPSVA8WzuiiU1LAWwP2ObZ0m1dZYEPXRteBVF16KIQEGZDYPvJhTtzf8UGBGPpa2kNkYtGcG8ZWifrlWLm0PnrhwKUnxzfW8vkTugkwJNcr5MJztlaN1BLdJvNRjrD-4I_Ks",
+                    "distance": "6.2 mi",
+                    "address": "Suite 310, 700 Bellevue Way NE, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "4:00pm",
+                                "7:30pm",
+                                "8:15pm",
+                                "9:20pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "3:10pm",
+                                "10:15pm"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Oak Tree 6",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Oak+Tree+6&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uult2TsNBt_L3SlIVnWSkgPgwIBmDoSu45RruomawhzTKQzYS6nFH4WVIeTG-9JesoOQ-uH1OHKhAPr41dBz7ONy8ugU-MO6y2YS_uYRzJ7e39voGls-njkruUNIOXRhkpDhW6UWIXjMynkj72hKQ0gV154ZAkz3hWYrprYy5KW4bgqolWZ8iomX63JM8Qo_6l2yfZX0c%3D",
+                    "distance": "6.7 mi",
+                    "address": "10006 Aurora Avenue North, Seattle, WA 98133",
+                    "showing": [
+                        {
+                            "time": [
+                                "3:30pm",
+                                "6:30pm",
+                                "9:45pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Thornton Place",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulkwQGRtHVI1m4PsytuOod9z-AjZkelUhCGDlWDlws92UgVDhRMnaSyJHUmyD4Yj4BYIux9G4wZuUYT_4QhkOu00cRHtf0wFsgRJJKZ6EXqxp4QInjHhgYt0NwOpVue_OjSlrKwYQtXqfsFvw4F3ESgHbwM9XJ4kFdB_XRIVgsE2aVgj-89y1scKEPXAGjwcDXYMxIEE%3D",
+                    "distance": "6.7 mi",
+                    "address": "316 Northeast Thornton Place, Seattle, WA 98125",
+                    "showing": [
+                        {
+                            "time": [
+                                "4:50pm",
+                                "8:10pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "10:30pm"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Factoria 8",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Factoria+8&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuliUGlsofDLd9P6JKZDgw4IN4RPK7MxvvDYpMKIAFp5Gqowl1a0iW2-SOe2Y2Wwbpfy_Q9N3_M_7SdcUTs1ow9rvpHeAUxA49L2x89edzsPXduLKPQuJ9EsxfJKbEufCcqFpzs5STGNlqI1gSuPzLYTJDnF6oA4hvmfooHW0BpJRg_MMfNK2T5auOImBmP3R3l6uzLu8%3D",
+                    "distance": "7.8 mi",
+                    "address": "3505 Factoria Boulevard SE, Bellevue, WA 98006",
+                    "showing": [
+                        {
+                            "time": [
+                                "4:00pm",
+                                "7:00pm",
+                                "10:35pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bainbridge Cinemas",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Bainbridge+Cinemas&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulm5tP6ap4OdrdotQa4iqCfOa4Ft8yzgiu2Qk0_Ts1OVQVz80-DpFSJO3hT4dsgdDdsOuiZjCoaR3yUPzF92Tj8IlD1pzAvvYcD1_xz1RG0dFV1EpAgnUBhzKCuXSRamrgGCjtu09NMD6IjqCSMwxQW04q0S8jPZ1qpo3jHMgEBDqRHyjww0tt2R8RzKwCLQ2jNSaLm4%3D",
+                    "distance": "9.0 mi",
+                    "address": "403 North Madison Avenue, Bainbridge Island, WA 98110",
+                    "showing": [
+                        {
+                            "time": [
+                                "3:20pm",
+                                "6:40pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Crossroads - Bellevue",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Crossroads+-+Bellevue&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulg5gtqibLZtkletGQtIw46Mky1cO3y8ZJvUKNO3dYqHnIrFG5DVO2ckA96-2Hi_wr6vDyp05TCQXGn4KqHWK_1-90t1HrWFZq4_RL1ydGWnhenwFsn-JXvTLZtV3oKsMp8vjO1nPgSqhF4qiIs8GVw7R7EF7SUM85QKYIhXj-ZMiP6rhFUrcCuPVVBk6OO4V5n9ou8U%3D",
+                    "distance": "9.6 mi",
+                    "address": "1200 156th Avenue NE, Bellevue, WA 98008",
+                    "showing": [
+                        {
+                            "time": [
+                                "6:30pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal The Landing",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+The+Landing&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMW4GNQV6cNieMejTkDf16oz0_x2U3UkWcKOKZlPhqBDiMOm51cjaTENGIUamb_QKTu3pLfBtazxqqVcVBH7dH4xl0esfVBxAZ0LCdR3oeOf8yXt2m8eCT-Ku9f7NBiIROjADX40NHBN2G8NJcuT6IS51t-8lCkqTP7rGSrinDLzsnmVx3kLSiTZXIFjcHciehEW75gEq0_eljSEjISLzGL1G8cQH",
+                    "distance": "9.6 mi",
+                    "address": "900 North 10th Place, Renton, WA 98057",
+                    "showing": [
+                        {
+                            "time": [
+                                "3:10pm",
+                                "5:50pm",
+                                "6:20pm",
+                                "9:15pm",
+                                "9:50pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landmark's Crest Cinema Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Landmark%27s+Crest+Cinema+Center&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNfIwJ2TBpBF_nPlLfByKVrsWa64kGdjexa7BQpXP--wrTIbiT_w4Aa5G2Pk-Gp0ctmNRhbIxxWx1TybCLz8_1yKoUSili9JAxUD7p2Bjbg9uo1tC1C6UGwYfLGpKpqRt_5GLJFu9AqONWju3Q2NhPEsX-So09AtB04qjxFL6NMtZcJ23T2W7jX_vTEJFdaOLVsC3UNJgFcYFayx3HAdnHqiPGBNi",
+                    "distance": "9.9 mi",
+                    "address": "16505 5th Avenue Northeast, Shoreline, WA 98155",
+                    "showing": [
+                        {
+                            "time": [
+                                "4:20pm",
+                                "7:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "WedJul 9",
+            "theaters": [
+                {
+                    "name": "Regal Meridian",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Meridian&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMXNovQiDWhUaEEhkxO6qZ_zIHzTDPorOYxCtwBwjZ48pYApjaMApyqOSUCAohc1ndD1xhmFPhiasiKD3Gu_Gexk7Xyyv5MGRBBMi8Q55VDHbj-jGb4mOqWdZcMN5L5W0HzRLvJik7Iq5k91mLOKew19QleBaEe3aeWE9lD4jH_Ai4921VJOUisj0X6lcwSvgOArj2sYm5WAcKqKccz5G6jHG3jqw",
+                    "distance": "0.4 mi",
+                    "address": "1501 7th Ave, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:00am",
+                                "11:10am",
+                                "1:15pm",
+                                "2:45pm",
+                                "5:00pm",
+                                "6:20pm",
+                                "8:40pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "3:15pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Pacific Place 11",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Pacific+Place+11&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-E53P4knenMd_OHdPU6ditlmxTUUbeCMAf7WzrSf8pLVPo_gv9ZoU9VIy9slyth1x-Wo7Az_Aw7oKxzASlBOVqv-358DIRDOjfwmDYNP32p1LVdmaSr4pFHZJsisxcFgABMhLZXQFIeIJWS0KdCIDV8BEvXcjGhVJc6U3DPh4nPlvRGMGGUc3qmuvHR6CHxSdQJ9PMY%3D",
+                    "distance": "0.5 mi",
+                    "address": "Suite 400, 600 Pine Street, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:30pm",
+                                "4:00pm",
+                                "6:30pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Boeing and PACCAR IMAX Theaters at Pacific Science Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Boeing+and+PACCAR+IMAX+Theaters+at+Pacific+Science+Center&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMedeQhw5C8cyfxnIgucLZ_pH2XFaEcJ-N0Koj_OqFhWIC169_sFmWMsE4rQ4nfOWRA73TKrkI5uAR25OrWAls3eF2Q82IJF-jcG6bSgezH2dcGWZZkIzqY5Miz2K5ziOR5RZ0a8Vq-9ujFD12ZjOJuemDfhv8V3puNbcPd0ivAP2QpdXnZgZnDjIjYmY0lew8whnTgJq8ctceUX6C3em6d_YF7Ll",
+                    "distance": "1.3 mi",
+                    "address": "200 Second Avenue North, Seattle, WA 98109",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:45pm",
+                                "4:00pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "12:45pm",
+                                "4:00pm"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "Admiral Theater",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Admiral+Theater&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-LQ5ZyoeBwU336gT4B-5fwy176yiH9HiEmMijyY5cUyaqOkJ5lqFttGYPsHUR5oqPBymh6TvmXWVlR0sKiG8H_JrYypF2tSVR476KhHBYK2eYpBTtW7p4oNTfjtsdcf3dsxu2PbW-5GMT6Z4UaIV-zB45-Ghv9mVRFm8__Yd9d8EkRzgU0xv3wgeKxGZ-IAKBPd1068%3D",
+                    "distance": "3.1 mi",
+                    "address": "2343 California Avenue SW, Seattle, WA 98116",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:30pm",
+                                "2:30pm",
+                                "6:00pm",
+                                "8:50pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "The Varsity Theatre",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=The+Varsity+Theatre&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuluOWw9NRv4QiMjecRXrv3MNhxzUzkLTKNg534K0LXwlBx51Lnldx2rLLXXWdldDQAqdrylprqJIgosLLRw-Mj8jJnjCTxVGgOoogc1xRmQEmNUlBjjdKPUaoFiy3PxyA9HrCYm5FP_rf_5yFQ9O1hSq87FufhbkVgIVIZxbLE2m60QZsBHIt1Zf_9Q4QEDWota8Dmqw%3D",
+                    "distance": "3.9 mi",
+                    "address": "4329 University Way Northeast, Seattle, WA 98105",
+                    "showing": [
+                        {
+                            "time": [
+                                "3:00pm",
+                                "6:15pm",
+                                "9:30pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Majestic Bay Theatres",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Majestic+Bay+Theatres&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35MW4yhiJmTFlHqkzb5FFI3qY5dlkwdsJyN56H3IUaoMwFN5cM0SNFwcb-THOuBhupvJVtPf6Q_pWFiRXpufCWhtvyp-wf5ynChG7kCSYwuBIhSHQY1KP9ru444FCLw0Rf4YnbERl2GVVcaidJNqDvG8-nf60m15Hw1_QBvQapxkiy5OM-IR5Og1z5HOy3JuRm4kRYEk%3D",
+                    "distance": "5.0 mi",
+                    "address": "2044 NW Market Street, Seattle, WA 98107",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:45am",
+                                "3:00pm",
+                                "6:15pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Reserve Lincoln Square — Dine-In 21+",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Reserve+Lincoln+Square+%E2%80%94+Dine-In+21%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNWxbaof5_mIdcIif5fPFh9YyVuYYxMmpno4RpRv84ujupWwwALuGkImFnsCmPBSsazy3IP83Rd5WACEYrsZoHi1YlKoe8dXpn3ManT-RMjFy2dZlPoKieIdiwdsxAaDzPEl0zRndwnTOCb4dB7f7tQA2HGoW1ZAnpuWZvTLlX9c6B8y2BbbaFR8Pul1v-G7McxWNdl5hfoDr7YWTN7IWmW6OZjua",
+                    "distance": "6.2 mi",
+                    "address": "Suite 340, 500 Bellevue Way Northeast, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:45am",
+                                "11:45am",
+                                "1:30pm",
+                                "2:15pm",
+                                "3:15pm",
+                                "5:45pm",
+                                "6:45pm",
+                                "8:15pm",
+                                "9:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Lincoln Square Cinemas and IMAX",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Lincoln+Square+Cinemas+and+IMAX&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMeHnUfhxC8I7wZ50iZILS8gl0yBXDhUmjOONpV1q_OvCF73s64nYcRkW9qq_h5g6YHzqMPykYABjksCy8JNg60c5PPSVA8WzuiiU1LAWwP2ObZ0m1dZYEPXRteBVF16KIQEGZDYPvJhTtzf8UGBGPpa2kNkYtGcG8ZWifrlWLm0PnrhwKUnxzfW8vkTugkwJNcr5MJztlaN1BLdJvNRjrD-4I_Ks",
+                    "distance": "6.2 mi",
+                    "address": "Suite 310, 700 Bellevue Way NE, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:10am",
+                                "10:45am",
+                                "2:25pm",
+                                "6:10pm",
+                                "9:50pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "11:50am",
+                                "3:30pm",
+                                "7:00pm",
+                                "10:40pm"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Oak Tree 6",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Oak+Tree+6&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uult2TsNBt_L3SlIVnWSkgPgwIBmDoSu45RruomawhzTKQzYS6nFH4WVIeTG-9JesoOQ-uH1OHKhAPr41dBz7ONy8ugU-MO6y2YS_uYRzJ7e39voGls-njkruUNIOXRhkpDhW6UWIXjMynkj72hKQ0gV154ZAkz3hWYrprYy5KW4bgqolWZ8iomX63JM8Qo_6l2yfZX0c%3D",
+                    "distance": "6.7 mi",
+                    "address": "10006 Aurora Avenue North, Seattle, WA 98133",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:45pm",
+                                "3:00pm",
+                                "6:30pm",
+                                "9:45pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Thornton Place",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulkwQGRtHVI1m4PsytuOod9z-AjZkelUhCGDlWDlws92UgVDhRMnaSyJHUmyD4Yj4BYIux9G4wZuUYT_4QhkOu00cRHtf0wFsgRJJKZ6EXqxp4QInjHhgYt0NwOpVue_OjSlrKwYQtXqfsFvw4F3ESgHbwM9XJ4kFdB_XRIVgsE2aVgj-89y1scKEPXAGjwcDXYMxIEE%3D",
+                    "distance": "6.7 mi",
+                    "address": "316 Northeast Thornton Place, Seattle, WA 98125",
+                    "showing": [
+                        {
+                            "time": [
+                                "9:10am",
+                                "1:00pm",
+                                "4:50pm",
+                                "8:10pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "11:00am",
+                                "3:00pm",
+                                "7:00pm",
+                                "10:30pm"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Factoria 8",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Factoria+8&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuliUGlsofDLd9P6JKZDgw4IN4RPK7MxvvDYpMKIAFp5Gqowl1a0iW2-SOe2Y2Wwbpfy_Q9N3_M_7SdcUTs1ow9rvpHeAUxA49L2x89edzsPXduLKPQuJ9EsxfJKbEufCcqFpzs5STGNlqI1gSuPzLYTJDnF6oA4hvmfooHW0BpJRg_MMfNK2T5auOImBmP3R3l6uzLu8%3D",
+                    "distance": "7.8 mi",
+                    "address": "3505 Factoria Boulevard SE, Bellevue, WA 98006",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:30am",
+                                "12:25pm",
+                                "4:00pm",
+                                "7:00pm",
+                                "10:35pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bainbridge Cinemas",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Bainbridge+Cinemas&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulm5tP6ap4OdrdotQa4iqCfOa4Ft8yzgiu2Qk0_Ts1OVQVz80-DpFSJO3hT4dsgdDdsOuiZjCoaR3yUPzF92Tj8IlD1pzAvvYcD1_xz1RG0dFV1EpAgnUBhzKCuXSRamrgGCjtu09NMD6IjqCSMwxQW04q0S8jPZ1qpo3jHMgEBDqRHyjww0tt2R8RzKwCLQ2jNSaLm4%3D",
+                    "distance": "9.0 mi",
+                    "address": "403 North Madison Avenue, Bainbridge Island, WA 98110",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:30pm",
+                                "3:20pm",
+                                "6:40pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Crossroads - Bellevue",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Crossroads+-+Bellevue&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulg5gtqibLZtkletGQtIw46Mky1cO3y8ZJvUKNO3dYqHnIrFG5DVO2ckA96-2Hi_wr6vDyp05TCQXGn4KqHWK_1-90t1HrWFZq4_RL1ydGWnhenwFsn-JXvTLZtV3oKsMp8vjO1nPgSqhF4qiIs8GVw7R7EF7SUM85QKYIhXj-ZMiP6rhFUrcCuPVVBk6OO4V5n9ou8U%3D",
+                    "distance": "9.6 mi",
+                    "address": "1200 156th Avenue NE, Bellevue, WA 98008",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:30am",
+                                "3:00pm",
+                                "6:30pm",
+                                "9:20pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal The Landing",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+The+Landing&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMW4GNQV6cNieMejTkDf16oz0_x2U3UkWcKOKZlPhqBDiMOm51cjaTENGIUamb_QKTu3pLfBtazxqqVcVBH7dH4xl0esfVBxAZ0LCdR3oeOf8yXt2m8eCT-Ku9f7NBiIROjADX40NHBN2G8NJcuT6IS51t-8lCkqTP7rGSrinDLzsnmVx3kLSiTZXIFjcHciehEW75gEq0_eljSEjISLzGL1G8cQH",
+                    "distance": "9.6 mi",
+                    "address": "900 North 10th Place, Renton, WA 98057",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:30am",
+                                "11:30am",
+                                "2:15pm",
+                                "3:10pm",
+                                "5:50pm",
+                                "6:20pm",
+                                "9:15pm",
+                                "9:50pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landmark's Crest Cinema Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Landmark%27s+Crest+Cinema+Center&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNfIwJ2TBpBF_nPlLfByKVrsWa64kGdjexa7BQpXP--wrTIbiT_w4Aa5G2Pk-Gp0ctmNRhbIxxWx1TybCLz8_1yKoUSili9JAxUD7p2Bjbg9uo1tC1C6UGwYfLGpKpqRt_5GLJFu9AqONWju3Q2NhPEsX-So09AtB04qjxFL6NMtZcJ23T2W7jX_vTEJFdaOLVsC3UNJgFcYFayx3HAdnHqiPGBNi",
+                    "distance": "9.9 mi",
+                    "address": "16505 5th Avenue Northeast, Shoreline, WA 98155",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:30pm",
+                                "4:20pm",
+                                "7:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "ThuJul 15",
+            "theaters": [
+                {
+                    "name": "Regal Meridian",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Meridian&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMXNovQiDWhUaEEhkxO6qZ_zIHzTDPorOYxCtwBwjZ48pYApjaMApyqOSUCAohc1ndD1xhmFPhiasiKD3Gu_Gexk7Xyyv5MGRBBMi8Q55VDHbj-jGb4mOqWdZcMN5L5W0HzRLvJik7Iq5k91mLOKew19QleBaEe3aeWE9lD4jH_Ai4921VJOUisj0X6lcwSvgOArj2sYm5WAcKqKccz5G6jHG3jqw",
+                    "distance": "0.4 mi",
+                    "address": "1501 7th Ave, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:10am",
+                                "1:15pm",
+                                "2:45pm",
+                                "5:00pm",
+                                "6:20pm",
+                                "8:40pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Pacific Place 11",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Pacific+Place+11&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-E53P4knenMd_OHdPU6ditlmxTUUbeCMAf7WzrSf8pLVPo_gv9ZoU9VIy9slyth1x-Wo7Az_Aw7oKxzASlBOVqv-358DIRDOjfwmDYNP32p1LVdmaSr4pFHZJsisxcFgABMhLZXQFIeIJWS0KdCIDV8BEvXcjGhVJc6U3DPh4nPlvRGMGGUc3qmuvHR6CHxSdQJ9PMY%3D",
+                    "distance": "0.5 mi",
+                    "address": "Suite 400, 600 Pine Street, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:30pm",
+                                "4:10pm",
+                                "6:30pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Boeing and PACCAR IMAX Theaters at Pacific Science Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Boeing+and+PACCAR+IMAX+Theaters+at+Pacific+Science+Center&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMedeQhw5C8cyfxnIgucLZ_pH2XFaEcJ-N0Koj_OqFhWIC169_sFmWMsE4rQ4nfOWRA73TKrkI5uAR25OrWAls3eF2Q82IJF-jcG6bSgezH2dcGWZZkIzqY5Miz2K5ziOR5RZ0a8Vq-9ujFD12ZjOJuemDfhv8V3puNbcPd0ivAP2QpdXnZgZnDjIjYmY0lew8whnTgJq8ctceUX6C3em6d_YF7Ll",
+                    "distance": "1.3 mi",
+                    "address": "200 Second Avenue North, Seattle, WA 98109",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:45pm",
+                                "4:00pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "12:45pm",
+                                "4:00pm"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "Admiral Theater",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Admiral+Theater&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-LQ5ZyoeBwU336gT4B-5fwy176yiH9HiEmMijyY5cUyaqOkJ5lqFttGYPsHUR5oqPBymh6TvmXWVlR0sKiG8H_JrYypF2tSVR476KhHBYK2eYpBTtW7p4oNTfjtsdcf3dsxu2PbW-5GMT6Z4UaIV-zB45-Ghv9mVRFm8__Yd9d8EkRzgU0xv3wgeKxGZ-IAKBPd1068%3D",
+                    "distance": "3.1 mi",
+                    "address": "2343 California Avenue SW, Seattle, WA 98116",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:30pm",
+                                "2:30pm",
+                                "6:00pm",
+                                "8:50pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "The Varsity Theatre",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=The+Varsity+Theatre&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuluOWw9NRv4QiMjecRXrv3MNhxzUzkLTKNg534K0LXwlBx51Lnldx2rLLXXWdldDQAqdrylprqJIgosLLRw-Mj8jJnjCTxVGgOoogc1xRmQEmNUlBjjdKPUaoFiy3PxyA9HrCYm5FP_rf_5yFQ9O1hSq87FufhbkVgIVIZxbLE2m60QZsBHIt1Zf_9Q4QEDWota8Dmqw%3D",
+                    "distance": "3.9 mi",
+                    "address": "4329 University Way Northeast, Seattle, WA 98105",
+                    "showing": [
+                        {
+                            "time": [
+                                "3:00pm",
+                                "6:15pm",
+                                "9:30pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Majestic Bay Theatres",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Majestic+Bay+Theatres&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35MW4yhiJmTFlHqkzb5FFI3qY5dlkwdsJyN56H3IUaoMwFN5cM0SNFwcb-THOuBhupvJVtPf6Q_pWFiRXpufCWhtvyp-wf5ynChG7kCSYwuBIhSHQY1KP9ru444FCLw0Rf4YnbERl2GVVcaidJNqDvG8-nf60m15Hw1_QBvQapxkiy5OM-IR5Og1z5HOy3JuRm4kRYEk%3D",
+                    "distance": "5.0 mi",
+                    "address": "2044 NW Market Street, Seattle, WA 98107",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:45am",
+                                "3:00pm",
+                                "6:15pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Reserve Lincoln Square — Dine-In 21+",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Reserve+Lincoln+Square+%E2%80%94+Dine-In+21%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNWxbaof5_mIdcIif5fPFh9YyVuYYxMmpno4RpRv84ujupWwwALuGkImFnsCmPBSsazy3IP83Rd5WACEYrsZoHi1YlKoe8dXpn3ManT-RMjFy2dZlPoKieIdiwdsxAaDzPEl0zRndwnTOCb4dB7f7tQA2HGoW1ZAnpuWZvTLlX9c6B8y2BbbaFR8Pul1v-G7McxWNdl5hfoDr7YWTN7IWmW6OZjua",
+                    "distance": "6.2 mi",
+                    "address": "Suite 340, 500 Bellevue Way Northeast, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:10am",
+                                "11:20am",
+                                "1:40pm",
+                                "5:30pm",
+                                "7:00pm",
+                                "9:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Lincoln Square Cinemas and IMAX",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Lincoln+Square+Cinemas+and+IMAX&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMeHnUfhxC8I7wZ50iZILS8gl0yBXDhUmjOONpV1q_OvCF73s64nYcRkW9qq_h5g6YHzqMPykYABjksCy8JNg60c5PPSVA8WzuiiU1LAWwP2ObZ0m1dZYEPXRteBVF16KIQEGZDYPvJhTtzf8UGBGPpa2kNkYtGcG8ZWifrlWLm0PnrhwKUnxzfW8vkTugkwJNcr5MJztlaN1BLdJvNRjrD-4I_Ks",
+                    "distance": "6.2 mi",
+                    "address": "Suite 310, 700 Bellevue Way NE, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:00am",
+                                "11:40am",
+                                "3:15pm",
+                                "6:50pm",
+                                "9:10pm",
+                                "10:30pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "10:15am"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Oak Tree 6",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Oak+Tree+6&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uult2TsNBt_L3SlIVnWSkgPgwIBmDoSu45RruomawhzTKQzYS6nFH4WVIeTG-9JesoOQ-uH1OHKhAPr41dBz7ONy8ugU-MO6y2YS_uYRzJ7e39voGls-njkruUNIOXRhkpDhW6UWIXjMynkj72hKQ0gV154ZAkz3hWYrprYy5KW4bgqolWZ8iomX63JM8Qo_6l2yfZX0c%3D",
+                    "distance": "6.7 mi",
+                    "address": "10006 Aurora Avenue North, Seattle, WA 98133",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:00pm",
+                                "6:00pm",
+                                "9:45pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Thornton Place",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulkwQGRtHVI1m4PsytuOod9z-AjZkelUhCGDlWDlws92UgVDhRMnaSyJHUmyD4Yj4BYIux9G4wZuUYT_4QhkOu00cRHtf0wFsgRJJKZ6EXqxp4QInjHhgYt0NwOpVue_OjSlrKwYQtXqfsFvw4F3ESgHbwM9XJ4kFdB_XRIVgsE2aVgj-89y1scKEPXAGjwcDXYMxIEE%3D",
+                    "distance": "6.7 mi",
+                    "address": "316 Northeast Thornton Place, Seattle, WA 98125",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:00am",
+                                "2:00pm",
+                                "5:50pm",
+                                "8:10pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "10:30am"
+                            ],
+                            "type": "IMAX"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Factoria 8",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Factoria+8&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuliUGlsofDLd9P6JKZDgw4IN4RPK7MxvvDYpMKIAFp5Gqowl1a0iW2-SOe2Y2Wwbpfy_Q9N3_M_7SdcUTs1ow9rvpHeAUxA49L2x89edzsPXduLKPQuJ9EsxfJKbEufCcqFpzs5STGNlqI1gSuPzLYTJDnF6oA4hvmfooHW0BpJRg_MMfNK2T5auOImBmP3R3l6uzLu8%3D",
+                    "distance": "7.8 mi",
+                    "address": "3505 Factoria Boulevard SE, Bellevue, WA 98006",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:15pm",
+                                "4:00pm",
+                                "7:00pm",
+                                "10:35pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Crossroads - Bellevue",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Crossroads+-+Bellevue&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulg5gtqibLZtkletGQtIw46Mky1cO3y8ZJvUKNO3dYqHnIrFG5DVO2ckA96-2Hi_wr6vDyp05TCQXGn4KqHWK_1-90t1HrWFZq4_RL1ydGWnhenwFsn-JXvTLZtV3oKsMp8vjO1nPgSqhF4qiIs8GVw7R7EF7SUM85QKYIhXj-ZMiP6rhFUrcCuPVVBk6OO4V5n9ou8U%3D",
+                    "distance": "9.6 mi",
+                    "address": "1200 156th Avenue NE, Bellevue, WA 98008",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:00pm",
+                                "3:00pm",
+                                "6:30pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "11:30am"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal The Landing",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+The+Landing&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMW4GNQV6cNieMejTkDf16oz0_x2U3UkWcKOKZlPhqBDiMOm51cjaTENGIUamb_QKTu3pLfBtazxqqVcVBH7dH4xl0esfVBxAZ0LCdR3oeOf8yXt2m8eCT-Ku9f7NBiIROjADX40NHBN2G8NJcuT6IS51t-8lCkqTP7rGSrinDLzsnmVx3kLSiTZXIFjcHciehEW75gEq0_eljSEjISLzGL1G8cQH",
+                    "distance": "9.6 mi",
+                    "address": "900 North 10th Place, Renton, WA 98057",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:30am",
+                                "11:30am",
+                                "2:15pm",
+                                "5:50pm",
+                                "9:15pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landmark's Crest Cinema Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Landmark%27s+Crest+Cinema+Center&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNfIwJ2TBpBF_nPlLfByKVrsWa64kGdjexa7BQpXP--wrTIbiT_w4Aa5G2Pk-Gp0ctmNRhbIxxWx1TybCLz8_1yKoUSili9JAxUD7p2Bjbg9uo1tC1C6UGwYfLGpKpqRt_5GLJFu9AqONWju3Q2NhPEsX-So09AtB04qjxFL6NMtZcJ23T2W7jX_vTEJFdaOLVsC3UNJgFcYFayx3HAdnHqiPGBNi",
+                    "distance": "9.9 mi",
+                    "address": "16505 5th Avenue Northeast, Shoreline, WA 98155",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:30pm",
+                                "4:20pm",
+                                "7:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "FriJul 16",
+            "theaters": [
+                {
+                    "name": "AMC Pacific Place 11",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Pacific+Place+11&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-E53P4knenMd_OHdPU6ditlmxTUUbeCMAf7WzrSf8pLVPo_gv9ZoU9VIy9slyth1x-Wo7Az_Aw7oKxzASlBOVqv-358DIRDOjfwmDYNP32p1LVdmaSr4pFHZJsisxcFgABMhLZXQFIeIJWS0KdCIDV8BEvXcjGhVJc6U3DPh4nPlvRGMGGUc3qmuvHR6CHxSdQJ9PMY%3D",
+                    "distance": "0.5 mi",
+                    "address": "Suite 400, 600 Pine Street, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:40pm",
+                                "4:20pm",
+                                "6:30pm",
+                                "9:20pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Reserve Lincoln Square — Dine-In 21+",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Reserve+Lincoln+Square+%E2%80%94+Dine-In+21%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNWxbaof5_mIdcIif5fPFh9YyVuYYxMmpno4RpRv84ujupWwwALuGkImFnsCmPBSsazy3IP83Rd5WACEYrsZoHi1YlKoe8dXpn3ManT-RMjFy2dZlPoKieIdiwdsxAaDzPEl0zRndwnTOCb4dB7f7tQA2HGoW1ZAnpuWZvTLlX9c6B8y2BbbaFR8Pul1v-G7McxWNdl5hfoDr7YWTN7IWmW6OZjua",
+                    "distance": "6.2 mi",
+                    "address": "Suite 340, 500 Bellevue Way Northeast, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:30am",
+                                "11:10am",
+                                "2:00pm",
+                                "2:45pm",
+                                "4:30pm",
+                                "5:30pm",
+                                "9:00pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Lincoln Square Cinemas and IMAX",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Lincoln+Square+Cinemas+and+IMAX&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMeHnUfhxC8I7wZ50iZILS8gl0yBXDhUmjOONpV1q_OvCF73s64nYcRkW9qq_h5g6YHzqMPykYABjksCy8JNg60c5PPSVA8WzuiiU1LAWwP2ObZ0m1dZYEPXRteBVF16KIQEGZDYPvJhTtzf8UGBGPpa2kNkYtGcG8ZWifrlWLm0PnrhwKUnxzfW8vkTugkwJNcr5MJztlaN1BLdJvNRjrD-4I_Ks",
+                    "distance": "6.2 mi",
+                    "address": "Suite 310, 700 Bellevue Way NE, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:05am",
+                                "12:05pm",
+                                "1:50pm",
+                                "3:40pm",
+                                "5:25pm",
+                                "7:15pm",
+                                "9:00pm",
+                                "10:50pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Thornton Place",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulkwQGRtHVI1m4PsytuOod9z-AjZkelUhCGDlWDlws92UgVDhRMnaSyJHUmyD4Yj4BYIux9G4wZuUYT_4QhkOu00cRHtf0wFsgRJJKZ6EXqxp4QInjHhgYt0NwOpVue_OjSlrKwYQtXqfsFvw4F3ESgHbwM9XJ4kFdB_XRIVgsE2aVgj-89y1scKEPXAGjwcDXYMxIEE%3D",
+                    "distance": "6.7 mi",
+                    "address": "316 Northeast Thornton Place, Seattle, WA 98125",
+                    "showing": [
+                        {
+                            "time": [
+                                "9:40am",
+                                "2:30pm",
+                                "4:00pm",
+                                "6:20pm",
+                                "8:10pm",
+                                "10:10pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Factoria 8",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Factoria+8&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuliUGlsofDLd9P6JKZDgw4IN4RPK7MxvvDYpMKIAFp5Gqowl1a0iW2-SOe2Y2Wwbpfy_Q9N3_M_7SdcUTs1ow9rvpHeAUxA49L2x89edzsPXduLKPQuJ9EsxfJKbEufCcqFpzs5STGNlqI1gSuPzLYTJDnF6oA4hvmfooHW0BpJRg_MMfNK2T5auOImBmP3R3l6uzLu8%3D",
+                    "distance": "7.8 mi",
+                    "address": "3505 Factoria Boulevard SE, Bellevue, WA 98006",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:15am",
+                                "2:45pm",
+                                "7:00pm",
+                                "10:35pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Crossroads - Bellevue",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Crossroads+-+Bellevue&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulg5gtqibLZtkletGQtIw46Mky1cO3y8ZJvUKNO3dYqHnIrFG5DVO2ckA96-2Hi_wr6vDyp05TCQXGn4KqHWK_1-90t1HrWFZq4_RL1ydGWnhenwFsn-JXvTLZtV3oKsMp8vjO1nPgSqhF4qiIs8GVw7R7EF7SUM85QKYIhXj-ZMiP6rhFUrcCuPVVBk6OO4V5n9ou8U%3D",
+                    "distance": "9.6 mi",
+                    "address": "1200 156th Avenue NE, Bellevue, WA 98008",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:00am",
+                                "2:40pm",
+                                "6:20pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landmark's Crest Cinema Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Landmark%27s+Crest+Cinema+Center&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNfIwJ2TBpBF_nPlLfByKVrsWa64kGdjexa7BQpXP--wrTIbiT_w4Aa5G2Pk-Gp0ctmNRhbIxxWx1TybCLz8_1yKoUSili9JAxUD7p2Bjbg9uo1tC1C6UGwYfLGpKpqRt_5GLJFu9AqONWju3Q2NhPEsX-So09AtB04qjxFL6NMtZcJ23T2W7jX_vTEJFdaOLVsC3UNJgFcYFayx3HAdnHqiPGBNi",
+                    "distance": "9.9 mi",
+                    "address": "16505 5th Avenue Northeast, Shoreline, WA 98155",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:00pm",
+                                "4:10pm",
+                                "7:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "SatJul 17",
+            "theaters": [
+                {
+                    "name": "AMC Pacific Place 11",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Pacific+Place+11&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-E53P4knenMd_OHdPU6ditlmxTUUbeCMAf7WzrSf8pLVPo_gv9ZoU9VIy9slyth1x-Wo7Az_Aw7oKxzASlBOVqv-358DIRDOjfwmDYNP32p1LVdmaSr4pFHZJsisxcFgABMhLZXQFIeIJWS0KdCIDV8BEvXcjGhVJc6U3DPh4nPlvRGMGGUc3qmuvHR6CHxSdQJ9PMY%3D",
+                    "distance": "0.5 mi",
+                    "address": "Suite 400, 600 Pine Street, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:45am",
+                                "3:15pm",
+                                "6:45pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Reserve Lincoln Square — Dine-In 21+",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Reserve+Lincoln+Square+%E2%80%94+Dine-In+21%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNWxbaof5_mIdcIif5fPFh9YyVuYYxMmpno4RpRv84ujupWwwALuGkImFnsCmPBSsazy3IP83Rd5WACEYrsZoHi1YlKoe8dXpn3ManT-RMjFy2dZlPoKieIdiwdsxAaDzPEl0zRndwnTOCb4dB7f7tQA2HGoW1ZAnpuWZvTLlX9c6B8y2BbbaFR8Pul1v-G7McxWNdl5hfoDr7YWTN7IWmW6OZjua",
+                    "distance": "6.2 mi",
+                    "address": "Suite 340, 500 Bellevue Way Northeast, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:30am",
+                                "11:10am",
+                                "2:00pm",
+                                "2:45pm",
+                                "4:30pm",
+                                "5:30pm",
+                                "9:00pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Lincoln Square Cinemas and IMAX",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Lincoln+Square+Cinemas+and+IMAX&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMeHnUfhxC8I7wZ50iZILS8gl0yBXDhUmjOONpV1q_OvCF73s64nYcRkW9qq_h5g6YHzqMPykYABjksCy8JNg60c5PPSVA8WzuiiU1LAWwP2ObZ0m1dZYEPXRteBVF16KIQEGZDYPvJhTtzf8UGBGPpa2kNkYtGcG8ZWifrlWLm0PnrhwKUnxzfW8vkTugkwJNcr5MJztlaN1BLdJvNRjrD-4I_Ks",
+                    "distance": "6.2 mi",
+                    "address": "Suite 310, 700 Bellevue Way NE, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:05am",
+                                "12:05pm",
+                                "1:45pm",
+                                "3:40pm",
+                                "5:25pm",
+                                "7:15pm",
+                                "9:00pm",
+                                "10:50pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Thornton Place",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulkwQGRtHVI1m4PsytuOod9z-AjZkelUhCGDlWDlws92UgVDhRMnaSyJHUmyD4Yj4BYIux9G4wZuUYT_4QhkOu00cRHtf0wFsgRJJKZ6EXqxp4QInjHhgYt0NwOpVue_OjSlrKwYQtXqfsFvw4F3ESgHbwM9XJ4kFdB_XRIVgsE2aVgj-89y1scKEPXAGjwcDXYMxIEE%3D",
+                    "distance": "6.7 mi",
+                    "address": "316 Northeast Thornton Place, Seattle, WA 98125",
+                    "showing": [
+                        {
+                            "time": [
+                                "9:40am",
+                                "2:30pm",
+                                "4:00pm",
+                                "6:20pm",
+                                "8:10pm",
+                                "10:10pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Factoria 8",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Factoria+8&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuliUGlsofDLd9P6JKZDgw4IN4RPK7MxvvDYpMKIAFp5Gqowl1a0iW2-SOe2Y2Wwbpfy_Q9N3_M_7SdcUTs1ow9rvpHeAUxA49L2x89edzsPXduLKPQuJ9EsxfJKbEufCcqFpzs5STGNlqI1gSuPzLYTJDnF6oA4hvmfooHW0BpJRg_MMfNK2T5auOImBmP3R3l6uzLu8%3D",
+                    "distance": "7.8 mi",
+                    "address": "3505 Factoria Boulevard SE, Bellevue, WA 98006",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:15am",
+                                "2:45pm",
+                                "7:00pm",
+                                "10:35pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Crossroads - Bellevue",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Crossroads+-+Bellevue&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulg5gtqibLZtkletGQtIw46Mky1cO3y8ZJvUKNO3dYqHnIrFG5DVO2ckA96-2Hi_wr6vDyp05TCQXGn4KqHWK_1-90t1HrWFZq4_RL1ydGWnhenwFsn-JXvTLZtV3oKsMp8vjO1nPgSqhF4qiIs8GVw7R7EF7SUM85QKYIhXj-ZMiP6rhFUrcCuPVVBk6OO4V5n9ou8U%3D",
+                    "distance": "9.6 mi",
+                    "address": "1200 156th Avenue NE, Bellevue, WA 98008",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:45am",
+                                "2:30pm",
+                                "6:10pm",
+                                "9:45pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landmark's Crest Cinema Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Landmark%27s+Crest+Cinema+Center&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNfIwJ2TBpBF_nPlLfByKVrsWa64kGdjexa7BQpXP--wrTIbiT_w4Aa5G2Pk-Gp0ctmNRhbIxxWx1TybCLz8_1yKoUSili9JAxUD7p2Bjbg9uo1tC1C6UGwYfLGpKpqRt_5GLJFu9AqONWju3Q2NhPEsX-So09AtB04qjxFL6NMtZcJ23T2W7jX_vTEJFdaOLVsC3UNJgFcYFayx3HAdnHqiPGBNi",
+                    "distance": "9.9 mi",
+                    "address": "16505 5th Avenue Northeast, Shoreline, WA 98155",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:00pm",
+                                "4:10pm",
+                                "7:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "SunJul 18",
+            "theaters": [
+                {
+                    "name": "AMC Pacific Place 11",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Pacific+Place+11&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-E53P4knenMd_OHdPU6ditlmxTUUbeCMAf7WzrSf8pLVPo_gv9ZoU9VIy9slyth1x-Wo7Az_Aw7oKxzASlBOVqv-358DIRDOjfwmDYNP32p1LVdmaSr4pFHZJsisxcFgABMhLZXQFIeIJWS0KdCIDV8BEvXcjGhVJc6U3DPh4nPlvRGMGGUc3qmuvHR6CHxSdQJ9PMY%3D",
+                    "distance": "0.5 mi",
+                    "address": "Suite 400, 600 Pine Street, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:15am",
+                                "3:00pm",
+                                "6:30pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Reserve Lincoln Square — Dine-In 21+",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Reserve+Lincoln+Square+%E2%80%94+Dine-In+21%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNWxbaof5_mIdcIif5fPFh9YyVuYYxMmpno4RpRv84ujupWwwALuGkImFnsCmPBSsazy3IP83Rd5WACEYrsZoHi1YlKoe8dXpn3ManT-RMjFy2dZlPoKieIdiwdsxAaDzPEl0zRndwnTOCb4dB7f7tQA2HGoW1ZAnpuWZvTLlX9c6B8y2BbbaFR8Pul1v-G7McxWNdl5hfoDr7YWTN7IWmW6OZjua",
+                    "distance": "6.2 mi",
+                    "address": "Suite 340, 500 Bellevue Way Northeast, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:30am",
+                                "11:10am",
+                                "2:00pm",
+                                "2:45pm",
+                                "4:30pm",
+                                "5:30pm",
+                                "9:00pm",
+                                "10:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Lincoln Square Cinemas and IMAX",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Lincoln+Square+Cinemas+and+IMAX&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMeHnUfhxC8I7wZ50iZILS8gl0yBXDhUmjOONpV1q_OvCF73s64nYcRkW9qq_h5g6YHzqMPykYABjksCy8JNg60c5PPSVA8WzuiiU1LAWwP2ObZ0m1dZYEPXRteBVF16KIQEGZDYPvJhTtzf8UGBGPpa2kNkYtGcG8ZWifrlWLm0PnrhwKUnxzfW8vkTugkwJNcr5MJztlaN1BLdJvNRjrD-4I_Ks",
+                    "distance": "6.2 mi",
+                    "address": "Suite 310, 700 Bellevue Way NE, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:05am",
+                                "12:05pm",
+                                "1:50pm",
+                                "3:40pm",
+                                "5:25pm",
+                                "7:15pm",
+                                "9:00pm",
+                                "10:30pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Thornton Place",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulkwQGRtHVI1m4PsytuOod9z-AjZkelUhCGDlWDlws92UgVDhRMnaSyJHUmyD4Yj4BYIux9G4wZuUYT_4QhkOu00cRHtf0wFsgRJJKZ6EXqxp4QInjHhgYt0NwOpVue_OjSlrKwYQtXqfsFvw4F3ESgHbwM9XJ4kFdB_XRIVgsE2aVgj-89y1scKEPXAGjwcDXYMxIEE%3D",
+                    "distance": "6.7 mi",
+                    "address": "316 Northeast Thornton Place, Seattle, WA 98125",
+                    "showing": [
+                        {
+                            "time": [
+                                "9:40am",
+                                "2:30pm",
+                                "4:00pm",
+                                "6:20pm",
+                                "8:10pm",
+                                "10:15pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Factoria 8",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Factoria+8&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuliUGlsofDLd9P6JKZDgw4IN4RPK7MxvvDYpMKIAFp5Gqowl1a0iW2-SOe2Y2Wwbpfy_Q9N3_M_7SdcUTs1ow9rvpHeAUxA49L2x89edzsPXduLKPQuJ9EsxfJKbEufCcqFpzs5STGNlqI1gSuPzLYTJDnF6oA4hvmfooHW0BpJRg_MMfNK2T5auOImBmP3R3l6uzLu8%3D",
+                    "distance": "7.8 mi",
+                    "address": "3505 Factoria Boulevard SE, Bellevue, WA 98006",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:15am",
+                                "2:45pm",
+                                "7:00pm",
+                                "10:35pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Crossroads - Bellevue",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Crossroads+-+Bellevue&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulg5gtqibLZtkletGQtIw46Mky1cO3y8ZJvUKNO3dYqHnIrFG5DVO2ckA96-2Hi_wr6vDyp05TCQXGn4KqHWK_1-90t1HrWFZq4_RL1ydGWnhenwFsn-JXvTLZtV3oKsMp8vjO1nPgSqhF4qiIs8GVw7R7EF7SUM85QKYIhXj-ZMiP6rhFUrcCuPVVBk6OO4V5n9ou8U%3D",
+                    "distance": "9.6 mi",
+                    "address": "1200 156th Avenue NE, Bellevue, WA 98008",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:45am",
+                                "2:30pm",
+                                "6:10pm",
+                                "9:45pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landmark's Crest Cinema Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Landmark%27s+Crest+Cinema+Center&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNfIwJ2TBpBF_nPlLfByKVrsWa64kGdjexa7BQpXP--wrTIbiT_w4Aa5G2Pk-Gp0ctmNRhbIxxWx1TybCLz8_1yKoUSili9JAxUD7p2Bjbg9uo1tC1C6UGwYfLGpKpqRt_5GLJFu9AqONWju3Q2NhPEsX-So09AtB04qjxFL6NMtZcJ23T2W7jX_vTEJFdaOLVsC3UNJgFcYFayx3HAdnHqiPGBNi",
+                    "distance": "9.9 mi",
+                    "address": "16505 5th Avenue Northeast, Shoreline, WA 98155",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:00pm",
+                                "4:10pm",
+                                "7:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "MonJul 14",
+            "theaters": [
+                {
+                    "name": "AMC Pacific Place 11",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Pacific+Place+11&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-E53P4knenMd_OHdPU6ditlmxTUUbeCMAf7WzrSf8pLVPo_gv9ZoU9VIy9slyth1x-Wo7Az_Aw7oKxzASlBOVqv-358DIRDOjfwmDYNP32p1LVdmaSr4pFHZJsisxcFgABMhLZXQFIeIJWS0KdCIDV8BEvXcjGhVJc6U3DPh4nPlvRGMGGUc3qmuvHR6CHxSdQJ9PMY%3D",
+                    "distance": "0.5 mi",
+                    "address": "Suite 400, 600 Pine Street, Seattle, WA 98101",
+                    "showing": [
+                        {
+                            "time": [
+                                "12:40pm",
+                                "4:20pm",
+                                "6:40pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Reserve Lincoln Square — Dine-In 21+",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Reserve+Lincoln+Square+%E2%80%94+Dine-In+21%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNWxbaof5_mIdcIif5fPFh9YyVuYYxMmpno4RpRv84ujupWwwALuGkImFnsCmPBSsazy3IP83Rd5WACEYrsZoHi1YlKoe8dXpn3ManT-RMjFy2dZlPoKieIdiwdsxAaDzPEl0zRndwnTOCb4dB7f7tQA2HGoW1ZAnpuWZvTLlX9c6B8y2BbbaFR8Pul1v-G7McxWNdl5hfoDr7YWTN7IWmW6OZjua",
+                    "distance": "6.2 mi",
+                    "address": "Suite 340, 500 Bellevue Way Northeast, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:10am",
+                                "11:45am",
+                                "1:45pm",
+                                "4:30pm",
+                                "5:15pm",
+                                "7:00pm",
+                                "8:00pm",
+                                "8:45pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Cinemark Lincoln Square Cinemas and IMAX",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Cinemark+Lincoln+Square+Cinemas+and+IMAX&si=AMgyJEuDKtOmISa9Akvtd6wQceP6KMdyloFoUI5CI2g3z4vsMeHnUfhxC8I7wZ50iZILS8gl0yBXDhUmjOONpV1q_OvCF73s64nYcRkW9qq_h5g6YHzqMPykYABjksCy8JNg60c5PPSVA8WzuiiU1LAWwP2ObZ0m1dZYEPXRteBVF16KIQEGZDYPvJhTtzf8UGBGPpa2kNkYtGcG8ZWifrlWLm0PnrhwKUnxzfW8vkTugkwJNcr5MJztlaN1BLdJvNRjrD-4I_Ks",
+                    "distance": "6.2 mi",
+                    "address": "Suite 310, 700 Bellevue Way NE, Bellevue, WA 98004",
+                    "showing": [
+                        {
+                            "time": [
+                                "10:05am",
+                                "11:25am",
+                                "1:50pm",
+                                "3:00pm",
+                                "5:25pm",
+                                "6:40pm",
+                                "9:00pm",
+                                "10:20pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Thornton Place",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulkwQGRtHVI1m4PsytuOod9z-AjZkelUhCGDlWDlws92UgVDhRMnaSyJHUmyD4Yj4BYIux9G4wZuUYT_4QhkOu00cRHtf0wFsgRJJKZ6EXqxp4QInjHhgYt0NwOpVue_OjSlrKwYQtXqfsFvw4F3ESgHbwM9XJ4kFdB_XRIVgsE2aVgj-89y1scKEPXAGjwcDXYMxIEE%3D",
+                    "distance": "6.7 mi",
+                    "address": "316 Northeast Thornton Place, Seattle, WA 98125",
+                    "showing": [
+                        {
+                            "time": [
+                                "9:40am",
+                                "2:30pm",
+                                "4:00pm",
+                                "6:20pm",
+                                "8:10pm",
+                                "10:10pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMC Factoria 8",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Factoria+8&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uuliUGlsofDLd9P6JKZDgw4IN4RPK7MxvvDYpMKIAFp5Gqowl1a0iW2-SOe2Y2Wwbpfy_Q9N3_M_7SdcUTs1ow9rvpHeAUxA49L2x89edzsPXduLKPQuJ9EsxfJKbEufCcqFpzs5STGNlqI1gSuPzLYTJDnF6oA4hvmfooHW0BpJRg_MMfNK2T5auOImBmP3R3l6uzLu8%3D",
+                    "distance": "7.8 mi",
+                    "address": "3505 Factoria Boulevard SE, Bellevue, WA 98006",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:15am",
+                                "2:45pm",
+                                "7:00pm",
+                                "10:35pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Regal Crossroads - Bellevue",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Crossroads+-+Bellevue&si=AMgyJEt4gI5NMInIh8VmHjRSOVu8AO9g8YCb2bwac_lcM9uulg5gtqibLZtkletGQtIw46Mky1cO3y8ZJvUKNO3dYqHnIrFG5DVO2ckA96-2Hi_wr6vDyp05TCQXGn4KqHWK_1-90t1HrWFZq4_RL1ydGWnhenwFsn-JXvTLZtV3oKsMp8vjO1nPgSqhF4qiIs8GVw7R7EF7SUM85QKYIhXj-ZMiP6rhFUrcCuPVVBk6OO4V5n9ou8U%3D",
+                    "distance": "9.6 mi",
+                    "address": "1200 156th Avenue NE, Bellevue, WA 98008",
+                    "showing": [
+                        {
+                            "time": [
+                                "11:30am",
+                                "2:30pm",
+                                "9:45pm"
+                            ],
+                            "type": "Standard"
+                        },
+                        {
+                            "time": [
+                                "6:10pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                },
+                {
+                    "name": "Landmark's Crest Cinema Center",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Landmark%27s+Crest+Cinema+Center&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNfIwJ2TBpBF_nPlLfByKVrsWa64kGdjexa7BQpXP--wrTIbiT_w4Aa5G2Pk-Gp0ctmNRhbIxxWx1TybCLz8_1yKoUSili9JAxUD7p2Bjbg9uo1tC1C6UGwYfLGpKpqRt_5GLJFu9AqONWju3Q2NhPEsX-So09AtB04qjxFL6NMtZcJ23T2W7jX_vTEJFdaOLVsC3UNJgFcYFayx3HAdnHqiPGBNi",
+                    "distance": "9.9 mi",
+                    "address": "16505 5th Avenue Northeast, Shoreline, WA 98155",
+                    "showing": [
+                        {
+                            "time": [
+                                "1:00pm",
+                                "4:10pm",
+                                "7:00pm"
+                            ],
+                            "type": "Standard"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "knowledge_graph": {
+        "title": "F1",
+        "type": "PG-13 2025 ‧ Action/Sport ‧ 2h 35m",
+        "entity_type": "film, tvm",
+        "kgmid": "/g/11s7lzftr_",
+        "knowledge_graph_search_link": "https://www.google.com/search?kgmid=/g/11s7lzftr_&hl=en-US&q=F1",
+        "serpapi_knowledge_graph_search_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en-US&kgmid=%2Fg%2F11s7lzftr_&location=Seattle%2C+Washington%2C+United+States&q=F1",
+        "description": "In the 1990s, Sonny Hayes was Formula 1's most promising driver until an accident on the track nearly ended his career. Thirty years later, the owner of a struggling Formula 1 team convinces Sonny to return to racing and become the best in the world. Driving alongside the team's hotshot rookie, Sonny soon learns that the road to redemption is not something you can travel alone.… MORE",
+        "release_date": "June 23, 2025 (USA)",
+        "release_date_links": [
+            {
+                "text": "USA",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=United+States&stick=H4sIAAAAAAAAAOPgE-LVT9c3NCw2z6lKKymKV-LUz9U3sEw2LzfQMspOttJPy8zJBRNWJRmpiSVFmcmJOQpFqemZ-XkKieWJRalATk5qYnGqQkpiSeoiVt7QvMyS1BSF4BIgt3gHK-MudiYOBgCMe2tKaAAAAA&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAg8EAI"
+            }
+        ],
+        "director": "Joseph Kosinski",
+        "director_links": [
+            {
+                "text": "Joseph Kosinski",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Joseph+Kosinski&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-KKFN5PHB5v5aEkuJZRzozSGbsPDwxMeS7CftSiJYjv2Lji0tITiZgIkn81CjHdPL4JIVHyVZVfq62VkbOfIm-fxFB0SQ0MNJEG8U76TR7lhtJFRtd3FpkNWx2qxNt-w1qBKOFYXBfi9vHqv2zVgjydCrnFABa4odpEy7l2tzD_JRYmU7A%3D%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAghEAI"
+            }
+        ],
+        "producers": "Brad Pitt, Joseph Kosinski, Lewis Hamilton, Jerry Bruckheimer, Chad Oman, Dede Gardner, Jeremy Kleiner",
+        "producers_links": [
+            {
+                "text": "Brad Pitt",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Brad+Pitt&si=AMgyJEvmed8FkyEkpEJ8jfGhZkakcy5kQho_c4G-QJRdklshMhaCYsSU-jVC8W-MUGHOSiYzoFcH45DPKrUTiYS2MacMAUNMckTcpXvA6FZZzKM9ONPoTqQcontN4IMWqwWwYiVjD2L_ZuU3nK6HW_gE7UNUUDi2cPyXw2x8zkonMsgri8yCOk_P4HQOIbimhBHvDUNKOlxbbiE7seHX8bySZGpJBxg7_mOyLxe1esZNIGNgX5i-SETMc5amY4Jvb-wEPZyth-hiGTuXeku45Nd4ZDwe-UJXxQ%3D%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgyEAI"
+            },
+            {
+                "text": "Joseph Kosinski",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Joseph+Kosinski&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-KKFN5PHB5v5aEkuJZRzozRKthDsFVYrHVKCwWEfQ-fhPj8kYEqjvAU4F-dnNJ6RuVIQUPAzuG-5mN8tEEl5q_tuIW6FQvqqWpmZ6UdwMCRs9ZV3Z36tDtqSvYmObe1H-QA1cKprGjceN4E61HtE560X_ts68JPZbFV6xSLhMo_obYtxk7Br8x8_THaiAMWdDo92JJGTbxfGr2TE0owdAuj2Bb7t9f4MFu2_C4uEoxZp7oGfU5Gn1ObLCSkHZIEoN2BNNVE%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgyEAM"
+            },
+            {
+                "text": "Lewis Hamilton",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Lewis+Hamilton&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35B-1mXTKO1CU8cG2e-AYu9IrKDORseTpr_vB5vsdGK_yMryWMqODkUniWQKUQ0mw2ogiu89Q4Hpcf2M5xoaa9R4XgNmBdZwHE2Xr7cJyKby8NWHIQ1cSbwQCfKwoCH1T15I1nL2qkoEgYireivku0pD9faS-1rjwo0W5NqiqV3nIQuhMatp-kB3cejQeMuSzqh6juWg9LbWzQ_TJgWI0dBpshcZHCUzgBG4Z1buy-cSsZgdsKm5toNsUJa4zWBAw8qrmyo4%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgyEAQ"
+            },
+            {
+                "text": "Jerry Bruckheimer",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Jerry+Bruckheimer&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35AEEjY8S0C5AjXkjFmPpB01kXRM9JeJGpWYWtt3uE5WDLVFGthg0cQF2hBmm5mkBy1hOTbyL2zh8f9J83OgENO75MxbepYFYWf7DmS-dvSdsuZRhw-Pr-CpluhNmX-zY1DdzouAKC9N7xhkD3QS--h61TVM_DQVp52n8RpSRul0p-wmUz156ezNhY21zFxafz-_FnadFeSgNm_mTL65pvXzVKsZhpbT1aDnnKJQ6knDOL6eeW90WK6IyL_3-IRGRQ5Onqeg%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgyEAU"
+            },
+            {
+                "text": "Chad Oman",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Chad+Oman&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35BhR1gtyHKVahxi0ZsvjViJy_7lFjrGvHPBohMsnTho0-3rz36NghxJIHO1K4Yrn2JpLk6avm6ULAXmd1sXf2Y9PLcEQB-qIivsAvFam9efAan85z1S4GwvxwD3WbZ1HEHWDTbmXAM1pprQon9gc-T0ccZwK17e-FZ1arJtxILv5fICZanjU6eS7RrMIVfJRayzTf1nfPZG_cA1aziNCcdXCFZJUdS8Q8s8dHezR1bHeT7_F1A%3D%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgyEAY"
+            },
+            {
+                "text": "Dede Gardner",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Dede+Gardner&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35BDFPMX0QHhv0nD6MIJFcvMW0FLNkBhFsl8xkCbYUUDS95lyeihrF2HM2VvUigiDuFQDtSHyiKOu5hlvJzUWmXN-6kG9lszQ7uvzZmsC47X-owLhl8t26C_5pJEgvcOqsLw0iL59mZ7GryaOavCUJH40V385RcA60oYPoMNGIm-Yy3CXgp1-_VwBQjB3FXFSb1GRy2qmmmt0FQHAtRtCXCCnnR-AdWyj7YQZAjDEhsSfgVN6kxsVOvm4P-UF0kLj2mmNKx4%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgyEAc"
+            },
+            {
+                "text": "Jeremy Kleiner",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Jeremy+Kleiner&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-DnFFpDupDgjFwfcAbVRNd7kqAFwnOuMqEH_2KqYb8FvLosBrsZ3OMk7l0tvbaa7lh561rda3wPUQKVDStECDD6lQ9entyregQOBzTYOci0_RczeX5cEkMprm3AbiFqtOER_gIgAa7ugY8DvrwUocWDeqBdARhX3OYSf640CK6grzoH_kF0wOixacU5BBUyUfmJVBXHbX7lIFaQwC-NFAnQG9vDCbr9QsdOJKOYAaUS6UC9ukIBTtjVrf1dDRUqJuzuzaiE%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgyEAg"
+            }
+        ],
+        "production_companies": "Dawn Apollo Films, Plan B Entertainment, Jerry Bruckheimer Films, Apple Studios, Monolith Pictures",
+        "production_companies_links": [
+            {
+                "text": "Dawn Apollo Films",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Dawn+Apollo+Films&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNZm6Ad--BHZ9cbalDfVljH5qKSlhgRkyVjTJ0fjB-gZaoXPI59S6n7e3iCZmE-E3_gNWInv6iBcs2b8llhlIB9xbDtgdn5ny9jhPJcQ0tiE85Xiknjap-p0SRqhIWgc46HbMHygPXtDqibDPu0xhPudCTpXPqLd2BhLDPvWPkk2koVG9IPjjrMUBccSQHbQ19ar16N0g8RlyVDfNUmctsWsvMAuz-SoGT5v6hzHvkNpFrIuI_COPCZTx-ylKPJA2NlwdOW-cH6HdbFf42i36U0qwGl5C&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgwEAI"
+            },
+            {
+                "text": "Plan B Entertainment",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Plan+B+Entertainment&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-OHP69fIblclH5jdjf7gV-TdPBfHS1XKbPTEGEb8pmO5owSLzCXcCuz8Y_oELy-SBkwP5YjgwqFzZ3T_yq6rhEbhhDfABWC7EI7hCxlC5GS5vrALMKezqjDpSb465sXSBuoheBFkeywSpzOSeBrfnsYv2FVh2B5ntb8PlyAzctN7tbRSw3P00F2LS5JHso-DbzMedmRDrpqPFVt5e31qDwePAw7Xo3fj9E9gIbHopMxG3IT8LP84yvTo55y_a8Lc8PE7ktK1h6vh6peiE_U2JXK-0yB5&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgwEAM"
+            },
+            {
+                "text": "Jerry Bruckheimer Films",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Jerry+Bruckheimer+Films&si=AMgyJEtRPX4ld4pdQeltMBlsXK6YnLg9be4xryEBJwXFHLOO-Gw8zbttDugjPRsejnqlsgJi9imstf4h1DAFw2rS_B8CU2ogPS5jE9gKqgUL_xazspqezhdbFzy8oOQ0hTz5Vz1kZJkFqaH8ASLis2oHV0Exa-NEWxTuh5AOonMbfvUQooxjwXdRhNthiALQbui8SgGwx-w0HDR75xLy6ffSC8JuwpSIVKClymJBqiGhU88iz_NYRGc61vjSrKLc4XzSp5495FTDXHm7acdiRs7qvxP_rcrERlU1ID4raLs9nqyd4gaFwRpAeDCvy2D4CoumJQDQcSvp&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgwEAQ"
+            },
+            {
+                "text": "Apple Studios",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Apple+Studios&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNaCafplnUUhHwy9rqszdMDBX-kGmHzUTSPBCsT2OBLRn8utVGG6kJRK_1UcHT_lYSugTQ1MmCQKVcp5BCZkf5gCRnKpc332twY7ecNKPSV2y_LilCbgyCeG4YbVCE8ntC8D3NHA1VJ5quJ4T105ncMTWfDZqPwMBvbjV2zLkXU3KtkfTAONLsZxYDjEtPQq1uStQx1a_TexqURgGdRke_MBO2gjYVKGsN6oVILUyGZNP4-P_rV0vfk5eBkvlxOwKKjOqyEdKxrCI2DZm4pyNzoj9Tvdq&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgwEAU"
+            },
+            {
+                "text": "Monolith Pictures",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Monolith+Pictures&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNePeJ--Rn5Rk1HJU55ctN0J_yhNlOeNPpBVg9DePvls4zUfEk36yC8UVxHPf3E2CJGWJ1Fr6b_Dqro6cqFnKQogrpbHIRB-tiCeq2G2_yopf1sp5x81HprUTT6Shv0SXvgP65Rh3kJ0KUiFaOPhDWqcoT-jTk0gXCtfcywtfXhHkQgTgX-jJCqJ-BNsIHxoPASWEc_NbpGtXYRN882-CY6kcBa_ICHBHJI5NK7dq2786LNQdBqDa4RL0eGmOfuojjVczGuTIrZETJWc31OdCXgpRQ1JZ&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAgwEAY"
+            }
+        ],
+        "running_time": "2h 35m",
+        "mpaa_rating": "PG-13",
+        "mpaa_rating_links": [
+            {
+                "text": "PG-13",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=&si=AMgyJEveiRpRWbYSNPkEPxCUbItHSvun4xkRgDDPLmrOjDx35F39yR2KEtfw7xXehXi3br7evRHzDqWgKUvLHOGDCOPm3JwctrmellLD3nvGgAFWP7Fe3s-ILHaCldz1fRbml756zDp95b5lmww_bj1KFyoCOFGVIXn_YC51xk-B5n7F3KDhxxGZE_Hcnkd8_wE2qWm0Pqdw&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAg6EAI"
+            }
+        ],
+        "distributed_by": "Apple, Apple TV+, Warner Bros. Pictures",
+        "distributed_by_links": [
+            {
+                "text": "Apple",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Apple&si=AMgyJEsDiSRjWbqzYFj-WWva_AB38rmr0hlaV8lJ7y-WQYnYXyP-9_zr04G7wq0XAj9lnBBmG9siy54pHamStYGHlmdvsOIyu2eG4uOO9LzGpOL3deSbvpO6N_iyKoL-pfg1N3EoOKHZ0-arzQ4NTir-KYEaq_7gHij6dkuFSRHYeGg9Q5-Io_HQbrjFMUp5c5MByKnRAYsi&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAg5EAI"
+            },
+            {
+                "text": "Apple TV+",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Apple+TV%2B&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNdUYvRn2J6YpICFJXQvjQNEfS96DicK8UsVWODQQGZWayMTcq1_ef3oA9_eW2Z4uEH2BKnZWc0qkC5ABoQY9XDaoqHnyo8vnhN5VSDMdeESJ_3dTmtBnC6HemsGIlWzASwDAS8xvEHR_eQD_o6cpN72IVqVcZ7fClT0Cp8GeF7yKwwyT9w%3D%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAg5EAM"
+            },
+            {
+                "text": "Warner Bros. Pictures",
+                "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Warner+Bros.+Pictures&si=AMgyJEs9DArPE9xmb5yVYVjpG4jqWDEKSIpCRSjmm88XZWnGNf6Bnw2bmN_Q_JzmkV0-OBFJJU6vt61AGACwcAYNmaPqY1puvV52IeLXmk4aOG7t79V_WvuzKaQWkRIpa8BlA8Y90_a0HZCZWRbuq9wj3UQIbaYStrhjBGmH0VVFd0ujj4uFwhOcrxK_PtatZp0l-FqNVTdHRXkwt6Bstzvt7PSomMhJF5wV7AdsxE7p2bppqjifm9o%3D&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QmxN6BAg5EAQ"
+            }
+        ],
+        "editorial_reviews": [
+            {
+                "title": "Rotten Tomatoes",
+                "rating": "83%",
+                "link": "https://www.rottentomatoes.com/m/f1_the_movie"
+            },
+            {
+                "title": "Metacritic",
+                "rating": "68%",
+                "link": "https://www.metacritic.com/movie/f1-the-movie/critic-reviews/"
+            },
+            {
+                "title": "IMDb",
+                "rating": "7.9/10",
+                "link": "https://www.imdb.com/title/tt16311594/"
+            }
+        ],
+        "audience_reviews": [
+            {
+                "rating": 4,
+                "summary": "Experienced in IMAX Dive deep into the world of Racing, they explained everything with so much of details, A new type of film with phenomenal work by Hans Zimmer in music (can ..."
+            }
+        ],
+        "user_statistics": {
+            "platform": "Google users",
+            "statistic": "96% liked this movie"
+        }
+    },
+    "inline_videos": [
+        {
+            "position": 1,
+            "title": "F1® The Movie | Official Trailer",
+            "link": "https://www.youtube.com/watch?v=CT2_P2DZBR0",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv5kN2zzhhffBg80ycAjV0dyDRp46TdcuAPoq6SoFMv-w1G6_qZFDXYxGHyOIZ&s&ec=73015329",
+            "channel": "Warner Bros.",
+            "duration": "2:31",
+            "platform": "YouTube"
+        },
+        {
+            "position": 2,
+            "title": "F1® The Movie | \"Heart\" BTS | In Theaters June 27",
+            "link": "https://www.youtube.com/watch?v=bQWkae5VdgM",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScktTuUky9tRFa3mva7quudS68LRSDHgPBUlnNZYLP6XTEfyXnCCHMnwhuufPC&s&ec=73015329",
+            "channel": "Warner Bros.",
+            "duration": "1:04",
+            "platform": "YouTube"
+        },
+        {
+            "position": 3,
+            "title": "F1®️ THE MOVIE | In Cinemas Now #Shorts",
+            "link": "https://www.youtube.com/watch?v=gRoaPutTw9k",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5KfV68wL94DEJhNepcRTaEZuypGk4SJtpjchTaJ76qrdM-TEMsvLatUMyxy7Y&s&ec=73015329",
+            "channel": "Warner Bros. India",
+            "duration": "0:15",
+            "platform": "YouTube"
+        }
+    ],
+    "related_questions": [
+        {
+            "question": "Should I watch F1 in IMAX or Dolby?",
+            "snippet": null,
+            "title": "AI Overview",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=4DX&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QxccNegUI9QEQAg",
+            "list": [
+                "Pros: Larger screen, powerful sound system, expanded aspect ratio (revealing more of the image), often steeper seating for better views.  ",
+                "Cons: IMAX seats can be similar to regular cinema seats.  ",
+                "Why it's good for F1: The larger screen and powerful sound can make the racing sequences feel incredibly immersive and exciting.  ",
+                "Pros: Enhanced visual depth and clarity, potentially more comfortable seating (depending on the theater), Dolby Atmos sound.  ",
+                "Cons: Screen size may be smaller than IMAX.  ",
+                "Why it's good for F1: The visual and audio quality can create a vibrant and realistic racing experience.  ",
+                "Pros: Moving seats, wind effects, vibrations, and other environmental effects that simulate the feeling of being in a racing car. ",
+                "Cons: May not be suitable for those sensitive to motion or those who prefer a more traditional movie experience. ",
+                "Why it's good for F1: The immersive effects can be very exciting and make you feel like you're actually on the track.  "
+            ],
+            "displayed_link": null,
+            "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJTaG91bGQgSSB3YXRjaCBGMSBpbiBJTUFYIG9yIERvbGJ5PyIsImxrIjoiR2lKemFHOTFiR1FnYVNCM1lYUmphQ0JtTVNCcGJpQnBiV0Y0SUc5eUlHUnZiR0o1IiwiYnMiOiJjM1hQdXdyQ01CVEdjYnBtY2hGS3ZCMnRQa0FLNGlCWWhGSW9xSXREWGRNMk5ZRW1nVjZzdm9DUDVaTUl2b3FObDdIei1mSG5PLWlBbkNQWGRaNUNDQTJ0RWc0QkFhRWczRzlQb0F2d2RSN2ZQUHUxZE9kNFZuNmwtTW5zSTRXa1Z5TlRJOUVHRFNKT0t4QWxWSnpCYXJtQW9zNlpnUUh4N0x2bERqRnVPa1JHa0lfR0ViLVpvNnBsekFvZ0s0aXBVaXo5SjU1OWQ0SkhUVGRxS3pzMEM3XzU5aHVwTDRKQm9xVlFaNmcwSkVJeFNVdlBmcXhkQjA5X083Sk8yTFBlIiwiaWQiOiJmY19JcDF0YUpXbkJ1V2Y1Tm9Qclo2bzZRa18yIn0=",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJTaG91bGQgSSB3YXRjaCBGMSBpbiBJTUFYIG9yIERvbGJ5PyIsImxrIjoiR2lKemFHOTFiR1FnYVNCM1lYUmphQ0JtTVNCcGJpQnBiV0Y0SUc5eUlHUnZiR0o1IiwiYnMiOiJjM1hQdXdyQ01CVEdjYnBtY2hGS3ZCMnRQa0FLNGlCWWhGSW9xSXREWGRNMk5ZRW1nVjZzdm9DUDVaTUl2b3FObDdIei1mSG5PLWlBbkNQWGRaNUNDQTJ0RWc0QkFhRWczRzlQb0F2d2RSN2ZQUHUxZE9kNFZuNmwtTW5zSTRXa1Z5TlRJOUVHRFNKT0t4QWxWSnpCYXJtQW9zNlpnUUh4N0x2bERqRnVPa1JHa0lfR0ViLVpvNnBsekFvZ0s0aXBVaXo5SjU1OWQ0SkhUVGRxS3pzMEM3XzU5aHVwTDRKQm9xVlFaNmcwSkVJeFNVdlBmcXhkQjA5X083Sk8yTFBlIiwiaWQiOiJmY19JcDF0YUpXbkJ1V2Y1Tm9Qclo2bzZRa18yIn0%3D"
+        },
+        {
+            "question": "What is the 75% rule in F1?",
+            "snippet": "If more than 75% of the scheduled race distance is completed, full points will be awarded. However, these rules do not apply and full points will be awarded when a race is suspended and then resumed, even if the whole race distance cannot be completed in the 3 hour race window.",
+            "title": "Formula One regulations - Wikipedia",
+            "link": "https://en.wikipedia.org/wiki/Formula_One_regulations#:~:text=If%20more%20than%2075%25%20of,the%203%20hour%20race%20window.",
+            "displayed_link": "https://en.wikipedia.org › wiki › Formula_One_regulations",
+            "source_logo": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/a5a2363a90d838662c215ce31e8d3abd2c8c36473c82df033b201f4e6c0aa6d2.png",
+            "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSA3NSUgcnVsZSBpbiBGMT8iLCJsayI6IkdocDNhR0YwSUdseklIUm9aU0EzTlNVZ2NuVnNaU0JwYmlCbU1RIiwiYnMiOiJjM1hQdXdyQ01CVEdjYnBtY2hGS3ZCMnRQa0FLNGlCWWhGSW9xSXREWGRNMk5ZRW1nVjZzdm9DUDVaTUl2b3FObDdIei1mSG5PLWlBbkNQWGRaNUNDQTJ0RWc0QkFhRWczRzlQb0F2d2RSN2ZQUHUxZE9kNFZuNmwtTW5zSTRXa1Z5TlRJOUVHRFNKT0t4QWxWSnpCYXJtQW9zNlpnUUh4N0x2bERqRnVPa1JHa0lfR0ViLVpvNnBsekFvZ0s0aXBVaXo5SjU1OWQ0SkhUVGRxS3pzMEM3XzU5aHVwTDRKQm9xVlFaNmcwSkVJeFNVdlBmcXhkQjA5X083Sk8yTFBlIiwiaWQiOiJmY19JcDF0YUpXbkJ1V2Y1Tm9Qclo2bzZRa18yIn0=",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSA3NSUgcnVsZSBpbiBGMT8iLCJsayI6IkdocDNhR0YwSUdseklIUm9aU0EzTlNVZ2NuVnNaU0JwYmlCbU1RIiwiYnMiOiJjM1hQdXdyQ01CVEdjYnBtY2hGS3ZCMnRQa0FLNGlCWWhGSW9xSXREWGRNMk5ZRW1nVjZzdm9DUDVaTUl2b3FObDdIei1mSG5PLWlBbkNQWGRaNUNDQTJ0RWc0QkFhRWczRzlQb0F2d2RSN2ZQUHUxZE9kNFZuNmwtTW5zSTRXa1Z5TlRJOUVHRFNKT0t4QWxWSnpCYXJtQW9zNlpnUUh4N0x2bERqRnVPa1JHa0lfR0ViLVpvNnBsekFvZ0s0aXBVaXo5SjU1OWQ0SkhUVGRxS3pzMEM3XzU5aHVwTDRKQm9xVlFaNmcwSkVJeFNVdlBmcXhkQjA5X083Sk8yTFBlIiwiaWQiOiJmY19JcDF0YUpXbkJ1V2Y1Tm9Qclo2bzZRa18yIn0%3D"
+        },
+        {
+            "question": "Why is number 17 banned in F1?",
+            "snippet": null,
+            "title": "AI Overview",
+            "link": "https://support.google.com/websearch?p=ai_overviews&hl=en",
+            "list": [
+                "The Incident: In the 2014 Japanese Grand Prix, Jules Bianchi suffered a severe head injury during a collision with a recovery vehicle. ",
+                "The Aftermath: Bianchi fought for his life for nine months before succumbing to his injuries in 2015. ",
+                "The Tribute: In response to this tragedy, the FIA retired number 17 as a permanent tribute to Bianchi's memory. ",
+                "Permanent Retirement: This means that no Formula 1 driver will ever be allowed to use the number 17 again.  "
+            ],
+            "displayed_link": null,
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWOjFlFKaIpBzsOzdgIeDdRkbOiUL_kI3gBURGo9qALgahrsbTgklzmX_d&s",
+            "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJXaHkgaXMgbnVtYmVyIDE3IGJhbm5lZCBpbiBGMT8iLCJsayI6IkdoMTNhSGtnYVhNZ2JuVnRZbVZ5SURFM0lHSmhibTVsWkNCcGJpQm1NUSIsImJzIjoiYzNYUHV3ckNNQlRHY2JwbWNoRkt2QjJ0UGtBSzRpQlloRklvcUl0RFhkTTJOWUVtZ1Y2c3ZvQ1A1Wk1Jdm9xTmw3SHotZkhuTy1pQW5DUFhkWjVDQ0EydEVnNEJBYUVnM0c5UG9BdndkUjdmUFB1MWRPZDRWbjZsLU1uc0k0V2tWeU5USTlFR0RTSk9LeEFsVkp6QmFybUFvczZaZ1FIeDdMdmxEakZ1T2tSR2tJX0dFYi1abzZwbHpBb2dLNGlwVWl6OUo1NTlkNEpIVFRkcUt6czBDN181OWh1cEw0SkJvcVZRWjZnMEpFSXhTVXZQZnF4ZEIwOV9PN0pPMkxQZSIsImlkIjoiZmNfSXAxdGFKV25CdVdmNU5vUHJaNm82UWtfMiJ9",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJXaHkgaXMgbnVtYmVyIDE3IGJhbm5lZCBpbiBGMT8iLCJsayI6IkdoMTNhSGtnYVhNZ2JuVnRZbVZ5SURFM0lHSmhibTVsWkNCcGJpQm1NUSIsImJzIjoiYzNYUHV3ckNNQlRHY2JwbWNoRkt2QjJ0UGtBSzRpQlloRklvcUl0RFhkTTJOWUVtZ1Y2c3ZvQ1A1Wk1Jdm9xTmw3SHotZkhuTy1pQW5DUFhkWjVDQ0EydEVnNEJBYUVnM0c5UG9BdndkUjdmUFB1MWRPZDRWbjZsLU1uc0k0V2tWeU5USTlFR0RTSk9LeEFsVkp6QmFybUFvczZaZ1FIeDdMdmxEakZ1T2tSR2tJX0dFYi1abzZwbHpBb2dLNGlwVWl6OUo1NTlkNEpIVFRkcUt6czBDN181OWh1cEw0SkJvcVZRWjZnMEpFSXhTVXZQZnF4ZEIwOV9PN0pPMkxQZSIsImlkIjoiZmNfSXAxdGFKV25CdVdmNU5vUHJaNm82UWtfMiJ9"
+        },
+        {
+            "question": "Is the F1 movie coming to cinemas?",
+            "snippet": null,
+            "title": "AI Overview",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Brad+Pitt&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QxccNegUIlwIQAQ",
+            "displayed_link": null,
+            "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJJcyB0aGUgRjEgbW92aWUgY29taW5nIHRvIGNpbmVtYXM/IiwibGsiOiJHaUZwY3lCMGFHVWdaakVnYlc5MmFXVWdZMjl0YVc1bklIUnZJR05wYm1WdFlYTSIsImJzIjoiYzNYUHV3ckNNQlRHY2JwbWNoRkt2QjJ0UGtBSzRpQlloRklvcUl0RFhkTTJOWUVtZ1Y2c3ZvQ1A1Wk1Jdm9xTmw3SHotZkhuTy1pQW5DUFhkWjVDQ0EydEVnNEJBYUVnM0c5UG9BdndkUjdmUFB1MWRPZDRWbjZsLU1uc0k0V2tWeU5USTlFR0RTSk9LeEFsVkp6QmFybUFvczZaZ1FIeDdMdmxEakZ1T2tSR2tJX0dFYi1abzZwbHpBb2dLNGlwVWl6OUo1NTlkNEpIVFRkcUt6czBDN181OWh1cEw0SkJvcVZRWjZnMEpFSXhTVXZQZnF4ZEIwOV9PN0pPMkxQZSIsImlkIjoiZmNfSXAxdGFKV25CdVdmNU5vUHJaNm82UWtfMiJ9",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJUR3QwWDNaRmRIVnRTekZWTW5aNlExVTBWV0l4ZVdoWE4yOHdVelJQZG5wSE9GbFNRVzh4TjA1UldrVkhlamhRTmtsRGJXdE9OSEJRYms0eVltMDRjM295ZVdGV1ltaEJNSEJ2Y0hGVlNIbzRWVVZaZEhCWFJEQkRhR0UzUVdOclVSSVhTWEF4ZEdGS1YyNUNkVmRtTlU1dlVISmFObTgyVVdzYUlrRkdUVUZIUjNKWlEyRmhTeTFKZEZWb1JXSm5NblJLYjI5algwbFdhbkF6UTJjIiwiZmN2IjoiMyIsImVpIjoiSXAxdGFKV25CdVdmNU5vUHJaNm82UWsiLCJxYyI6IkNncG1NU0IwYUdWaGRHVnlFQUI5dkJrc1B3IiwicXVlc3Rpb24iOiJJcyB0aGUgRjEgbW92aWUgY29taW5nIHRvIGNpbmVtYXM%2FIiwibGsiOiJHaUZwY3lCMGFHVWdaakVnYlc5MmFXVWdZMjl0YVc1bklIUnZJR05wYm1WdFlYTSIsImJzIjoiYzNYUHV3ckNNQlRHY2JwbWNoRkt2QjJ0UGtBSzRpQlloRklvcUl0RFhkTTJOWUVtZ1Y2c3ZvQ1A1Wk1Jdm9xTmw3SHotZkhuTy1pQW5DUFhkWjVDQ0EydEVnNEJBYUVnM0c5UG9BdndkUjdmUFB1MWRPZDRWbjZsLU1uc0k0V2tWeU5USTlFR0RTSk9LeEFsVkp6QmFybUFvczZaZ1FIeDdMdmxEakZ1T2tSR2tJX0dFYi1abzZwbHpBb2dLNGlwVWl6OUo1NTlkNEpIVFRkcUt6czBDN181OWh1cEw0SkJvcVZRWjZnMEpFSXhTVXZQZnF4ZEIwOV9PN0pPMkxQZSIsImlkIjoiZmNfSXAxdGFKV25CdVdmNU5vUHJaNm82UWtfMiJ9"
+        }
+    ],
+    "organic_results": [
+        {
+            "position": 1,
+            "title": "F1 The Movie",
+            "link": "https://www.amctheatres.com/movies/f1-the-movie-77378",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.amctheatres.com/movies/f1-the-movie-77378&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoECDQQAQ",
+            "displayed_link": "https://www.amctheatres.com › movies › f1-the-movie-...",
+            "thumbnail": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc785a40652aa0a0854a46050254e9e206f.jpeg",
+            "favicon": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc7eef818c31f1ee4815cc63a04d72a3ee1.png",
+            "snippet": "Start your summer on the right track when you see F1® THE MOVIE on the big screen. Get tickets to the action-packed racing film from 7/4-7/31 to receive 2X AMC ...",
+            "snippet_highlighted_words": [
+                "Get tickets to the action-packed racing film from 7/4-7/31"
+            ],
+            "source": "AMC"
+        },
+        {
+            "position": 2,
+            "title": "Majestic Bay Theatres: Home",
+            "link": "https://www.majesticbay.com/",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.majesticbay.com/&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoFCJcBEAE",
+            "displayed_link": "https://www.majesticbay.com",
+            "snippet": "Browse the latest showtimes & movies now playing at Majestic Bay Theatres and reserve your tickets online in advance today ... F1 The Movie. PG-13. •. 2 hr 35 min.",
+            "snippet_highlighted_words": [
+                "F1 The Movie"
+            ],
+            "source": "Majestic Bay Theatres"
+        },
+        {
+            "position": 3,
+            "title": "F1 The Movie (2025) Tickets & Showtimes",
+            "link": "https://www.fandango.com/f1-the-movie-2025-236966/movie-overview",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.fandango.com/f1-the-movie-2025-236966/movie-overview&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoFCKYBEAE",
+            "displayed_link": "https://www.fandango.com › movie-overview",
+            "favicon": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc72bdfa417a3fbb7680d5e1a8241182e18.png",
+            "snippet": "Buy F1 The Movie (2025) tickets and view showtimes at a theater near you. Earn double rewards when you purchase a ticket with Fandango today.",
+            "snippet_highlighted_words": [
+                "F1 The Movie (2025) tickets"
+            ],
+            "rich_snippet": {
+                "top": {
+                    "detected_extensions": {
+                        "rating": 97,
+                        "reviews": 11966
+                    },
+                    "extensions": [
+                        "97%(11,966)"
+                    ]
+                }
+            },
+            "source": "Fandango"
+        },
+        {
+            "position": 4,
+            "title": "All the information on Apple Original Films' 'F1' movie",
+            "link": "https://www.formula1.com/en/page/apple-original-films-f1-movie",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.formula1.com/en/page/apple-original-films-f1-movie&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoFCJkBEAE",
+            "displayed_link": "https://www.formula1.com › page › apple-original-film...",
+            "favicon": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc7f80dfb5aaf91b764af78cbf9ca0a8faa.png",
+            "snippet": "Formula 1 and Apple Original Films' highly anticipated movie F1 is distributed in theatres and in IMAX by Warner Bros. Pictures internationally on June 25, ...",
+            "snippet_highlighted_words": [
+                "Formula 1 and Apple Original Films' highly anticipated movie F1"
+            ],
+            "sitelinks": {
+                "inline": [
+                    {
+                        "title": "Release date confirmed for...",
+                        "link": "https://www.formula1.com/en/latest/article/release-date-confirmed-for-apple-original-films-formula-1-movie.18IMLaYq0UFsKfEELXjO2w"
+                    },
+                    {
+                        "title": "Tickets on sale for fan-first...",
+                        "link": "https://www.formula1.com/en/latest/article/tickets-on-sale-for-fan-first-premiere-screenings-of-apple-original-films-f1-movie.6y4M02JKdowXWLDmlJfjdx"
+                    },
+                    {
+                        "title": "Formula 1",
+                        "link": "https://www.formula1.com/en/latest/article/watch-check-out-the-drivers-reactions-to-the-new-trailer-for-the-upcoming-f1.7H3oIdLLvZMM1TH2hwWSF7"
+                    },
+                    {
+                        "title": "MUST-SEE",
+                        "link": "https://www.formula1.com/en/latest/article/must-see-get-an-enticing-behind-the-scenes-look-at-apple-original-films.7HrfCmcBfGIefs2tDrc2at"
+                    }
+                ]
+            },
+            "source": "Formula 1"
+        },
+        {
+            "position": 5,
+            "title": "IMAX Theaters",
+            "link": "https://pacificsciencecenter.org/visit/imax/",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://pacificsciencecenter.org/visit/imax/&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoFCJYBEAE",
+            "displayed_link": "https://pacificsciencecenter.org › visit › imax",
+            "favicon": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc74b7bfc754925ed21c715242c8d352df3.png",
+            "snippet": "Playing This Week. F1: The Movie. Brad Pitt on the poster for F1. Buy Tickets. Superman. David Corenswet in Superman. Buy Tickets Buy 3D Tickets. tickets on ...",
+            "snippet_highlighted_words": [
+                "F1: The Movie"
+            ],
+            "source": "Pacific Science Center"
+        },
+        {
+            "position": 6,
+            "title": "F1 movie Showtimes & Tickets Near You",
+            "link": "https://www.cinemark.com/movies/f1",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.cinemark.com/movies/f1&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoFCJ4BEAE",
+            "displayed_link": "https://www.cinemark.com › movies › f1",
+            "favicon": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc7c502374552abd3745f9a04a309f068f5.png",
+            "snippet": "Showtimes & movie tickets online for Brad Pitt's new F1 movie at Cinemark near you. Reserve recliner seats, pre-order food & drinks online, and more.​",
+            "snippet_highlighted_words": [
+                "F1"
+            ],
+            "source": "Cinemark"
+        },
+        {
+            "position": 7,
+            "title": "F1® The Movie (2025) Movie Tickets & Showtimes Near You",
+            "link": "https://www.imax.com/movie/f1",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.imax.com/movie/f1&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoFCJgBEAE",
+            "displayed_link": "https://www.imax.com › movie › f1",
+            "favicon": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc7e5452a04913e6d93bf5d1b3708f924d4.png",
+            "snippet": "Get behind the wheel and strap in for an adrenaline rush that was Filmed For IMAX®. Learn More. F1: The Movie - Filmed For IMAX - Experience It In IMAX.",
+            "snippet_highlighted_words": [
+                "F1: The Movie - Filmed For IMAX"
+            ],
+            "source": "IMAX"
+        },
+        {
+            "position": 8,
+            "title": "F1® The Movie | Official Movie Site",
+            "link": "https://www.f1themovie.com/",
+            "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.f1themovie.com/&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0QFnoFCKgBEAE",
+            "displayed_link": "https://www.f1themovie.com",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvdAMgm9g7Y_xWccMXEaV52Z_7If1twLREchdyY_AO3a6QvoNCLQT7&usqp=CAE&s",
+            "favicon": "https://serpapi.com/searches/686d9d1ff0114a918af33f06/images/638f7aeb82ac95365c763a762a306dc7c4d19938c234092dd5a258bf6424d1ed.jpeg",
+            "snippet": "Pictures, in theaters and IMAX nationwide on June 27, 2025 and internationally beginning 25 June 2025. “Grab your crew” and experience the exhilaration on the ...",
+            "snippet_highlighted_words": [
+                "in theaters and IMAX nationwide on June 27, 2025"
+            ],
+            "source": "f1themovie.com"
+        }
+    ],
+    "perspectives": [
+        {
+            "author": "TheCineprism",
+            "author_description": "Film enthusiast",
+            "source": "X (Twitter)",
+            "extensions": [
+                "11.6K+ likes"
+            ],
+            "thumbnails": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4tjpmxYhXZtvCEMFZIlUTuauW05hhJfRIdGL6w2TYvdWfoFLPNSDHL99rW6g_0WCNe6jJ8RU&s=10"
+            ],
+            "snippet": "F1 (2025) in an IMAX theater🔥🥹",
+            "link": "https://x.com/TheCineprism/status/1941556501925257639?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "3 days ago"
+        },
+        {
+            "author": "BrandonDavisBD",
+            "source": "X (Twitter)",
+            "extensions": [
+                "990+ likes"
+            ],
+            "thumbnails": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75d6DGbSCAJBFZrfFoKZHLq4MUgdYamewNBBVm6-JFsGz_QJhlbzNgfVLNM98_aiJUTEcAEM&s=10"
+            ],
+            "snippet": "Just watched #F1 in a packed IMAX theater. What an epic experience. Hans Zimmer's score and the music overall were awesome. The cinematography kicks ass. The constant commentary was a bit much but that movie ruled. An excellent reminder of why we love theaters. Loved it.",
+            "link": "https://x.com/BrandonDavisBD/status/1940614111718789492?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "5 days ago"
+        },
+        {
+            "author": "STaranto92",
+            "source": "X (Twitter)",
+            "extensions": [
+                "10+ likes"
+            ],
+            "snippet": "At the movie theater to see Days of F1: The Movie If something happens in the next three hours, no it didn't.",
+            "link": "https://x.com/STaranto92/status/1942361685152653361?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "23 hours ago"
+        },
+        {
+            "author": "r/Visakhapatnam",
+            "source": "Reddit",
+            "extensions": [
+                "30+ comments "
+            ],
+            "thumbnails": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGtIA15V1pRYqS-SWCZe2E5VeNSwDR-EzH3jN_64rmzwH9JQkiV1BS7gU&usqp=CAI&s"
+            ],
+            "title": "Best theater to watch F1 (Formula 1) 2025 movie?",
+            "link": "https://www.reddit.com/r/Visakhapatnam/comments/1lmg5r7/best_theater_to_watch_f1_formula_1_2025_movie/",
+            "date": "1 week ago"
+        },
+        {
+            "author": "The Flick Pick",
+            "author_description": "Film reviewer & critic",
+            "source": "YouTube",
+            "extensions": [
+                "11.1K+ views "
+            ],
+            "thumbnails": [
+                "https://img.youtube.com/vi/2Bq2O-OVcYE/hqdefault.jpg"
+            ],
+            "title": "Just Watched F1 (2025) - Out Of The Theater Reaction!",
+            "link": "https://www.youtube.com/watch?v=2Bq2O-OVcYE",
+            "date": "1 week ago",
+            "video": "https://encrypted-vtbn0.gstatic.com/video?q=tbn:ANd9GcTKOZhpzi8Tx3MTaNZpYKmZvYGMLQAEy2YI8A"
+        },
+        {
+            "author": "_NickWhalen",
+            "author_description": "Sports podcast host",
+            "source": "X (Twitter)",
+            "extensions": [
+                "10+ likes"
+            ],
+            "thumbnails": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGn4wvgwWj3ienwPDhTY8R3hVUBwqPxy_hmTeJ0AB9O8nkDw89_nYrI7DLFTD7enDssIogInty&s=10"
+            ],
+            "snippet": "Highly recommend going to watch F1 in theaters. Thought it was a great movie.",
+            "link": "https://x.com/_NickWhalen/status/1941160610294833176?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "4 days ago"
+        },
+        {
+            "author": "EddieAlfano",
+            "source": "X (Twitter)",
+            "extensions": [
+                "7+ likes"
+            ],
+            "snippet": "Definitely go see \"F1\" on a big screen in a theater and all that, but can we please stop with the 60-year-old guy that's \"still got it\" and is leaving a trail of broken-hearted women in his wake?",
+            "link": "https://x.com/EddieAlfano/status/1941896204335682005?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "2 days ago"
+        },
+        {
+            "author": "BW",
+            "author_description": "Monthly business magazine",
+            "source": "X (Twitter)",
+            "extensions": [
+                "10+ likes"
+            ],
+            "snippet": "Apple, dipping its toe back into big-theater releases, really wants you to see F1 www.bloomberg.com/news/…",
+            "link": "https://x.com/BW/status/1941452084034851261?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "3 days ago"
+        },
+        {
+            "author": "Kristian Harloff",
+            "author_description": "Collider Video VP & movie reviews host",
+            "source": "YouTube",
+            "extensions": [
+                "33.1K+ views "
+            ],
+            "thumbnails": [
+                "https://img.youtube.com/vi/dbsluJ_1mcM/hqdefault.jpg"
+            ],
+            "title": "F1 Out Of The Theater Reaction!",
+            "link": "https://www.youtube.com/watch?v=dbsluJ_1mcM",
+            "date": "2 weeks ago",
+            "video": "https://encrypted-vtbn0.gstatic.com/video?q=tbn:ANd9GcRrlVu8LtS_Rq5FB8w67zTi8aBtjE0YcriJHg"
+        },
+        {
+            "author": "IMSA",
+            "author_description": "American sports car racing sanctioning body",
+            "source": "X (Twitter)",
+            "extensions": [
+                "210+ likes"
+            ],
+            "snippet": "📺: IMSA and Daytona International Speedway kick off the opening sequence in the new F1 movie with Brad Pitt. Here, Joseph Kosinski walks through IMSA and endurance racings role in the film with behind the scenes clips. F1 NOW SHOWING in theaters! www.youtube.com/watch?v…",
+            "link": "https://x.com/IMSA/status/1939678380678373865?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "1 week ago"
+        },
+        {
+            "author": "StephenSeanFord",
+            "author_description": "American actor & internet producer",
+            "source": "X (Twitter)",
+            "extensions": [
+                "8.4K+ likes"
+            ],
+            "thumbnails": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcVfTSsqAzsINLauQFgGt4teIN_6n4SjXWGOtfNqXcBdZB1epbqaQhi5gQfcR0FngQNPdMCTw&s=10"
+            ],
+            "snippet": "when that hans zimmer F1 theme hit in the theater",
+            "link": "https://x.com/StephenSeanFord/status/1939054300417999142?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "1 week ago"
+        },
+        {
+            "author": "Jon_Finkel",
+            "author_description": "Wrestling author",
+            "source": "X (Twitter)",
+            "extensions": [
+                "6+ likes"
+            ],
+            "thumbnails": [
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYikgmtTPOvnNKq6k943_vKh5Ceqq3sc_1INzhPdQgQ2RAZuo2Ttu6uA36lKwl7PU3U98_iaW&s=10"
+            ],
+            "snippet": "yo, go see F1 in the theater biggest screen you can find great time at the movies",
+            "link": "https://x.com/Jon_Finkel/status/1939450533435076687?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet",
+            "date": "1 week ago"
+        }
+    ],
+    "related_searches": [
+        {
+            "block_position": 1,
+            "items": [
+                {
+                    "name": "Regal Thornton Place",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTYMN19CSFi-qkRIkE2X_6Tb2KZaIp10xP767WHDCI-K4lrDyaAvis&s=0",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Regal+Thornton+Place&stick=H4sIAAAAAAAAAOMwVOLWT9c3LEkzzU7KzfvFyLCBheEVCy8XsiicX2ZkmVSYk4wkb5lbGW_4ioWbi1M_V98gqTIlq_wVCx8XD0jWsMLSIqM42QIubVFuYVmI0JxhmmyRkfWKhYeLCyRrnGFiVALk8nPxgnUnmZVZVOSmVCEU5OVWGmYtYhUJSk1PzFEIycgvyivJz1MIyElMTr3FJsmwe1HHTxbX_YYbLY03bhJ7vJ39l_vf2rQZKxdxiAWk5hfkpCok5hTnKxSnJhYlZyik5Ret4GAEAEk6FPcBAQAA&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Qs9oBKAB6BQiyARAK",
+                    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Regal+Thornton+Place&stick=H4sIAAAAAAAAAOMwVOLWT9c3LEkzzU7KzfvFyLCBheEVCy8XsiicX2ZkmVSYk4wkb5lbGW_4ioWbi1M_V98gqTIlq_wVCx8XD0jWsMLSIqM42QIubVFuYVmI0JxhmmyRkfWKhYeLCyRrnGFiVALk8nPxgnUnmZVZVOSmVCEU5OVWGmYtYhUJSk1PzFEIycgvyivJz1MIyElMTr3FJsmwe1HHTxbX_YYbLY03bhJ7vJ39l_vf2rQZKxdxiAWk5hfkpCok5hTnKxSnJhYlZyik5Ret4GAEAEk6FPcBAQAA"
+                },
+                {
+                    "name": "AMC Oak Tree 6",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRclVa0Oo4IU4QIA72WujDq8D1yP_jH7ASz-olnsPF-SdpWdbpfX3GA&s=0",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=AMC+Oak+Tree+6&stick=H4sIAAAAAAAAAOMwVOLWT9c3LDOyTCrMSf7FyLCBheEVCy8XWLQkzTQ7KTcPzoeqQpK3zK2MN3zFws3FqZ-rb5BUmZJV_oqFj4sHJGtYYWmRUZxsAZe2KLewLERozjBNtsjIesXCw8UFkjXOMDEqAXL5uXjBupPMyiwqclOqEArycisNsxax8jn6Oiv4J2YrhBSlpiqY3WKTZNi9qOMni-t-w42Wxhs3iT3ezv7L_W9t2oyVizjEAlLzC3JSFRJzivMVilMTi5IzFNLyi1ZwMAIADwn14_sAAAA&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Qs9oBKAB6BQiyARAP",
+                    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=AMC+Oak+Tree+6&stick=H4sIAAAAAAAAAOMwVOLWT9c3LDOyTCrMSf7FyLCBheEVCy8XWLQkzTQ7KTcPzoeqQpK3zK2MN3zFws3FqZ-rb5BUmZJV_oqFj4sHJGtYYWmRUZxsAZe2KLewLERozjBNtsjIesXCw8UFkjXOMDEqAXL5uXjBupPMyiwqclOqEArycisNsxax8jn6Oiv4J2YrhBSlpiqY3WKTZNi9qOMni-t-w42Wxhs3iT3ezv7L_W9t2oyVizjEAlLzC3JSFRJzivMVilMTi5IzFNLyi1ZwMAIADwn14_sAAAA"
+                },
+                {
+                    "name": "SIFF Cinema Uptown",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS273abBtKFbnvnxxdHmmNoDslygHEOOfge-YjQIcyYgnPHn4enCi4a&s=0",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=SIFF+Cinema+Uptown&stick=H4sIAAAAAAAAAOMwVOLWT9c3LEmzzK2MN_zFyLCBheEVCy8XVNQ0Oyk3D84vM7JMKsxJRpIH63rFws3FqZ-rb5BUmZJV_oqFj4sHJGtYYWmRUZxsAZe2KLewLERozjBNtsjIesXCw8UFkjXOMDEqAXL5uXjBupPMyiwqclOqEArycisNsxaxCgV7urkpOGfmpeYmKoQWlOSX591ik2TYvajjJ4vrfsONlsYbN4k93s7-y_1vbdqMlYs4xAJS8wtyUhUSc4rzFYpTE4uSMxTS8otWcDACAKdvz5L_AAAA&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Qs9oBKAB6BQiyARAU",
+                    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=SIFF+Cinema+Uptown&stick=H4sIAAAAAAAAAOMwVOLWT9c3LEmzzK2MN_zFyLCBheEVCy8XVNQ0Oyk3D84vM7JMKsxJRpIH63rFws3FqZ-rb5BUmZJV_oqFj4sHJGtYYWmRUZxsAZe2KLewLERozjBNtsjIesXCw8UFkjXOMDEqAXL5uXjBupPMyiwqclOqEArycisNsxaxCgV7urkpOGfmpeYmKoQWlOSX591ik2TYvajjJ4vrfsONlsYbN4k93s7-y_1vbdqMlYs4xAJS8wtyUhUSc4rzFYpTE4uSMxTS8otWcDACAKdvz5L_AAAA"
+                },
+                {
+                    "name": "SIFF Cinema Downtown",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9akiJPaxp51-LO3qzD3xBm1Sr5hdvzHRyGoKiFKfNa7TQ5nWf-qq6&s=0",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=SIFF+Cinema+Downtown&stick=H4sIAAAAAAAAAOMwVOLUz9U3SKpMySr_xciwgYXhFQsvF7d-ur5hSZppdlJuHpxfZmSZVJiTjCRvmVsZb_iKhZsLYcYrFj4uHpCsYYWlRUZxsgVc2qLcwrIQoTnDNNkiI-sVCw8XF0jWOMPEqATI5efiBetOMiuzqMhNqUIoyMutNMxaxCoS7OnmpuCcmZeam6jgkl-eVwLEt9gkGXYv6vjJ4rrfcKOl8cZNYo-3s_9y_1ubNmPlIg6xgNT8gpxUhcSc4nyF4tTEouQMhbT8ohUcjAC338Se_wAAAA&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Qs9oBKAB6BQiyARAZ",
+                    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=SIFF+Cinema+Downtown&stick=H4sIAAAAAAAAAOMwVOLUz9U3SKpMySr_xciwgYXhFQsvF7d-ur5hSZppdlJuHpxfZmSZVJiTjCRvmVsZb_iKhZsLYcYrFj4uHpCsYYWlRUZxsgVc2qLcwrIQoTnDNNkiI-sVCw8XF0jWOMPEqATI5efiBetOMiuzqMhNqUIoyMutNMxaxCoS7OnmpuCcmZeam6jgkl-eVwLEt9gkGXYv6vjJ4rrfcKOl8cZNYo-3s_9y_1ubNmPlIg6xgNT8gpxUhcSc4nyF4tTEouQMhbT8ohUcjAC338Se_wAAAA"
+                },
+                {
+                    "name": "Boeing and PACCAR IMAX Theat...",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsXAKiWoRdV6QugyYi2HbgvaQe00yHvhVwHelEAlYxQsEwExejHOk&s=0",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Pacific+Science+Center+IMAX&stick=H4sIAAAAAAAAAOMwVOLRT9c3NKywtMgoTrb4xciwgYXhFQsvFzdIuCTNNDspNw_OLzOyTCrMSUaSt8ytjDd8xcLNxamfq2-QVJmSVf6KhY8LxVC4tEW5hWUhQnOGabJFRtYrFh4uLpCscYaJUQmQy8_FC9adZFZmUZGbUoVQkJdbaZi1iFU6IDE5My0zWSE4OTM1LzlVwTk1ryS1SMHT1zHiFpskw-5FHT9ZXPcbbrQ03rhJ7PF29l_uf2vTZqxcxCEWkJpfkJOqkJhTnK9QnJpYlJyhkJZftIKDEQBEN0d-CQEAAA&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Qs9oBKAB6BQiyARAe",
+                    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Pacific+Science+Center+IMAX&stick=H4sIAAAAAAAAAOMwVOLRT9c3NKywtMgoTrb4xciwgYXhFQsvFzdIuCTNNDspNw_OLzOyTCrMSUaSt8ytjDd8xcLNxamfq2-QVJmSVf6KhY8LxVC4tEW5hWUhQnOGabJFRtYrFh4uLpCscYaJUQmQy8_FC9adZFZmUZGbUoVQkJdbaZi1iFU6IDE5My0zWSE4OTM1LzlVwTk1ryS1SMHT1zHiFpskw-5FHT9ZXPcbbrQ03rhJ7PF29l_uf2vTZqxcxCEWkJpfkJOqkJhTnK9QnJpYlJyhkJZftIKDEQBEN0d-CQEAAA"
+                },
+                {
+                    "name": "Majestic Bay Theatres",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ89kWoc8dPJr_R7-0h14MJTXlwZrY5_PdsLtD151Il4qGJEX9xGgdyw&s=0",
+                    "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Majestic+Bay+Theatres&stick=H4sIAAAAAAAAAOMwVOLUz9U3sCi3sCz8xciwgYXhFQsvF7d-ur5hSZppdlJuHpxfZmSZVJiTjCRvmVsZb_iKhZsLbEZSZUpW-SsWPi4ekKxhhaVFRnGyBVwabAVCc4ZpskVG1isWHi4ukKxxholRCZDLz8UL1p1kVmZRkZtShVCQl1tpmLWIVdQ3MSu1uCQzWcEpsVIhJCM1saQotfgWmyTD7kUdP1lc9xtutDTeuEns8Xb2X-5_a9NmrFzEIRaQml-Qk6qQmFOcr1CcmliUnKGQll-0goMRAOPQEP4AAQAA&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Qs9oBKAB6BQiyARAj",
+                    "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Majestic+Bay+Theatres&stick=H4sIAAAAAAAAAOMwVOLUz9U3sCi3sCz8xciwgYXhFQsvF7d-ur5hSZppdlJuHpxfZmSZVJiTjCRvmVsZb_iKhZsLbEZSZUpW-SsWPi4ekKxhhaVFRnGyBVwabAVCc4ZpskVG1isWHi4ukKxxholRCZDLz8UL1p1kVmZRkZtShVCQl1tpmLWIVdQ3MSu1uCQzWcEpsVIhJCM1saQotfgWmyTD7kUdP1lc9xtutDTeuEns8Xb2X-5_a9NmrFzEIRaQml-Qk6qQmFOcr1CcmliUnKGQll-0goMRAOPQEP4AAQAA"
+                }
+            ]
+        },
+        {
+            "block_position": 1,
+            "query": "F1 theater near me",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=F1+theater+near+me&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjQARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater+near+me"
+        },
+        {
+            "block_position": 1,
+            "query": "F1 theater nyc",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=F1+theater+nyc&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjSARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater+nyc"
+        },
+        {
+            "block_position": 1,
+            "query": "F1 theater tickets",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=F1+theater+tickets&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjOARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater+tickets"
+        },
+        {
+            "block_position": 1,
+            "query": "Movie theater showtimes In Seattle",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Movie+theater+showtimes+In+Seattle&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjRARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Movie+theater+showtimes+In+Seattle"
+        },
+        {
+            "block_position": 1,
+            "query": "Majestic Bay Theater",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Majestic+Bay+Theater&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjTARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Majestic+Bay+Theater"
+        },
+        {
+            "block_position": 1,
+            "query": "Crest Theater",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Crest+Theater&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjNARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Crest+Theater"
+        },
+        {
+            "block_position": 1,
+            "query": "Majestic theater",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Majestic+theater&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjVARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Majestic+theater"
+        },
+        {
+            "block_position": 1,
+            "query": "Movie theater Seattle",
+            "link": "https://www.google.com/search?sca_esv=f2d37a307d9ff73f&gl=us&hl=en&q=Movie+theater+Seattle&sa=X&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q1QJ6BQjUARAB",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=Movie+theater+Seattle"
+        }
+    ],
+    "pagination": {
+        "current": 1,
+        "next": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=10&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8NMDegQIERAW",
+        "other_pages": {
+            "2": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=10&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAE",
+            "3": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=20&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAG",
+            "4": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=30&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAI",
+            "5": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=40&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAK",
+            "6": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=50&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAM",
+            "7": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=60&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAO",
+            "8": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=70&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAQ",
+            "9": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=80&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAS",
+            "10": "https://www.google.com/search?q=F1+theater&sca_esv=f2d37a307d9ff73f&gl=us&hl=en&ei=Ip1taJWnBuWf5NoPrZ6o6Qk&start=90&sa=N&sstk=Ac65TH7gXTP7sZ7F6BN7be_sRpH3PfVuvrccygUtbaEWNHEw2DsFmgL-ZpWjOkF5H5uWu8KrAMUzCky6mF_jx8Q2R35V7Ia17eEB4Q&ved=2ahUKEwiVwKaXqa6OAxXlD1kFHS0PKp0Q8tMDegQIERAU"
+        }
+    },
+    "serpapi_pagination": {
+        "current": 1,
+        "next_link": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=10",
+        "next": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=10",
+        "other_pages": {
+            "2": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=10",
+            "3": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=20",
+            "4": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=30",
+            "5": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=40",
+            "6": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=50",
+            "7": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=60",
+            "8": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=70",
+            "9": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=80",
+            "10": "https://serpapi.com/search.json?device=desktop&engine=google&gl=us&google_domain=google.com&hl=en&location=Seattle%2C+Washington%2C+United+States&q=F1+theater&start=90"
+        }
+    }
+}
