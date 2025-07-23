@@ -12,7 +12,7 @@ const ShowtimeList: React.FC<ShowtimeListProps> = ({showtimes, selectedUsers}) =
     if (showtimes.length == 0) {
         return (
             <div className="flex items-center justify-center">
-                <h1 className="text-4xl text-primary">Add user availabilities to see optimal showtimes.</h1>
+                <h1 className="text-3xl text-center text-primary-shift-red md:text-4xl">Add user availabilities to see optimal showtimes.</h1>
             </div>
         )
     }

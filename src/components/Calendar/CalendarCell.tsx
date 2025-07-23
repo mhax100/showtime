@@ -29,12 +29,12 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
     }) => {
 
     const getAvailabilityShade = (pct: number): string => {
-        if (pct >= 80) return 'bg-primary hover:bg-primary/50';
-        if (pct >= 60) return 'bg-primary-desaturated-1 hover:bg-primary-desaturated-1/50';
-        if (pct >= 40) return 'bg-primary-desaturated-2 hover:bg-primary-desaturated-2/50';
-        if (pct >= 20) return 'bg-primary-desaturated-3 hover:bg-primary-desaturated-3/50';
-        if (pct == 0) return 'bg-primary-desaturated-5 hover:bg-primary-desaturated-5/50';
-        return 'bg-primary-desaturated-4 hover:bg-primary-desaturated-4/50';
+        if (pct >= 80) return 'bg-available-100 hover:bg-available-100/50';
+        if (pct >= 60) return 'bg-available-80 hover:bg-available-80/50';
+        if (pct >= 40) return 'bg-available-60 hover:bg-available-60/50';
+        if (pct >= 20) return 'bg-available-40 hover:bg-available-40/50';
+        if (pct == 0) return 'bg-available-0 hover:bg-available-0/50';
+        return 'bg-available-20 hover:bg-available-20/50';
     }
 
     if (isDisabled) {
