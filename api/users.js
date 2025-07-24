@@ -1,13 +1,5 @@
-const Pool = require('pg').Pool
+const pool = require('./database')
 const { validateUUIDs } = require('./helpers')
-
-const pool = new Pool({
-  user: 'me',
-  host: 'localhost',
-  database: 'showtime_db',
-  password: 'password',
-  port: 5432,
-})
 
 const getUsers = (request, response) => {
     pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {

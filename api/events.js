@@ -1,13 +1,5 @@
-const Pool = require('pg').Pool
+const pool = require('./database')
 const { validateUUIDs } = require('./helpers')
-
-const pool = new Pool({
-  user: 'me',
-  host: 'localhost',
-  database: 'showtime_db',
-  password: 'password',
-  port: 5432,
-})
 
 const getEvents = (request, response) => {
     pool.query('SELECT * FROM events ORDER BY id ASC', (error, results) => {
@@ -36,8 +28,9 @@ const getEventById = (request, response) => {
 }
 
 const createEvent = (request, response) => {
-    const { title, creator_id, location, chain, potential_dates } = request.body
-    pool.query('INSERT INTO events (title, creator_id, location, chain, potential_dates) VALUES ($1, $2, $3, $4, $5) RETURNING *', [title, creator_id, location, chain, potential_dates], (error, results) => {
+    const { title, location, chain, potential_dates } = request.body
+    // creator_id is temporarily not used until authentication is implemented
+    pool.query('INSERT INTO events (title, location, chain, potential_dates) VALUES ($1, $2, $3, $4) RETURNING *', [title, location, chain, potential_dates], (error, results) => {
       if (error) {
         throw error
       }
@@ -47,7 +40,7 @@ const createEvent = (request, response) => {
 
 const updateEvent = (request, response) => {
     const id = request.params.id
-    const { title, creator_id, location, chain } = request.body
+    const { title, location, chain } = request.body
     
     // Validate UUID
     const validationError = validateUUIDs({ event_id: id })
@@ -56,8 +49,8 @@ const updateEvent = (request, response) => {
     }
   
     pool.query(
-      'UPDATE events SET title = $1, creator_id = $2, location = $3, chain = $4 WHERE id = $5',
-      [title, creator_id, location, chain, id],
+      'UPDATE events SET title = $1, location = $2, chain = $3 WHERE id = $4',
+      [title, location, chain, id],
       (error, results) => {
         if (error) {
           throw error

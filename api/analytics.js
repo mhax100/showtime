@@ -1,14 +1,7 @@
 const { addMinutes, setHours, setMinutes, isBefore } = require('date-fns')
 const { validateUUIDs } = require('./helpers')
 
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'me',
-  host: 'localhost',
-  database: 'showtime_db',
-  password: 'password',
-  port: 5432,
-})
+const pool = require('./database')
 
 const getAvailabilitySummary = (request, response) => {
   const event_id = request.params.event_id

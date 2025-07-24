@@ -122,8 +122,9 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         const date = dates[colIndex]
         const newDate = new Date(date)
 
-        newDate.setHours(9, 0, 0, 0)
-        newDate.setMinutes(rowIndex * 30)
+        // Set to 9am PST which is 4pm UTC (during PDT it's 16:00 UTC)
+        newDate.setUTCHours(16, 0, 0, 0)
+        newDate.setUTCMinutes(rowIndex * 30)
 
         return newDate
     }
@@ -186,13 +187,13 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
     }
 
     const renderDay = (date: Date, colIndex: number) => {
+        // Create dates using to match database format
         const start = new Date(date)
         const end = new Date(date)
 
         start.setHours(9, 0, 0, 0);
         end.setHours(24, 0, 0, 0);
 
-        // const disabledCutoff = new Date(date).setHours(isWeekend(date) ? 9 : 17, 0, 0, 0)
         const disabledCutoff = new Date(date).setHours(9, 0, 0, 0)
         const day = []
 
@@ -204,6 +205,9 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
             const isSelected = selectedTimes && selectedTimes.some(time => isSameMinute(currentTimeCopy, time) && isSameDay(currentTimeCopy, time))
             const isDisabled = isBefore(currentTimeCopy, disabledCutoff)
             const isHalfHour = getMinutes(currentTimeCopy) == 30
+
+            console.log(currentTimeCopy.toISOString())
+            console.log(filteredAvailabilities.find(a => a.time_slot === currentTimeCopy.toISOString())?.percentAvailable)
 
             day.push(
                     <CalendarCell

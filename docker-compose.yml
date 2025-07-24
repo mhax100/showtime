@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # PostgreSQL database service
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: showtime_user
+      POSTGRES_PASSWORD: showtime_pass
+      POSTGRES_DB: showtime_db
+      TZ: America/Los_Angeles
+    ports:
+      - "5433:5432"
+    volumes:
+      # Persist database data between container restarts
+      - postgres_data:/var/lib/postgresql/data
+      # Mount schema file to initialize database
+      - ./schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U showtime_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API service
+  backend:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      # Database connection
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: showtime_user
+      DB_PASSWORD: showtime_pass
+      DB_NAME: showtime_db
+      # API keys (add your SerpAPI key here)
+      SERPAPI_KEY: ${SERPAPI_KEY}
+      # Timezone
+      TZ: America/Los_Angeles
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      # Mount source code for development with hot reload
+      - ./api:/app
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+    command: node index.js
+
+  # Frontend service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    environment:
+      # Vite needs this for Docker
+      - VITE_API_URL=http://localhost:3000
+      - TZ=America/Los_Angeles
+    volumes:
+      # Mount source code for development with hot reload
+      - ./frontend:/app
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+
+  # nginx reverse proxy (optional for local dev, mimics production)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
+
+volumes:
+  postgres_data:

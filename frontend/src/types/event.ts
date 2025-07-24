@@ -1,7 +1,7 @@
 export type Event = {
     id: string;
     title: string;
-    creator_id: string;
+    creator_id?: string; // Optional until authentication is implemented
     location: string;
     chain?: string;
     created_at: string;
@@ -10,7 +10,7 @@ export type Event = {
   
   export type EventFormData = {
     title: string;
-    creator_id: string;
+    creator_id?: string; // Optional until authentication is implemented
     location: string;
     chain?: string;
     potential_dates: string[];

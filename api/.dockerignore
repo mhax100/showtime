@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+npm-debug.log
+
+# Testing
+tests/
+coverage/
+.nyc_output/
+
+# Development files
+.env.local
+.env.development
+.env.test
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+dist/
+build/

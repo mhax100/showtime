@@ -27,7 +27,6 @@ export async function newShowtimeAction({ request }: { request: Request }) {
 
     const event_id = await createEvent({
         title: movieName,
-        creator_id: "3018bbb8-7238-47f9-abcf-b7dfad28be34",
         location: location,
         chain: chain,
         potential_dates: parsedDates

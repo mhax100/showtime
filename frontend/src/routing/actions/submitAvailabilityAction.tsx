@@ -60,6 +60,7 @@ export async function submitAvailabilityAction({ request }: { request: Request }
 
     console.log(showtimes)
 
-    return { success: true, availability_id}
+    // Return json response to trigger revalidation
+    return Response.json({ success: true, availability_id })
 }
   

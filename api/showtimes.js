@@ -4,14 +4,7 @@ const { parse } = require('date-fns')
 const responseData = require('./response.json')
 const { validateUUIDs } = require('./helpers')
 
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'me',
-  host: 'localhost',
-  database: 'showtime_db',
-  password: 'password',
-  port: 5432,
-})
+const pool = require('./database')
 
 // serp-api request with caching
 const getShowtimes = async (location, movie) => {
@@ -259,6 +252,7 @@ const extractShowtimes = async (serpApiResponse, event_id) => {
 }
 
 // Helper function to convert time format to ISO string
+// Treats theater showtimes as "wall clock time" in the same timezone as users
 const convertTimeToISO = (timeStr, dayStr) => {
   const formatString = 'MMM d yyyy h:mmaaa'
   
@@ -272,6 +266,7 @@ const convertTimeToISO = (timeStr, dayStr) => {
   
   const parsedDate = parse(fullDateStr, formatString, new Date());
 
+  // Return the local time as ISO string (this preserves the "wall clock" time)
   return parsedDate.toISOString()
 }
 

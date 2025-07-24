@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+npm-debug.log
+
+# Development files
+.env.local
+.env.development
+.env.test
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build output (we build inside Docker)
+dist/
+build/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
