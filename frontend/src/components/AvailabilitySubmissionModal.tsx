@@ -65,9 +65,10 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                         </Fieldset>
                         <Button
                             type='submit' 
-                            className='self-end w-1/4 p-2 text-center rounded bg-primary text-text-primary'
+                            disabled={fetcher.state === "submitting"}
+                            className='self-end w-1/4 p-2 text-center rounded bg-primary text-text-primary disabled:opacity-50 disabled:cursor-not-allowed'
                         >
-                            Continue
+                            {fetcher.state === "submitting" ? "Submitting..." : "Continue"}
                         </Button>
                     </fetcher.Form>
                 </DialogPanel>
