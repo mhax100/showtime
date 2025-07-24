@@ -1,31 +1,30 @@
-# Multi-stage build to reduce final image size
-# Stage 1: Build the React application
+# Production Dockerfile for frontend
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Copy package files
 COPY package*.json ./
+
+# Install dependencies
 RUN npm ci
 
-# Copy source code and build the production bundle
+# Copy source code
 COPY . .
+
+# Build the app
 RUN npm run build
 
-# Stage 2: Serve with nginx
-# nginx:alpine is a lightweight web server perfect for serving static files
+# Production stage - serve with nginx
 FROM nginx:alpine
 
-# Copy custom nginx configuration
-# We'll create this file next to handle API proxying
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Copy the built React app from the builder stage
-# Vite outputs to 'dist' directory by default
+# Copy built files
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Expose port 80 for web traffic
+# Copy nginx config if needed
+# COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
 EXPOSE 80
 
-# nginx runs in foreground by default in Docker
 CMD ["nginx", "-g", "daemon off;"]
