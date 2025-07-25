@@ -1,4 +1,4 @@
-const { getJson } = require('serpapi')
+const axios = require('axios')
 const { calculateShowtimeAvailability } = require('./analytics')
 const { parse } = require('date-fns')
 const responseData = require('./response.json')
@@ -21,37 +21,43 @@ const getShowtimes = async (location, movie) => {
 
   // Cache miss - fetch from SerpAPI
   console.log('Fetching fresh SerpAPI data')
-  return new Promise((resolve, reject) => {
-    getJson({
-      q: `${movie} theater`,
-      location: location,
-      hl: "en",
-      gl: "us",
-      api_key: process.env.SERPAPI_KEY
-    }, async (json) => {
-      if (json.error) {
-        reject(new Error(json.error))
-      } else {
-        try {
-          // Cache the result
-          await pool.query(`
-            INSERT INTO serpapi_cache (location, movie, response_data, expires_at)
-            VALUES ($1, $2, $3, NOW() + INTERVAL '24 hours')
-            ON CONFLICT (location, movie) DO UPDATE SET
-              response_data = EXCLUDED.response_data,
-              expires_at = EXCLUDED.expires_at,
-              created_at = NOW()
-          `, [location, movie, json])
-          
-          resolve(json["showtimes"])
-        } catch (cacheError) {
-          console.error('Error caching SerpAPI response:', cacheError)
-          // Still return the data even if caching fails
-          resolve(json["showtimes"])
-        }
+  try {
+    const response = await axios.get('https://serpapi.com/search', {
+      params: {
+        q: `${movie} theater`,
+        location: location,
+        hl: "en",
+        gl: "us",
+        api_key: process.env.SERPAPI_KEY
       }
     })
-  })
+
+    const json = response.data
+    
+    if (json.error) {
+      throw new Error(json.error)
+    }
+
+    try {
+      // Cache the result
+      await pool.query(`
+        INSERT INTO serpapi_cache (location, movie, response_data, expires_at)
+        VALUES ($1, $2, $3, NOW() + INTERVAL '24 hours')
+        ON CONFLICT (location, movie) DO UPDATE SET
+          response_data = EXCLUDED.response_data,
+          expires_at = EXCLUDED.expires_at,
+          created_at = NOW()
+      `, [location, movie, json])
+      
+      return json["showtimes"]
+    } catch (cacheError) {
+      console.error('Error caching SerpAPI response:', cacheError)
+      // Still return the data even if caching fails
+      return json["showtimes"]
+    }
+  } catch (error) {
+    throw new Error(`Failed to fetch from SerpAPI: ${error.message}`)
+  }
 }
 
 // serp-api request wrapper
