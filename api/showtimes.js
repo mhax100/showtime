@@ -16,7 +16,17 @@ const getShowtimes = async (location, movie) => {
 
   if (cacheResult.rows.length > 0) {
     console.log('Using cached SerpAPI data')
-    return cacheResult.rows[0].response_data.showtimes
+    const cachedShowtimes = cacheResult.rows[0].response_data.showtimes
+    console.log('Cached showtimes:', cachedShowtimes)
+    
+    // If cached data is undefined/null, treat as cache miss
+    if (cachedShowtimes === undefined || cachedShowtimes === null) {
+      console.log('Cached data is invalid, fetching fresh data')
+      // Delete the bad cache entry
+      await pool.query('DELETE FROM serpapi_cache WHERE location = $1 AND movie = $2', [location, movie])
+    } else {
+      return cachedShowtimes
+    }
   }
 
   // Cache miss - fetch from SerpAPI
@@ -24,7 +34,7 @@ const getShowtimes = async (location, movie) => {
   try {
     const response = await axios.get('https://serpapi.com/search', {
       params: {
-        q: `${movie} theater`,
+        q: `${movie} showtimes`,
         location: location,
         hl: "en",
         gl: "us",
@@ -36,6 +46,11 @@ const getShowtimes = async (location, movie) => {
     
     if (json.error) {
       throw new Error(json.error)
+    }
+
+    // Debug logging for Superman issue
+    if (movie.toLowerCase().includes('superman')) {
+      console.log('Superman search results:', JSON.stringify(json, null, 2))
     }
 
     try {
