@@ -66,7 +66,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                         <Button
                             type='submit' 
                             disabled={fetcher.state === "submitting"}
-                            className='self-end w-1/4 p-2 text-center rounded bg-primary text-text-primary disabled:opacity-50 disabled:cursor-not-allowed'
+                            className='self-end w-auto px-4 py-2 text-center rounded bg-primary text-text-primary disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap'
                         >
                             {fetcher.state === "submitting" ? "Submitting..." : "Continue"}
                         </Button>

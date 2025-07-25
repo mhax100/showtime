@@ -89,8 +89,11 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         e.preventDefault() // Prevent scrolling
         isDragging.current = true
         dragStart.current = { row: rowIndex, col: colIndex }
+        didDrag.current = false // Reset drag flag
         const startDate = getDateFromPos(rowIndex, colIndex)
-        dragIntent.current = selectedTimes.some(time => isSameMinute(time, startDate) && isSameDay(time, startDate)) ? 'remove' : 'add'
+        const isCurrentlySelected = selectedTimes.some(time => isSameMinute(time, startDate) && isSameDay(time, startDate))
+        dragIntent.current = isCurrentlySelected ? 'remove' : 'add'
+        // Apply intent to starting cell immediately
         updateSelection(rowIndex, colIndex)
     }
 
@@ -111,7 +114,11 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         }
     }
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        e.preventDefault()
+        if (!isDragging.current || !dragStart.current) return
+        
+        // Reset all drag state
         isDragging.current = false
         dragStart.current = null
         dragIntent.current = null
@@ -133,7 +140,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         if (!dragStart.current) return;
         if (!dragIntent.current) return;
 
-        if (!didDrag) {
+        if (!didDrag.current) {
             handleTimeClick(getDateFromPos(endRow, endCol))
             return
         }
@@ -224,6 +231,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                     onMouseDown={() => handleMouseDown(row, colIndex)}
                     onMouseEnter={() => handleMouseEnter(row, colIndex)}
                     onTouchStart={(e) => handleTouchStart(e, row, colIndex)}
+                    onTouchEnd={(e) => handleTouchEnd(e)}
                     row={row}
                     col={colIndex}
                     />
@@ -313,7 +321,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                             </Button>
                         </div>
                     </div>
-                    <div className='flex flex-grow overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden touch-pan-y'>
+                    <div className='flex flex-grow md:overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden touch-pan-y'>
                         <div className="w-12 h-full">
                             {renderTimeStamps()}
                         </div>

@@ -10,6 +10,7 @@ type CalendarCellProps = {
     onMouseDown?: () => void
     onMouseEnter?: () => void
     onTouchStart?: (e: React.TouchEvent) => void
+    onTouchEnd?: (e: React.TouchEvent) => void
     row?: number
     col?: number
 }
@@ -24,6 +25,7 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
     onMouseDown,
     onMouseEnter,
     onTouchStart,
+    onTouchEnd,
     row,
     col
     }) => {
@@ -73,6 +75,7 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
         onMouseDown={mode === 'edit' ? onMouseDown: undefined}
         onMouseEnter={mode === 'edit' ? onMouseEnter: undefined}
         onTouchStart={mode === 'edit' ? onTouchStart: undefined}
+        onTouchEnd={mode === 'edit' ? onTouchEnd: undefined}
         />
     );
 };
