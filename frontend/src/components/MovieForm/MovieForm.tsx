@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DatePicker from './DatePicker';
-import { Button, Fieldset, Input } from '@headlessui/react';
+import { Button, Fieldset, Input, Select } from '@headlessui/react';
 import { Form } from 'react-router-dom';
 import { formatISO } from 'date-fns';
 
@@ -36,14 +36,16 @@ const MovieForm: React.FC = () => {
                     required
                     placeholder='Location...'
                 />
-                <Input
+                <Select 
                     name='chain'
-                    className='w-full px-4 py-2 mt-1 mb-2 rounded-md bg-white/5 text-text-primary focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-primary-soft/50'
-                    type="text"
                     value={chain}
                     onChange={(e) => setChain(e.target.value)}
-                    placeholder='Theater chain filter (e.g. Regal, Cinemark)'
-                />
+                    className='w-full px-4 py-2 mt-1 mb-2 rounded-md bg-white/5 text-text-primary focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-primary-soft/50'
+                >
+                    <option value="Regal">Regal</option>
+                    <option value="AMC">AMC</option>
+                    <option value="Cinemark">Cinemark</option>
+                </Select>
                 <DatePicker selectedDates={selectedDates} setSelectedDates={setSelectedDates} />
                 <Input type='hidden' name='dates' value={JSON.stringify(selectedDates.map(d => formatISO(d)))}/>
                 <Button
