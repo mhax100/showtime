@@ -68,7 +68,7 @@ const CalendarCell: React.FC<CalendarCellProps> = ({
             ${backgroundColor}
             border border-surface
             ${!isHalfHour ? '[border-bottom-style:dashed]' : '[border-top-style:dashed]'}
-            ${mode === 'edit' ? 'cursor-pointer touch-none' : 'cursor-default'}
+            ${mode === 'edit' ? 'cursor-pointer' : 'cursor-default'}
         `}
         data-row={row}
         data-col={col}

@@ -1,6 +1,6 @@
 import { Button } from '@headlessui/react'
 import { getMinutes, addMinutes, isBefore, format, isSameMinute, isSameDay } from 'date-fns'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import useMaxVisibleDays from '../../hooks/useMaxVisibleDays'
 import CalendarCell from './CalendarCell'
@@ -47,21 +47,6 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
     const dragIntent = useRef<'add' | 'remove' | null>(null)
     const didDrag = useRef(false)
 
-    // Prevent scrolling during touch drag
-    useEffect(() => {
-        const preventScroll = (e: TouchEvent) => {
-            if (isDragging.current) {
-                e.preventDefault()
-            }
-        }
-
-        // Add with passive: false to allow preventDefault
-        document.addEventListener('touchmove', preventScroll, { passive: false })
-        
-        return () => {
-            document.removeEventListener('touchmove', preventScroll)
-        }
-    }, [])
     
     const handleMouseDown = (rowIndex: number, colIndex: number) => {
         isDragging.current = true
@@ -85,8 +70,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
         didDrag.current = false
     }
 
-    const handleTouchStart = (e: React.TouchEvent, rowIndex: number, colIndex: number) => {
-        e.preventDefault() // Prevent scrolling
+    const handleTouchStart = (rowIndex: number, colIndex: number) => {
         isDragging.current = true
         dragStart.current = { row: rowIndex, col: colIndex }
         didDrag.current = false // Reset drag flag
@@ -98,9 +82,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
     }
 
     const handleTouchMove = (e: React.TouchEvent) => {
-        e.preventDefault() // Prevent scrolling
         if (!isDragging.current || !dragStart.current) return
-
         const touch = e.touches[0]
         const element = document.elementFromPoint(touch.clientX, touch.clientY)
         if (element) {
@@ -115,9 +97,8 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
     }
 
     const handleTouchEnd = (e: React.TouchEvent) => {
-        e.preventDefault()
         if (!isDragging.current || !dragStart.current) return
-        
+        e.preventDefault()
         // Reset all drag state
         isDragging.current = false
         dragStart.current = null
@@ -227,7 +208,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                     }
                     onMouseDown={() => handleMouseDown(row, colIndex)}
                     onMouseEnter={() => handleMouseEnter(row, colIndex)}
-                    onTouchStart={(e) => handleTouchStart(e, row, colIndex)}
+                    onTouchStart={() => handleTouchStart(row, colIndex)}
                     onTouchEnd={(e) => handleTouchEnd(e)}
                     row={row}
                     col={colIndex}
@@ -327,7 +308,8 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                             onMouseUp={handleMouseUp}
                             onTouchMove={handleTouchMove}
                             onTouchEnd={handleTouchEnd}
-                            className={`grid ${gridColsClass} w-full`}>
+                            className={`grid ${gridColsClass} w-full`}
+                            style={{ touchAction: 'none' }}>
                             {curDates.map((date: Date, index: number) => {
                                 const calculatedIndex = index + startIndex
                                 return (
