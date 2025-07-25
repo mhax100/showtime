@@ -14,7 +14,7 @@ type AvailabilitySideBarProps  = {
 const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAddClick, selectedUserIds, onUserSelectionChange}) => {
 
     return (
-        <div className='flex flex-col items-start justify-around h-full overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden md:w-1/6'>
+        <div className='flex flex-col items-start justify-start h-full overflow-y-auto max-h-[calc(100vh-12rem)] scrollbar-hidden md:w-1/6 touch-pan-y'>
             <div className='flex items-center justify-start w-full gap-2'>
                 <h3 className='text-2xl font-heavy text-text-secondary'>Responses</h3>
                 <h5 className='text-2xl font-light text-text-secondary'>{`(${userData.length})`}</h5>

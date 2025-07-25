@@ -213,9 +213,6 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
             const isDisabled = isBefore(currentTimeCopy, disabledCutoff)
             const isHalfHour = getMinutes(currentTimeCopy) == 30
 
-            console.log(currentTimeCopy.toISOString())
-            console.log(filteredAvailabilities.find(a => a.time_slot === currentTimeCopy.toISOString())?.percentAvailable)
-
             day.push(
                     <CalendarCell
                     date={currentTimeCopy}

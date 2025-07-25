@@ -169,10 +169,10 @@ function EventPage() {
             </div>
             <TabGroup selectedIndex={selectedTabIndex} onChange={setSelectedTabIndex} className='w-full'>
                 <TabList className='flex gap-1 p-1 mx-auto rounded-lg bg-surface w-fit md:mx-4'>
-                    <Tab className='px-4 py-2 text-sm font-medium rounded-md transition-colors text-text-secondary data-[selected]:bg-primary data-[selected]:text-white data-[hover]:bg-surface-hover data-[selected]:data-[hover]:bg-primary-soft'>
+                    <Tab className='px-4 py-2 text-sm font-medium rounded-md transition-colors text-text-secondary data-[selected]:border-3 data-[selected]:border-primary data-[selected]:text-white data-[hover]:bg-surface-hover data-[selected]:data-[hover]:bg-primary-soft'>
                         Calendar View
                     </Tab>
-                    <Tab className='px-4 py-2 text-sm font-medium rounded-md transition-colors text-text-secondary data-[selected]:bg-primary data-[selected]:text-white data-[hover]:bg-surface-hover data-[selected]:data-[hover]:bg-primary-soft'>
+                    <Tab className='px-4 py-2 text-sm font-medium rounded-md transition-colors text-text-secondary data-[selected]:border-3 data-[selected]:border-primary data-[selected]:text-white data-[hover]:bg-surface-hover data-[selected]:data-[hover]:bg-primary-soft'>
                         Showtimes List
                     </Tab>
                 </TabList>

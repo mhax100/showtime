@@ -24,12 +24,16 @@ const TopBar: React.FC<TopBarProps> = ({handleCreateShowtimeClick}) => {
                     className='items-center gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap'>
                     Create a Showtime
                 </Button>
-                <Button className='items-center hidden gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap sm:inline-flex'>
-                    Give feedback
-                </Button>
-                <Button className='items-center gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap'>
-                    Sign in
-                </Button>
+                {
+                    /*
+                        <Button className='items-center hidden gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap sm:inline-flex'>
+                            Give feedback
+                        </Button>
+                        <Button className='items-center gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap'>
+                            Sign in
+                        </Button>
+                    */
+                }
             </div>
 
         </div>
