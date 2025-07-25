@@ -318,7 +318,7 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                             </Button>
                         </div>
                     </div>
-                    <div className='flex flex-grow md:overflow-y-auto max-h-[calc(100vh-20rem)] scrollbar-hidden touch-pan-y'>
+                    <div className='flex flex-grow md:overflow-y-auto md:max-h-[calc(100vh-20rem)] scrollbar-hidden touch-pan-y'>
                         <div className="w-12 h-full">
                             {renderTimeStamps()}
                         </div>
