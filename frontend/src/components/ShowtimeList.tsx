@@ -1,14 +1,16 @@
 import React from "react"
 import type { Showtime } from "../types/showtime"
 import { format } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
 
 
 type ShowtimeListProps  = {
     showtimes: Showtime[];
     selectedUsers: string[];
+    eventTimezone: string;
 }
 
-const ShowtimeList: React.FC<ShowtimeListProps> = ({showtimes, selectedUsers}) => {
+const ShowtimeList: React.FC<ShowtimeListProps> = ({showtimes, selectedUsers, eventTimezone}) => {
     if (showtimes.length == 0) {
         return (
             <div className="flex items-center justify-center">
@@ -45,7 +47,7 @@ const ShowtimeList: React.FC<ShowtimeListProps> = ({showtimes, selectedUsers}) =
                 return (
                     <div className="flex-col w-full p-2 rounded-md bg-surface hover:bg-surface/50">
                         <div className="flex justify-between gap-2">
-                            <h1 className="text-2xl text-text-primary">{format(new Date(showtime.start_time), "MMMM d - h:mmaaa")}</h1>
+                            <h1 className="text-2xl text-text-primary">{format(toZonedTime(new Date(showtime.start_time), eventTimezone), "MMMM d - h:mmaaa")}</h1>
                             <h1 className={`text-2xl ${getAvailabilityShade(showtime.percentAvailable)}`}>{showtime.percentAvailable + "% available"}</h1>
                         </div>
                         <h1 className="text-xl text-text-primary">{showtime.theater_name}</h1>

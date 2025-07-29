@@ -1,6 +1,7 @@
 const axios = require('axios')
 const { calculateShowtimeAvailability } = require('./analytics')
 const { parse } = require('date-fns')
+const { fromZonedTime } = require('date-fns-tz')
 const responseData = require('./response.json')
 const { validateUUIDs } = require('./helpers')
 
@@ -31,17 +32,19 @@ const getShowtimes = async (location, movie) => {
 
   // Cache miss - fetch from SerpAPI
   console.log('Fetching fresh SerpAPI data')
+  const serpApiParams = {
+    q: `${movie} showtimes`,
+    location: location,
+    hl: "en",
+    gl: "us",
+    api_key: process.env.SERPAPI_KEY
+  }
+  console.log('SerpAPI request params:', serpApiParams)
+  
   try {
     const response = await axios.get('https://serpapi.com/search', {
-      params: {
-        q: `${movie} showtimes`,
-        location: location,
-        hl: "en",
-        gl: "us",
-        api_key: process.env.SERPAPI_KEY
-      }
+      params: serpApiParams
     })
-
     const json = response.data
     
     if (json.error) {
@@ -71,6 +74,12 @@ const getShowtimes = async (location, movie) => {
       return json["showtimes"]
     }
   } catch (error) {
+    console.error('SerpAPI request failed:', {
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      data: error.response?.data,
+      message: error.message
+    })
     throw new Error(`Failed to fetch from SerpAPI: ${error.message}`)
   }
 }
@@ -240,15 +249,17 @@ const extractShowtimes = async (serpApiResponse, event_id) => {
         return
       }
 
+      const eventTimezone = event_data.timezone || 'UTC'
+
       serpApiResponse.forEach(dayData => {
         const date = dayData.day // e.g., "TodayJul 8"
         
         dayData.theaters.forEach(theater => {
-          if (!event_data.chain || theater.name.includes(event_data.chain)) {
+          if (!event_data.chain || event_data.chain == "All" || theater.name.includes(event_data.chain)) {
             theater.showing.forEach(showing => {
             showing.time.forEach(time => {
-              // Convert time like "5:00pm" to full ISO string
-              const showtimeDateTime = convertTimeToISO(time, date)
+              // Convert time like "5:00pm" to full ISO string in UTC
+              const showtimeDateTime = convertTimeToUTC(time, date, eventTimezone)
               
               showtimes.push({
                 theater_name: theater.name,
@@ -272,9 +283,9 @@ const extractShowtimes = async (serpApiResponse, event_id) => {
   }
 }
 
-// Helper function to convert time format to ISO string
-// Treats theater showtimes as "wall clock time" in the same timezone as users
-const convertTimeToISO = (timeStr, dayStr) => {
+// Helper function to convert time format to UTC ISO string
+// Treats theater showtimes as "wall clock time" in the event's timezone, then converts to UTC
+const convertTimeToUTC = (timeStr, dayStr, eventTimezone) => {
   const formatString = 'MMM d yyyy h:mmaaa'
   
   // Use current date as base date for parsing the time
@@ -285,15 +296,18 @@ const convertTimeToISO = (timeStr, dayStr) => {
   let fullDateStr = `${dateStr} ${year}`; // → "Jul 8 2025"
   fullDateStr += " " + timeStr
   
+  // Parse the time as if it's in the event's timezone
   const parsedDate = parse(fullDateStr, formatString, new Date());
+  
+  // Convert from event timezone to UTC
+  const utcDate = fromZonedTime(parsedDate, eventTimezone)
 
-  // Return the local time as ISO string (this preserves the "wall clock" time)
-  return parsedDate.toISOString()
+  return utcDate.toISOString()
 }
 
 module.exports = {
   searchShowtimes,
   createShowtimes,
   getShowtimesByEvent,
-  convertTimeToISO
+  convertTimeToUTC
 }

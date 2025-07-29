@@ -1,4 +1,5 @@
 const { addMinutes, setHours, setMinutes, isBefore } = require('date-fns')
+const { toZonedTime, fromZonedTime } = require('date-fns-tz')
 const { validateUUIDs } = require('./helpers')
 
 const pool = require('./database')
@@ -54,26 +55,33 @@ const calculateAvailabilityPercentages = async (event_id) => {
     const availabilitySummary = []
     const totalUsers = user_data.length
 
-    for (const date of event_data.potential_dates) {
-      // Start at 9:00 AM
-      const start = setMinutes(setHours(new Date(date), 9), 0)
-      // End at 12:00 AM the NEXT DAY
-      const end = setMinutes(setHours(new Date(date), 24), 0)
+    const eventTimezone = event_data.timezone || 'UTC'
 
-      let slot = new Date(start)
-      while (isBefore(slot, end)) {
-        const availableUsers = invertedAvailability[slot.toISOString()] || []
+    for (const date of event_data.potential_dates) {
+      // Convert UTC date to event timezone to create proper 9am-12am range
+      const dateInTimezone = toZonedTime(new Date(date), eventTimezone)
+      
+      // Start at 9:00 AM in event timezone
+      const startInTimezone = setMinutes(setHours(dateInTimezone, 9), 0)
+      // End at 12:00 AM the NEXT DAY in event timezone
+      const endInTimezone = setMinutes(setHours(dateInTimezone, 24), 0)
+
+      let slotInTimezone = new Date(startInTimezone)
+      while (isBefore(slotInTimezone, endInTimezone)) {
+        // Convert the timezone slot back to UTC for storage and comparison
+        const slotUTC = fromZonedTime(slotInTimezone, eventTimezone)
+        const availableUsers = invertedAvailability[slotUTC.toISOString()] || []
         const pct = Math.round((availableUsers.length / totalUsers) * 100)
 
         availabilitySummary.push({
           event_id,
-          time_slot: slot.toISOString(),
+          time_slot: slotUTC.toISOString(),
           availability_pct: pct,
           available_user_ids: availableUsers,
           updated_at: new Date().toISOString()
         })
 
-        slot = addMinutes(slot, 30)
+        slotInTimezone = addMinutes(slotInTimezone, 30)
       }
     }
 

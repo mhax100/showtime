@@ -3,6 +3,7 @@ import { useFetcher } from "react-router-dom"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 import { Dialog, DialogPanel, Fieldset, Input, Button } from "@headlessui/react"
 import { formatISO } from "date-fns"
+import { fromZonedTime } from "date-fns-tz"
 
 
 type AvailabilitySubmissionModalProps  = {
@@ -10,6 +11,7 @@ type AvailabilitySubmissionModalProps  = {
     onClose: () => void
     selectedTimes: Date[]
     eventID: string
+    eventTimezone: string
 }
 
 const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = (
@@ -17,7 +19,8 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
         isOpen,
         onClose,
         selectedTimes,
-        eventID
+        eventID,
+        eventTimezone
     }
 ) => {
     const [name, setName] = useState("");
@@ -60,7 +63,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                                 placeholder='Enter your name...'
                             />
 
-                            <Input type='hidden' name='availability_data' value={JSON.stringify(selectedTimes.map(d => formatISO(d)))}/>
+                            <Input type='hidden' name='availability_data' value={JSON.stringify(selectedTimes.map(d => formatISO(fromZonedTime(d, eventTimezone))))}/>
                             <Input type='hidden' name='event_id' value={eventID}/>
                         </Fieldset>
                         <Button

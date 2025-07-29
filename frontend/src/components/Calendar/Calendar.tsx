@@ -1,5 +1,6 @@
 import { Button } from '@headlessui/react'
 import { getMinutes, addMinutes, isBefore, format, isSameMinute, isSameDay } from 'date-fns'
+import { toZonedTime } from 'date-fns-tz'
 import { useState, useRef } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import useMaxVisibleDays from '../../hooks/useMaxVisibleDays'
@@ -14,14 +15,15 @@ type CalendarProps = {
     mode: 'edit' | 'summary';
     availabilityData: Availability[];
     selectedUsers: string[];
+    eventTimezone: string;
 }
 
-const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData, selectedUsers }) => {
+const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTimes, mode, availabilityData, selectedUsers, eventTimezone }) => {
     const [startIndex, setStartIndex] = useState(0)
     const maxVisibleDays = useMaxVisibleDays()
     const visibleDates = dates.slice(startIndex, startIndex + maxVisibleDays)
 
-    // Calculate percentages and sort in one chain
+    // Calculate percentages and convert UTC times to event timezone
     const filteredAvailabilities = availabilityData
         .map(timeslot => {
             let percentAvailable = timeslot.availability_pct;
@@ -29,7 +31,9 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                 const filteredAvailableUsers = timeslot.available_user_ids.filter(userID => selectedUsers.includes(userID));
                 percentAvailable = Math.round((filteredAvailableUsers.length / selectedUsers.length) * 100);
             }
-            return { ...timeslot, percentAvailable };
+            // Convert UTC time to event timezone for comparison
+            const zonedTime = toZonedTime(new Date(timeslot.time_slot), eventTimezone);
+            return { ...timeslot, percentAvailable, zonedTime };
         })
     
     const gridColsClass = {
@@ -203,7 +207,9 @@ const Calendar: React.FC<CalendarProps> = ({ dates, selectedTimes, setSelectedTi
                     mode={mode}
                     availabilityPercentage={
                         mode === 'summary'
-                        ? filteredAvailabilities.find(a => a.time_slot === currentTimeCopy.toISOString())?.percentAvailable
+                        ? filteredAvailabilities.find(a => 
+                            isSameMinute(a.zonedTime, currentTimeCopy) && isSameDay(a.zonedTime, currentTimeCopy)
+                        )?.percentAvailable
                         : undefined
                     }
                     onMouseDown={() => handleMouseDown(row, colIndex)}

@@ -6,6 +6,7 @@ export type Event = {
     chain?: string;
     created_at: string;
     potential_dates: string[];
+    timezone: string;
   };
   
   export type EventFormData = {
@@ -14,4 +15,5 @@ export type Event = {
     location: string;
     chain?: string;
     potential_dates: string[];
+    timezone: string;
   };

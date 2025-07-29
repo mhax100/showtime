@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useLoaderData } from "react-router-dom";
 import { format } from "date-fns";
+import { toZonedTime } from "date-fns-tz";
 import { Button, Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import type { Event } from "../types/event";
 import type { Availability, UserAvailability } from "../types/availability";
@@ -84,7 +85,13 @@ function EventPage() {
         if (!dates || dates.length === 0) return '';
         
         const dateFormat = 'M/d';
-        const sortedDates = dates.map(d => new Date(d)).sort((a, b) => a.getTime() - b.getTime());
+        const eventTimezone = event?.timezone || 'UTC';
+        
+        // Convert UTC dates to event timezone for display
+        const sortedDates = dates
+            .map(d => toZonedTime(new Date(d), eventTimezone))
+            .sort((a, b) => a.getTime() - b.getTime());
+        
         const ranges: string[] = [];
         let rangeStart = sortedDates[0];
         let rangeEnd = sortedDates[0];
@@ -130,6 +137,7 @@ function EventPage() {
                 }
                 selectedTimes={selectedTimes}    
                 eventID={eventID}
+                eventTimezone={event?.timezone || 'UTC'}
             />
             <div className='flex flex-col items-center justify-between w-full p-4 py-2 lg:flex-row lg:items-center'>
                 <div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
@@ -180,18 +188,20 @@ function EventPage() {
                     <div className='flex-shrink-0 w-full max-w-5xl md:w-5/6 md:max-w-none'>
                         <TabPanel>
                             <Calendar 
-                                dates={(event.potential_dates ?? []).map((d: string) => new Date(d))}
+                                dates={(event.potential_dates ?? []).map((d: string) => toZonedTime(new Date(d), event?.timezone || 'UTC'))}
                                 selectedTimes={selectedTimes}
                                 setSelectedTimes={setSelectedTimes}
                                 mode={mode}
                                 availabilityData={availabilities}
-                                selectedUsers={selectedUserIds}    
+                                selectedUsers={selectedUserIds}
+                                eventTimezone={event?.timezone || 'UTC'}
                             />
                         </TabPanel>
                         <TabPanel>
                             <ShowtimeList 
                                 showtimes={showtimes}
                                 selectedUsers={selectedUserIds}
+                                eventTimezone={event?.timezone || 'UTC'}
                             />
                         </TabPanel>
                     </div>
