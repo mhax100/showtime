@@ -4,15 +4,17 @@ import { createEvent } from "../../api/events";
 export async function newShowtimeAction({ request }: { request: Request }) {
     const formData = await request.formData();
     const movieName = formData.get("movieName");
-    const location = formData.get("location");
+    const location = formData.get("validatedCity");
     const chain = formData.get("chain");
-    const dates = formData.get("dates")
+    const dates = formData.get("dates");
+    const timezone = formData.get("timezone");
 
     if (
         typeof movieName !== 'string' ||
         typeof location !== 'string' ||
         typeof chain !== 'string' ||
-        typeof dates !== 'string'
+        typeof dates !== 'string' ||
+        typeof timezone !== 'string'
     ) {
         throw new Error("Invalid form input");
     }
@@ -29,7 +31,8 @@ export async function newShowtimeAction({ request }: { request: Request }) {
         title: movieName,
         location: location,
         chain: chain,
-        potential_dates: parsedDates
+        potential_dates: parsedDates,
+        timezone: timezone
     })
   
     return redirect(`/showtime/${event_id}`);
