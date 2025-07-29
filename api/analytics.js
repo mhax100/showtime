@@ -1,5 +1,5 @@
-const { addMinutes, setHours, setMinutes, isBefore } = require('date-fns')
-const { toZonedTime, fromZonedTime } = require('date-fns-tz')
+const { addMinutes, setHours, setMinutes, isBefore, isEqual } = require('date-fns')
+const { utcToZonedTime, zonedTimeToUtc } = require('date-fns-tz')
 const { validateUUIDs } = require('./helpers')
 
 const pool = require('./database')
@@ -59,7 +59,7 @@ const calculateAvailabilityPercentages = async (event_id) => {
 
     for (const date of event_data.potential_dates) {
       // Convert UTC date to event timezone to create proper 9am-12am range
-      const dateInTimezone = toZonedTime(new Date(date), eventTimezone)
+      const dateInTimezone = utcToZonedTime(new Date(date), eventTimezone)
       
       // Start at 9:00 AM in event timezone
       const startInTimezone = setMinutes(setHours(dateInTimezone, 9), 0)
@@ -69,7 +69,7 @@ const calculateAvailabilityPercentages = async (event_id) => {
       let slotInTimezone = new Date(startInTimezone)
       while (isBefore(slotInTimezone, endInTimezone)) {
         // Convert the timezone slot back to UTC for storage and comparison
-        const slotUTC = fromZonedTime(slotInTimezone, eventTimezone)
+        const slotUTC = zonedTimeToUtc(slotInTimezone, eventTimezone)
         const availableUsers = invertedAvailability[slotUTC.toISOString()] || []
         const pct = Math.round((availableUsers.length / totalUsers) * 100)
 
@@ -112,47 +112,88 @@ const calculateAvailabilityPercentages = async (event_id) => {
   }
 }
 
+// Helper: round down a date to nearest half hour
+function roundDownToHalfHour(date) {
+  const ms = date.getTime()
+  const minutes = date.getMinutes()
+  const roundedMinutes = minutes < 30 ? 0 : 30
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), roundedMinutes, 0, 0)
+}
+
+// Helper: round up a date to nearest half hour
+function roundUpToHalfHour(date) {
+  const minutes = date.getMinutes()
+  if (minutes === 0 || minutes === 30) return new Date(date)
+  const roundedMinutes = minutes < 30 ? 30 : 60
+  let d = new Date(date)
+  d.setMinutes(roundedMinutes, 0, 0)
+  if (roundedMinutes === 60) {
+    d.setHours(d.getHours() + 1)
+    d.setMinutes(0)
+  }
+  return d
+}
+
 const calculateShowtimeAvailability = async (event_id, showtime_start, movie_duration_minutes) => {
   try {
-    // Calculate required consecutive time slots for the movie
     const startTime = new Date(showtime_start)
-    const requiredSlots = []
-    let currentSlot = new Date(startTime)
     const endTime = addMinutes(startTime, movie_duration_minutes)
 
-    // Generate all 30-minute slots needed for the movie duration
-    while (isBefore(currentSlot, endTime)) {
-      requiredSlots.push(currentSlot.toISOString())
+    // Round start down and end up to nearest half-hour marks to cover all overlapping slots
+    const slotRangeStart = roundDownToHalfHour(startTime)
+    const slotRangeEnd = roundUpToHalfHour(endTime)
+
+    // Generate all half-hour slots covering this expanded range
+    const allSlots = []
+    let currentSlot = new Date(slotRangeStart)
+    while (isBefore(currentSlot, slotRangeEnd) || isEqual(currentSlot, slotRangeEnd)) {
+      allSlots.push(currentSlot.toISOString())
       currentSlot = addMinutes(currentSlot, 30)
     }
 
-    // Get pre-calculated availability summary data for the required time slots
-    const placeholders = requiredSlots.map((_, i) => `$${i + 2}`).join(', ')
+    // Query availability for all these slots
+    const placeholders = allSlots.map((_, i) => `$${i + 2}`).join(', ')
     const summaryQuery = `
       SELECT time_slot, availability_pct, available_user_ids 
       FROM availability_summary 
       WHERE event_id = $1 AND time_slot IN (${placeholders})
     `
-    const summaryResults = await pool.query(summaryQuery, [event_id, ...requiredSlots])
+    const summaryResults = await pool.query(summaryQuery, [event_id, ...allSlots])
     const summaryData = summaryResults.rows
 
     if (summaryData.length === 0) {
       return {
         available_users: [],
         availability_percentage: 0,
-        required_time_slots: requiredSlots,
+        required_time_slots: allSlots,
       }
     }
 
-    // Get total users count from the first summary record
+    // We only want to consider the slots that fully cover the original movie duration:
+    // those whose intervals overlap with the [startTime, endTime)
+    // Filter summaryData for slots overlapping the original interval:
+    const filteredSummary = summaryData.filter(({ time_slot }) => {
+      const slotStart = new Date(time_slot)
+      const slotEnd = addMinutes(slotStart, 30)
+      return slotEnd > startTime && slotStart < endTime
+    })
+
+    if (filteredSummary.length === 0) {
+      return {
+        available_users: [],
+        availability_percentage: 0,
+        required_time_slots: allSlots,
+      }
+    }
+
+    // Get total users count
     const totalUsersQuery = await pool.query('SELECT COUNT(*) as total FROM event_attendees WHERE event_id = $1', [event_id])
     const totalUsers = parseInt(totalUsersQuery.rows[0].total)
 
-    // Find users available for ALL required slots (intersection)
-    let availableUsers = summaryData[0].available_user_ids || []
-    
-    for (let i = 1; i < summaryData.length; i++) {
-      const usersForSlot = summaryData[i].available_user_ids || []
+    // Intersect available_user_ids across all relevant slots
+    let availableUsers = filteredSummary[0].available_user_ids || []
+    for (let i = 1; i < filteredSummary.length; i++) {
+      const usersForSlot = filteredSummary[i].available_user_ids || []
       availableUsers = availableUsers.filter(userId => usersForSlot.includes(userId))
     }
 
@@ -161,7 +202,7 @@ const calculateShowtimeAvailability = async (event_id, showtime_start, movie_dur
     return {
       available_users: availableUsers,
       availability_percentage: availabilityPercentage,
-      required_time_slots: requiredSlots
+      required_time_slots: filteredSummary.map(s => s.time_slot)
     }
 
   } catch (error) {

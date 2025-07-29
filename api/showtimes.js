@@ -1,8 +1,6 @@
 const axios = require('axios')
 const { calculateShowtimeAvailability } = require('./analytics')
-const { parse } = require('date-fns')
-const { fromZonedTime } = require('date-fns-tz')
-const responseData = require('./response.json')
+const { zonedTimeToUtc } = require('date-fns-tz')
 const { validateUUIDs } = require('./helpers')
 
 const pool = require('./database')
@@ -18,7 +16,6 @@ const getShowtimes = async (location, movie) => {
   if (cacheResult.rows.length > 0) {
     console.log('Using cached SerpAPI data')
     const cachedShowtimes = cacheResult.rows[0].response_data.showtimes
-    console.log('Cached showtimes:', cachedShowtimes)
     
     // If cached data is undefined/null, treat as cache miss
     if (cachedShowtimes === undefined || cachedShowtimes === null) {
@@ -39,7 +36,6 @@ const getShowtimes = async (location, movie) => {
     gl: "us",
     api_key: process.env.SERPAPI_KEY
   }
-  console.log('SerpAPI request params:', serpApiParams)
   
   try {
     const response = await axios.get('https://serpapi.com/search', {
@@ -49,11 +45,6 @@ const getShowtimes = async (location, movie) => {
     
     if (json.error) {
       throw new Error(json.error)
-    }
-
-    // Debug logging for Superman issue
-    if (movie.toLowerCase().includes('superman')) {
-      console.log('Superman search results:', JSON.stringify(json, null, 2))
     }
 
     try {
@@ -286,23 +277,59 @@ const extractShowtimes = async (serpApiResponse, event_id) => {
 // Helper function to convert time format to UTC ISO string
 // Treats theater showtimes as "wall clock time" in the event's timezone, then converts to UTC
 const convertTimeToUTC = (timeStr, dayStr, eventTimezone) => {
-  const formatString = 'MMM d yyyy h:mmaaa'
-  
-  // Use current date as base date for parsing the time
-  const match = dayStr.match(/([A-Za-z]+)([A-Za-z]{3,}\s?\d{1,2})/);
-  const dateStr = match[2]
-  
-  const year = new Date().getFullYear(); // Use current year
-  let fullDateStr = `${dateStr} ${year}`; // → "Jul 8 2025"
-  fullDateStr += " " + timeStr
-  
-  // Parse the time as if it's in the event's timezone
-  const parsedDate = parse(fullDateStr, formatString, new Date());
-  
-  // Convert from event timezone to UTC
-  const utcDate = fromZonedTime(parsedDate, eventTimezone)
-
-  return utcDate.toISOString()
+  try {
+    // Parse the day string to extract month and day
+    // Examples: "TodayJul 8" -> "Jul 8", "SatAug 2" -> "Aug 2"
+    // The format is [DayOfWeek][Month] [Day] where DayOfWeek can be "Today" or day names
+    const dayMatch = dayStr.match(/(?:Today|Mon|Tue|Wed|Thu|Fri|Sat|Sun)([A-Za-z]{3})\s?(\d{1,2})/)
+    if (!dayMatch) {
+      throw new Error(`Could not parse day string: ${dayStr}`)
+    }
+    
+    const month = dayMatch[1]
+    const day = parseInt(dayMatch[2])
+    const year = new Date().getFullYear()
+    
+    // Parse the time (e.g., "7:00pm" -> hour: 19, minute: 0)
+    const timeMatch = timeStr.match(/^(\d{1,2}):(\d{2})\s*(am|pm)$/i)
+    if (!timeMatch) {
+      throw new Error(`Could not parse time string: ${timeStr}`)
+    }
+    
+    let hour = parseInt(timeMatch[1])
+    const minute = parseInt(timeMatch[2])
+    const ampm = timeMatch[3].toLowerCase()
+    
+    // Convert to 24-hour format
+    if (ampm === 'pm' && hour !== 12) {
+      hour += 12
+    } else if (ampm === 'am' && hour === 12) {
+      hour = 0
+    }
+    
+    // Create a date object representing the "wall clock time" in the event timezone
+    // We need to construct this carefully to avoid local timezone interference
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const monthIndex = monthNames.indexOf(month)
+    if (monthIndex === -1) {
+      throw new Error(`Invalid month: ${month}`)
+    }
+    
+    // Create the date in the local timezone first (this represents the "wall clock" time)
+    const localDate = new Date(year, monthIndex, day, hour, minute, 0, 0)
+    
+    // Now convert from the event timezone to UTC
+    // zonedTimeToUtc treats the input date as if it's in the specified timezone
+    const utcDate = zonedTimeToUtc(localDate, eventTimezone)
+    
+    return utcDate.toISOString()
+    
+  } catch (error) {
+    console.error(`[ERROR] convertTimeToUTC failed for "${timeStr}" on "${dayStr}":`, error)
+    // Fallback: return a reasonable default to avoid breaking the system
+    return new Date().toISOString()
+  }
 }
 
 module.exports = {

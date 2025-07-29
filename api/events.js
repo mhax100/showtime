@@ -28,9 +28,9 @@ const getEventById = (request, response) => {
 }
 
 const createEvent = (request, response) => {
-    const { title, location, chain, potential_dates } = request.body
+    const { title, location, chain, potential_dates, timezone } = request.body
     // creator_id is temporarily not used until authentication is implemented
-    pool.query('INSERT INTO events (title, location, chain, potential_dates) VALUES ($1, $2, $3, $4) RETURNING *', [title, location, chain, potential_dates], (error, results) => {
+    pool.query('INSERT INTO events (title, location, chain, potential_dates, timezone) VALUES ($1, $2, $3, $4, $5) RETURNING *', [title, location, chain, potential_dates, timezone], (error, results) => {
       if (error) {
         throw error
       }
