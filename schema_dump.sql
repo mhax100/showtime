@@ -8,6 +8,7 @@
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -21,7 +22,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: availability_summary; Type: TABLE; Schema: public; Owner: me
+-- Name: availability_summary; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.availability_summary (
@@ -34,9 +35,8 @@ CREATE TABLE public.availability_summary (
 );
 
 
-
 --
--- Name: event_attendees; Type: TABLE; Schema: public; Owner: me
+-- Name: event_attendees; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.event_attendees (
@@ -48,9 +48,8 @@ CREATE TABLE public.event_attendees (
 );
 
 
-
 --
--- Name: events; Type: TABLE; Schema: public; Owner: me
+-- Name: events; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.events (
@@ -60,13 +59,13 @@ CREATE TABLE public.events (
     location character varying(255),
     created_at timestamp with time zone DEFAULT now(),
     potential_dates timestamp with time zone[] DEFAULT '{}'::timestamp with time zone[],
-    chain character varying(255)
+    chain character varying(255),
+    timezone character varying(50)
 );
 
 
-
 --
--- Name: movie_showtimes; Type: TABLE; Schema: public; Owner: me
+-- Name: movie_showtimes; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.movie_showtimes (
@@ -85,9 +84,8 @@ CREATE TABLE public.movie_showtimes (
 );
 
 
-
 --
--- Name: movie_showtimes_id_seq; Type: SEQUENCE; Schema: public; Owner: me
+-- Name: movie_showtimes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.movie_showtimes_id_seq
@@ -99,16 +97,15 @@ CREATE SEQUENCE public.movie_showtimes_id_seq
     CACHE 1;
 
 
-
 --
--- Name: movie_showtimes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: me
+-- Name: movie_showtimes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.movie_showtimes_id_seq OWNED BY public.movie_showtimes.id;
 
 
 --
--- Name: serpapi_cache; Type: TABLE; Schema: public; Owner: me
+-- Name: serpapi_cache; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.serpapi_cache (
@@ -121,9 +118,8 @@ CREATE TABLE public.serpapi_cache (
 );
 
 
-
 --
--- Name: serpapi_cache_id_seq; Type: SEQUENCE; Schema: public; Owner: me
+-- Name: serpapi_cache_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.serpapi_cache_id_seq
@@ -135,16 +131,15 @@ CREATE SEQUENCE public.serpapi_cache_id_seq
     CACHE 1;
 
 
-
 --
--- Name: serpapi_cache_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: me
+-- Name: serpapi_cache_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.serpapi_cache_id_seq OWNED BY public.serpapi_cache.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: me
+-- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.users (
@@ -157,23 +152,22 @@ CREATE TABLE public.users (
 );
 
 
-
 --
--- Name: movie_showtimes id; Type: DEFAULT; Schema: public; Owner: me
+-- Name: movie_showtimes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.movie_showtimes ALTER COLUMN id SET DEFAULT nextval('public.movie_showtimes_id_seq'::regclass);
 
 
 --
--- Name: serpapi_cache id; Type: DEFAULT; Schema: public; Owner: me
+-- Name: serpapi_cache id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.serpapi_cache ALTER COLUMN id SET DEFAULT nextval('public.serpapi_cache_id_seq'::regclass);
 
 
 --
--- Name: availability_summary availability_summary_pkey; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: availability_summary availability_summary_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.availability_summary
@@ -181,7 +175,7 @@ ALTER TABLE ONLY public.availability_summary
 
 
 --
--- Name: event_attendees event_attendees_pkey; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: event_attendees event_attendees_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.event_attendees
@@ -189,7 +183,7 @@ ALTER TABLE ONLY public.event_attendees
 
 
 --
--- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: events events_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.events
@@ -197,7 +191,7 @@ ALTER TABLE ONLY public.events
 
 
 --
--- Name: movie_showtimes movie_showtimes_pkey; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: movie_showtimes movie_showtimes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.movie_showtimes
@@ -205,7 +199,7 @@ ALTER TABLE ONLY public.movie_showtimes
 
 
 --
--- Name: serpapi_cache serpapi_cache_location_movie_key; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: serpapi_cache serpapi_cache_location_movie_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.serpapi_cache
@@ -213,7 +207,7 @@ ALTER TABLE ONLY public.serpapi_cache
 
 
 --
--- Name: serpapi_cache serpapi_cache_pkey; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: serpapi_cache serpapi_cache_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.serpapi_cache
@@ -221,7 +215,7 @@ ALTER TABLE ONLY public.serpapi_cache
 
 
 --
--- Name: users users_email_key; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: users users_email_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.users
@@ -229,7 +223,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: me
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.users
@@ -237,14 +231,14 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: idx_serpapi_cache_expires; Type: INDEX; Schema: public; Owner: me
+-- Name: idx_serpapi_cache_expires; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX idx_serpapi_cache_expires ON public.serpapi_cache USING btree (expires_at);
 
 
 --
--- Name: availability_summary availability_summary_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: me
+-- Name: availability_summary availability_summary_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.availability_summary
@@ -252,7 +246,7 @@ ALTER TABLE ONLY public.availability_summary
 
 
 --
--- Name: event_attendees event_attendees_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: me
+-- Name: event_attendees event_attendees_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.event_attendees
@@ -260,7 +254,7 @@ ALTER TABLE ONLY public.event_attendees
 
 
 --
--- Name: event_attendees event_attendees_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: me
+-- Name: event_attendees event_attendees_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.event_attendees
@@ -268,16 +262,15 @@ ALTER TABLE ONLY public.event_attendees
 
 
 --
--- Name: events events_creator_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: me
+-- Name: events events_creator_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
--- Temporarily removed creator_id foreign key constraint until authentication is implemented
--- ALTER TABLE ONLY public.events
---     ADD CONSTRAINT events_creator_id_fkey FOREIGN KEY (creator_id) REFERENCES public.users(id) ON DELETE CASCADE;
+ALTER TABLE ONLY public.events
+    ADD CONSTRAINT events_creator_id_fkey FOREIGN KEY (creator_id) REFERENCES public.users(id) ON DELETE CASCADE;
 
 
 --
--- Name: movie_showtimes movie_showtimes_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: me
+-- Name: movie_showtimes movie_showtimes_event_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.movie_showtimes
