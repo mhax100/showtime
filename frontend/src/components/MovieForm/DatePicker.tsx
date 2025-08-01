@@ -1,4 +1,4 @@
-import { format, startOfMonth, isBefore, startOfWeek, addMonths, isSameDay, addDays, subDays, differenceInCalendarDays } from 'date-fns'
+import { format, isBefore, isSameDay, addDays, subDays, differenceInCalendarDays } from 'date-fns'
 import { Button } from '@headlessui/react'
 
 type DatePickerProps = {
@@ -58,9 +58,9 @@ const DatePicker: React.FC<DatePickerProps> = ({ selectedDates, setSelectedDates
         }
 
         const today = new Date()
-        const startDate = startOfWeek(today)
+        const startDate = today
         const difference = differenceInCalendarDays(today, startDate)
-        let days = []
+        const days = []
         let day = startDate
 
         const formattedDates = [renderMonth(startDate)]
@@ -72,17 +72,6 @@ const DatePicker: React.FC<DatePickerProps> = ({ selectedDates, setSelectedDates
             const isPrevSelected = selectedDates && selectedDates.some(date => isSameDay(date, subDays(currentDay, 1)))
             const isNextSelected = selectedDates && selectedDates.some(date => isSameDay(date, addDays(currentDay, 1)))
             const isDeactivated = isBefore(currentDay, subDays(today, 1))
-
-
-            if (isSameDay(currentDay, startOfMonth(addMonths(startDate, 1)))) {
-                formattedDates.push(
-                    <div key='month1' className='grid grid-cols-7'>
-                        {days}
-                    </div>
-                )
-                formattedDates.push(renderMonth(currentDay))
-                days = []
-            }
 
             days.push(
                 <div

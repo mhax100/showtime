@@ -76,9 +76,14 @@ const MovieForm: React.FC = () => {
                 <Input type='hidden' name='validatedCity' value={validatedCity} />
                 <Button
                     type='submit' 
-                    className='w-full p-2 text-center rounded bg-primary text-text-primary'
+                    disabled={isValidating || !validatedCity || (validationResult?.isValid === false)}
+                    className={`w-full p-2 text-center rounded ${
+                        isValidating || !validatedCity || (validationResult?.isValid === false)
+                            ? 'bg-gray-500 cursor-not-allowed' 
+                            : 'bg-primary'
+                    } text-text-primary`}
                 >
-                    Create Showtime
+                    {isValidating ? 'Validating...' : 'Create Showtime'}
                 </Button>
             </Fieldset>
         </Form>
