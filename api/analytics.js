@@ -70,12 +70,15 @@ const calculateAvailabilityPercentages = async (event_id) => {
       while (isBefore(slotInTimezone, endInTimezone)) {
         // Convert the timezone slot back to UTC for storage and comparison
         const slotUTC = zonedTimeToUtc(slotInTimezone, eventTimezone)
-        const availableUsers = invertedAvailability[slotUTC.toISOString()] || []
+        // Ensure slotUTC is rounded to exact 30-minute intervals with no seconds/milliseconds
+        const roundedSlotUTC = new Date(slotUTC.getFullYear(), slotUTC.getMonth(), slotUTC.getDate(), 
+                                       slotUTC.getHours(), slotUTC.getMinutes(), 0, 0)
+        const availableUsers = invertedAvailability[roundedSlotUTC.toISOString()] || []
         const pct = Math.round((availableUsers.length / totalUsers) * 100)
 
         availabilitySummary.push({
           event_id,
-          time_slot: slotUTC.toISOString(),
+          time_slot: roundedSlotUTC.toISOString(),
           availability_pct: pct,
           available_user_ids: availableUsers,
           updated_at: new Date().toISOString()

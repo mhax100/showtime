@@ -29,13 +29,31 @@ const getAvailabilityById = (request, response) => {
     })
 }
 
+const getAvailabilityByUserId = (request, response) => {
+    const event_id = request.params.event_id
+    const user_id = request.params.user_id
+    
+    // Validate UUID
+    const validationError = validateUUIDs({ event_id, user_id })
+    if (validationError) {
+      return response.status(400).json(validationError)
+    }
+  
+    pool.query('SELECT * FROM event_attendees WHERE event_id = $1  AND user_id = $2', [event_id, user_id], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows[0])
+    })
+}
+
 const createAvailability = (request, response) => {
     const { event_id, user_id, availability, role } = request.body
     pool.query('INSERT INTO event_attendees (event_id, user_id, availability, role) VALUES ($1, $2, $3, $4) RETURNING *', [event_id, user_id, availability, role], (error, results) => {
       if (error) {
         throw error
       }
-      response.status(201).send(`${results.rows[0].event_id}`)
+      response.status(201).send(`${results.rows[0].user_id}`)
       
       // Trigger availability summary recalculation
       calculateAvailabilityPercentages(event_id)
@@ -88,6 +106,7 @@ const deleteAvailability = (request, response) => {
 module.exports = {
     getAvailabilities,
     getAvailabilityById,
+    getAvailabilityByUserId,
     createAvailability,
     updateAvailability,
     deleteAvailability

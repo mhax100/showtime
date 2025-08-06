@@ -38,6 +38,7 @@ app.delete('/events/:id', db_events.deleteEvent)
 
 app.get('/availabilities/', db_availabilities.getAvailabilities)
 app.get('/availabilities/:event_id', db_availabilities.getAvailabilityById)
+app.get('/availabilities/:event_id/user/:user_id', db_availabilities.getAvailabilityByUserId)
 app.post('/availabilities', db_availabilities.createAvailability)
 app.put('/availabilities/:event_id', db_availabilities.updateAvailability)
 app.delete('/availabilities/:event_id', db_availabilities.deleteAvailability)
