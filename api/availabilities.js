@@ -71,8 +71,8 @@ const updateAvailability = (request, response) => {
     }
   
     pool.query(
-      'UPDATE event_attendees SET user_id = $1, availability = $2, role = $3 WHERE event_id = $4',
-      [user_id, availability, role, event_id],
+      'UPDATE event_attendees SET availability = $1, role = $2 WHERE event_id = $3 AND user_id = $4',
+      [availability, role, event_id, user_id],
       (error, results) => {
         if (error) {
           throw error
