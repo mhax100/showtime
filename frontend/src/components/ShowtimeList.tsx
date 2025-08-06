@@ -65,7 +65,7 @@ const ShowtimeList: React.FC<ShowtimeListProps> = ({showtimes, selectedUsers, ev
 
     return (
         <div className="flex flex-col gap-5">
-            <div className='flex justify-around'>
+            <div className='flex justify-around md:justify-start md:gap-3'>
                 {formats.map(format => {
                     return (
                     <Checkbox 
