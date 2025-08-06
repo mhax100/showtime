@@ -153,6 +153,7 @@ function EventPage() {
                         setMode('summary')
                         setSelectedTimes([])
                         setIsSubmissionModalOpen(false)
+                        setEditingUserId(undefined)
                     }
                 }
                 selectedTimes={selectedTimes}    
