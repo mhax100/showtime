@@ -45,14 +45,17 @@ const DatePicker: React.FC<DatePickerProps> = ({ selectedDates, setSelectedDates
 
     const renderCells = () => {
         const handleDateClick = (clicked: Date) => {
+            // Standardize the date to midnight UTC with no seconds/milliseconds
+            const standardizedDate = new Date(clicked.getFullYear(), clicked.getMonth(), clicked.getDate(), 0, 0, 0, 0)
+            
             setSelectedDates((prev: Date[]) => {
                 const dates = prev || []
-                const exists = selectedDates.some(date => isSameDay(date, clicked))
+                const exists = selectedDates.some(date => isSameDay(date, standardizedDate))
                 
                 if (exists) {
-                    return dates.filter(date => !isSameDay(date, clicked))
+                    return dates.filter(date => !isSameDay(date, standardizedDate))
                 } else {
-                    return [...dates, clicked].sort((a, b) => a.getTime() - b.getTime())
+                    return [...dates, standardizedDate].sort((a, b) => a.getTime() - b.getTime())
                 }
             })
         }
