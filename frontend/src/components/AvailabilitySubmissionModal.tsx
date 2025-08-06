@@ -12,6 +12,8 @@ type AvailabilitySubmissionModalProps  = {
     selectedTimes: Date[]
     eventID: string
     eventTimezone: string
+    defaultName?: string
+    editingUserId?: string
 }
 
 const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = (
@@ -20,10 +22,12 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
         onClose,
         selectedTimes,
         eventID,
-        eventTimezone
+        eventTimezone,
+        defaultName,
+        editingUserId
     }
 ) => {
-    const [name, setName] = useState("");
+    const [name, setName] = useState(defaultName || "");
     const fetcher = useFetcher();
     
     useEffect(() => {
@@ -65,6 +69,7 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
 
                             <Input type='hidden' name='availability_data' value={JSON.stringify(selectedTimes.map(d => formatISO(fromZonedTime(d, eventTimezone))))}/>
                             <Input type='hidden' name='event_id' value={eventID}/>
+                            <Input type='hidden' name='editing_user_id' value={editingUserId || ''}/>
                         </Fieldset>
                         <Button
                             type='submit' 

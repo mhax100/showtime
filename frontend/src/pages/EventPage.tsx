@@ -12,6 +12,7 @@ import ShowtimeList from "../components/ShowtimeList";
 import AvailabilitySideBar from "../components/AvailabilitySidebar";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 import AvailabilitySubmissionModal from "../components/AvailabilitySubmissionModal";
+import { fetchAvailabilityByUserID } from "../api/availabilities";
 
 function EventPage() {
     const { eventID } = useParams();
@@ -38,6 +39,7 @@ function EventPage() {
     const [isSubmissionModalOpen, setIsSubmissionModalOpen] = useState(false)
     const [selectedTabIndex, setSelectedTabIndex] = useState(0)
     const [selectedUserIds, setSelectedUserIds] = useState<string[]>([])
+    const [editingUserId, setEditingUserId] = useState<string>()
 
     // Update state when loader data changes (after revalidation)
     useEffect(() => {
@@ -46,6 +48,7 @@ function EventPage() {
         setShowtimes(loaderData.showtimes);
         setUsers(loaderData.users);
     }, [loaderData]);
+
 
 
     if (!event) return <p>Event not found</p>;
@@ -79,6 +82,23 @@ function EventPage() {
                 ? [...prev, userId]
                 : prev.filter(id => id !== userId)
         )
+    }
+
+    const handleEditUser = async (userId: string) => {
+        if (!eventID) return;
+        
+        try {
+            const existingAvailability = await fetchAvailabilityByUserID(eventID, userId);
+            if (existingAvailability && existingAvailability.availability) {
+                // Pass raw UTC dates to calendar - let Calendar component handle timezone conversion
+                const dates = existingAvailability.availability.map(dateStr => new Date(dateStr));
+                setSelectedTimes(dates);
+                setMode('edit');
+                setEditingUserId(userId)
+            }
+        } catch (error) {
+            console.error('Failed to load existing availability:', error);
+        }
     }
 
     const formatDateRanges = (dates: string[]): string => {
@@ -138,6 +158,8 @@ function EventPage() {
                 selectedTimes={selectedTimes}    
                 eventID={eventID}
                 eventTimezone={event?.timezone || 'UTC'}
+                defaultName={editingUserId && users.find(user => user.id == editingUserId)?.name}
+                editingUserId={editingUserId}
             />
             <div className='flex flex-col items-center justify-between w-full p-4 py-2 lg:flex-row lg:items-center'>
                 <div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
@@ -210,6 +232,7 @@ function EventPage() {
                         onAddClick={onAddClick} 
                         selectedUserIds={selectedUserIds}
                         onUserSelectionChange={handleUserSelectionChange}
+                        onEditUser={handleEditUser}
                     />
                 </TabPanels>
             </TabGroup>

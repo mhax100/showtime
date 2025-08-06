@@ -5,6 +5,12 @@ export type UserAvailability = {
     role: 'guest' | 'owner';
 }
 
+export type EditUserAvailability = {
+    user_id: string;
+    availability: string[];
+    role: 'guest' | 'owner';
+}
+
 export type Availability = {
     event_id: string;
     time_slot: string;

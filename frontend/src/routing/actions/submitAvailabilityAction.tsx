@@ -1,28 +1,22 @@
 import { createUser } from "../../api/users";
-import { createAvailability } from "../../api/availabilities";
+import { createAvailability, editAvailability } from "../../api/availabilities";
 import { createShowtimes } from "../../api/showtimes";
 import { fetchEventByID } from "../../api/events";
+import type { UserAvailability } from "../../types/availability";
 
 export async function submitAvailabilityAction({ request }: { request: Request }) {
 
-    /*
-    What needs to happen:
-    Get the name from the submitted form
-    Add an entry to the database where I create a new user with that name
-    Add an entry to the database where I create a new availability with the user id, event id, and role
-    Pull the new availability data from the database for the event id
-    Display the data in the summary mode on the same page
-    Display the new name in the availability side bar
-    */
     const formData = await request.formData();
     const name = formData.get("name");
     const availability = formData.get("availability_data")
     const event_id = formData.get("event_id")
+    const editing_user_id = formData.get("editing_user_id")
 
     if (
         typeof name !== 'string' ||
         typeof availability !== 'string' ||
-        typeof event_id !== 'string'
+        typeof event_id !== 'string' ||
+        typeof editing_user_id !== 'string'
     ) {
         throw new Error("Invalid form input");
     }
@@ -35,17 +29,29 @@ export async function submitAvailabilityAction({ request }: { request: Request }
         throw new Error("Could not parse dates");
     }
 
-    const user_response = await createUser({
-        name: name
-    })
+    let availability_id: UserAvailability;
 
-    
-    const availability_id = await createAvailability({
-        event_id: event_id,
-        user_id: user_response.data.id,
-        availability: parsedAvailability,
-        role: "guest"
-    })
+    // Check if we're editing an existing availability
+    if (editing_user_id && editing_user_id.trim() !== '') {
+        // Edit existing availability
+        availability_id = await editAvailability({
+            user_id: editing_user_id,
+            availability: parsedAvailability,
+            role: "guest"
+        }, event_id);
+    } else {
+        // Create new availability
+        const user_response = await createUser({
+            name: name
+        })
+
+        availability_id = await createAvailability({
+            event_id: event_id,
+            user_id: user_response.data.id,
+            availability: parsedAvailability,
+            role: "guest"
+        });
+    }
 
     const event_data = await fetchEventByID(event_id)
 
