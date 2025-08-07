@@ -1,6 +1,6 @@
 import React from "react"
 import { Checkbox, Button } from '@headlessui/react'
-import { PencilIcon } from '@heroicons/react/24/outline'
+import { PencilIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 
 type UserListItemProps  = {
@@ -9,9 +9,10 @@ type UserListItemProps  = {
     checked: boolean;
     onChange: (id: string, checked: boolean) => void;
     onEdit?: (userId: string) => void;
+    onDelete?: (userId: string) => void;
 }
 
-const UserListItem: React.FC<UserListItemProps> = ({id, name, checked, onChange, onEdit}) => {
+const UserListItem: React.FC<UserListItemProps> = ({id, name, checked, onChange, onEdit, onDelete}) => {
 
     return (
         <div 
@@ -30,14 +31,25 @@ const UserListItem: React.FC<UserListItemProps> = ({id, name, checked, onChange,
                     </Checkbox>
                 {name}
             </div>
-            {onEdit && (
-                <Button
-                    onClick={() => onEdit(id)}
-                    className="p-1 text-text-secondary hover:text-primary hover:bg-primary-soft/25 rounded"
-                >
-                    <PencilIcon className="w-4 h-4" />
-                </Button>
-            )}
+            <div className="flex justify-between gap-1">
+                {onEdit && (
+                    <Button
+                        onClick={() => onEdit(id)}
+                        className="p-1 rounded text-text-secondary hover:text-primary hover:bg-primary-soft/25"
+                    >
+                        <PencilIcon className="w-4 h-4" />
+                    </Button>
+                )}
+                {onDelete && (
+                    <Button
+                        onClick={() => onDelete(id)}
+                        className="p-1 rounded text-text-secondary hover:text-primary hover:bg-primary-soft/25"
+                    >
+                        <XMarkIcon className="w-4 h-4" />
+                    </Button>
+                )}
+            </div>
+            
         </div>
     )
 }

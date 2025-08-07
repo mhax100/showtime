@@ -51,3 +51,13 @@ export async function fetchAvailabilityByUserID(event_id: string, user_id: strin
         throw error;
     }
 }
+
+export async function deleteAvailabilityByUserID(user_id: string, event_id: string) {
+    try {
+        const response = await client.delete(`/availabilities/${event_id}/user/${user_id}`);
+        return response.data;
+    } catch (error) {
+        console.error(`Error deleting Availability for user ID: ${user_id} and event ID: ${event_id}:`, error);
+        throw error;
+    }
+}

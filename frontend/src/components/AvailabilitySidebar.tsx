@@ -10,9 +10,10 @@ type AvailabilitySideBarProps  = {
     selectedUserIds: string[]
     onUserSelectionChange: (userId: string, checked: boolean) => void
     onEditUser?: (userId: string) => void
+    onDeleteUser?: (userId: string) => void
 }
 
-const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAddClick, selectedUserIds, onUserSelectionChange, onEditUser}) => {
+const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAddClick, selectedUserIds, onUserSelectionChange, onEditUser, onDeleteUser}) => {
 
     return (
         <div className='flex flex-col items-start justify-start h-full overflow-y-auto max-h-[calc(100vh-12rem)] scrollbar-hidden md:w-1/6 touch-pan-y'>
@@ -29,6 +30,7 @@ const AvailabilitySideBar: React.FC<AvailabilitySideBarProps> = ({userData, onAd
                         checked={selectedUserIds.includes(user.id)}
                         onChange={onUserSelectionChange}
                         onEdit={onEditUser}
+                        onDelete={onDeleteUser}
                     />
                 )
             })}

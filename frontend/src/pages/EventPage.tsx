@@ -13,6 +13,7 @@ import AvailabilitySideBar from "../components/AvailabilitySidebar";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 import AvailabilitySubmissionModal from "../components/AvailabilitySubmissionModal";
 import { fetchAvailabilityByUserID } from "../api/availabilities";
+import DeleteAvailabilityConfirmationModal from "../components/DeleteAvailabilityConfirmationModal";
 
 function EventPage() {
     const { eventID } = useParams();
@@ -40,6 +41,7 @@ function EventPage() {
     const [selectedTabIndex, setSelectedTabIndex] = useState(0)
     const [selectedUserIds, setSelectedUserIds] = useState<string[]>([])
     const [editingUserId, setEditingUserId] = useState<string>()
+    const [deletingUserId, setDeletingUserId] = useState<string>()
 
     // Update state when loader data changes (after revalidation)
     useEffect(() => {
@@ -99,6 +101,12 @@ function EventPage() {
         } catch (error) {
             console.error('Failed to load existing availability:', error);
         }
+    }
+
+    const handleDeleteUser = async (userId: string) => {
+        if (!eventID) return;
+
+        setDeletingUserId(userId)
     }
 
     const formatDateRanges = (dates: string[]): string => {
@@ -162,6 +170,20 @@ function EventPage() {
                 defaultName={editingUserId && users.find(user => user.id == editingUserId)?.name}
                 editingUserId={editingUserId}
             />
+            {deletingUserId && (
+                <DeleteAvailabilityConfirmationModal 
+                    key={deletingUserId}
+                    isOpen={!!deletingUserId} 
+                    onClose={
+                        () => {
+                            setDeletingUserId(undefined)
+                        }
+                    }
+                    eventID={eventID}
+                    userID={deletingUserId}
+                    name={users.find(user => user.id === deletingUserId)?.name || 'Unknown User'}
+                />
+            )}
             <div className='flex flex-col items-center justify-between w-full p-4 py-2 lg:flex-row lg:items-center'>
                 <div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
                     <h3 className='text-2xl font-light md:text-4xl text-text-primary'>{event.title}</h3>
@@ -234,6 +256,7 @@ function EventPage() {
                         selectedUserIds={selectedUserIds}
                         onUserSelectionChange={handleUserSelectionChange}
                         onEditUser={handleEditUser}
+                        onDeleteUser={handleDeleteUser}
                     />
                 </TabPanels>
             </TabGroup>

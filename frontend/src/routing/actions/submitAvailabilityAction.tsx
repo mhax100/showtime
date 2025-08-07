@@ -1,5 +1,5 @@
 import { createUser } from "../../api/users";
-import { createAvailability, editAvailability } from "../../api/availabilities";
+import { createAvailability, editAvailability, deleteAvailabilityByUserID } from "../../api/availabilities";
 import { createShowtimes } from "../../api/showtimes";
 import { fetchEventByID } from "../../api/events";
 import type { UserAvailability } from "../../types/availability";
@@ -7,18 +7,48 @@ import type { UserAvailability } from "../../types/availability";
 export async function submitAvailabilityAction({ request }: { request: Request }) {
 
     const formData = await request.formData();
+    const action_type = formData.get("action_type");
+    const event_id = formData.get("event_id");
+
+    if (typeof action_type !== 'string' || typeof event_id !== 'string') {
+        throw new Error("Invalid form input");
+    }
+
+    // Handle delete action
+    if (action_type === 'delete') {
+        const user_id = formData.get("user_id");
+        
+        if (typeof user_id !== 'string') {
+            throw new Error("Invalid form input for delete action");
+        }
+
+        await deleteAvailabilityByUserID(user_id, event_id);
+        
+        const event_data = await fetchEventByID(event_id);
+        await createShowtimes(
+            event_id,
+            {
+                location: event_data.location,
+                movie: event_data.title,
+                duration: 120
+            }
+        );
+
+        // Return json response to trigger revalidation
+        return Response.json({ success: true, action: 'delete' });
+    }
+
+    // Handle create/update action
     const name = formData.get("name");
-    const availability = formData.get("availability_data")
-    const event_id = formData.get("event_id")
-    const editing_user_id = formData.get("editing_user_id")
+    const availability = formData.get("availability_data");
+    const editing_user_id = formData.get("editing_user_id");
 
     if (
         typeof name !== 'string' ||
         typeof availability !== 'string' ||
-        typeof event_id !== 'string' ||
         typeof editing_user_id !== 'string'
     ) {
-        throw new Error("Invalid form input");
+        throw new Error("Invalid form input for create/update action");
     }
 
     let parsedAvailability: string[];
@@ -39,6 +69,16 @@ export async function submitAvailabilityAction({ request }: { request: Request }
             availability: parsedAvailability,
             role: "guest"
         }, event_id);
+
+        const event_data = await fetchEventByID(event_id);
+        await createShowtimes(
+            event_id,
+            {
+                location: event_data.location,
+                movie: event_data.title,
+                duration: 120
+            }
+        );
     } else {
         // Create new availability
         const user_response = await createUser({
@@ -51,20 +91,19 @@ export async function submitAvailabilityAction({ request }: { request: Request }
             availability: parsedAvailability,
             role: "guest"
         });
+
+        const event_data = await fetchEventByID(event_id)
+
+        await createShowtimes(
+            event_id,
+            {
+                location: event_data.location,
+                movie: event_data.title,
+                duration: 120
+            }
+        )
     }
 
-    const event_data = await fetchEventByID(event_id)
-
-    const showtimes = await createShowtimes(
-        event_id,
-        {
-            location: event_data.location,
-            movie: event_data.title,
-            duration: 120
-        }
-    )
-
-    console.log(showtimes)
 
     // Return json response to trigger revalidation
     return Response.json({ success: true, availability_id })

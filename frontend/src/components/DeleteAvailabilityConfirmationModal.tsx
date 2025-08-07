@@ -1,33 +1,26 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import { useFetcher } from "react-router-dom"
 import { XMarkIcon } from "@heroicons/react/24/outline"
 import { Dialog, DialogPanel, Fieldset, Input, Button } from "@headlessui/react"
-import { formatISO } from "date-fns"
-import { fromZonedTime } from "date-fns-tz"
 
 
-type AvailabilitySubmissionModalProps  = {
+type DeleteAvailabilityConfirmationModalProps  = {
     isOpen: boolean
     onClose: () => void
-    selectedTimes: Date[]
     eventID: string
-    eventTimezone: string
-    defaultName?: string
-    editingUserId?: string
+    userID: string
+    name: string
 }
 
-const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = (
+const DeleteAvailabilityConfirmationModal: React.FC<DeleteAvailabilityConfirmationModalProps> = (
     {
         isOpen,
         onClose,
-        selectedTimes,
         eventID,
-        eventTimezone,
-        defaultName,
-        editingUserId
+        userID,
+        name
     }
 ) => {
-    const [name, setName] = useState(defaultName || "");
     const fetcher = useFetcher();
     
     useEffect(() => {
@@ -53,31 +46,20 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
                     <XMarkIcon className="w-6 h-6" />
                   </Button>
                   <fetcher.Form 
-                    method='post' 
+                    method='delete' 
                     className='flex flex-col p-5 lg:p-10 rounded-md min-w-[200px] bg-surface gap-2'>
-                        <h2 className='text-2xl text-text-primary'>Continue as Guest</h2>
+                        <h2 className='text-2xl text-text-primary'>{`Please confirm you would like to delete availability for ${name}`}</h2>
                         <Fieldset className='w-full'>
-                            <Input
-                                name='name'
-                                className='w-full px-4 py-2 mt-1 mb-2 rounded-md bg-white/5 text-text-primary focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-primary-soft/50'
-                                type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                required
-                                placeholder='Enter your name...'
-                            />
-
-                            <Input type='hidden' name='availability_data' value={JSON.stringify(selectedTimes.map(d => formatISO(fromZonedTime(d, eventTimezone))))}/>
                             <Input type='hidden' name='event_id' value={eventID}/>
-                            <Input type='hidden' name='editing_user_id' value={editingUserId || ''}/>
-                            <Input type='hidden' name='action_type' value='create_or_update'/>
+                            <Input type='hidden' name='user_id' value={userID}/>
+                            <Input type='hidden' name='action_type' value='delete'/>
                         </Fieldset>
                         <Button
                             type='submit' 
                             disabled={fetcher.state === "submitting"}
                             className='self-end w-auto px-4 py-2 text-center rounded bg-primary text-text-primary disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap'
                         >
-                            {fetcher.state === "submitting" ? "Submitting..." : "Continue"}
+                            {fetcher.state === "submitting" ? "Deleting..." : "Confirm"}
                         </Button>
                     </fetcher.Form>
                 </DialogPanel>
@@ -86,4 +68,4 @@ const AvailabilitySubmissionModal: React.FC<AvailabilitySubmissionModalProps> = 
     )
 }
 
-export default AvailabilitySubmissionModal
+export default DeleteAvailabilityConfirmationModal

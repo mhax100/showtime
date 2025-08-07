@@ -87,7 +87,7 @@ const updateAvailability = (request, response) => {
 
 const deleteAvailability = (request, response) => {
     const event_id = request.params.event_id
-    const { user_id } = request.body
+    const user_id = request.params.user_id
     
     // Validate UUID
     const validationError = validateUUIDs({ event_id })
@@ -100,7 +100,11 @@ const deleteAvailability = (request, response) => {
         throw error
       }
       response.status(200).send(`Availability deleted for user with ID: ${user_id} for event with ID: ${event_id}`)
-    })
+      
+      // Trigger availability summary recalculation
+      calculateAvailabilityPercentages(event_id)
+    }
+  )
 }
 
 module.exports = {
