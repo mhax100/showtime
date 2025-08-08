@@ -20,12 +20,12 @@ function Home() {
             </div>
 
             {/* Overlapping Image Section */}
-            <div className="relative w-full mt-32">
+            <div className="relative w-full mt-15 sm:mt-50">
                 {/* Top black spacer */}
                 <div className="h-40" />
 
                 {/* Bottom colored background */}
-                <div className="relative z-0 pb-10 pt-30 md:pt-60 bg-primary">
+                <div className="relative z-0 pb-10 pt-30 md:pt-80 bg-primary">
                     {/* Overlapping image */}
                     <img 
                     src={CalendarImage}
@@ -40,25 +40,25 @@ function Home() {
                 <ol className="flex flex-col items-start gap-4 text-text-primary">
                     <li className="flex items-center justify-between gap-2">
                         <div className="flex items-center justify-center w-8 rounded-full aspect-square bg-primary ">
-                            <h4 className="text-xl">1.</h4>
+                            <h4 className="text-xl">1</h4>
                         </div>
                         <h4>Create a Showtime</h4>
                     </li>
                     <li className="flex items-center justify-between gap-2">
                         <div className="flex items-center justify-center w-8 rounded-full aspect-square bg-primary ">
-                            <h4 className="text-xl">2.</h4>
+                            <h4 className="text-xl">2</h4>
                         </div>
                         <h4>Share the link with your friends</h4>
                     </li>
                     <li className="flex items-center justify-between gap-2">
                         <div className="flex items-center justify-center w-8 rounded-full aspect-square bg-primary ">
-                            <h4 className="text-xl">3.</h4>
+                            <h4 className="text-xl">3</h4>
                         </div>
                         <h4>Collect availability data</h4>
                     </li>
                     <li className="flex items-center justify-between gap-2">
                         <div className="flex items-center justify-center w-8 rounded-full aspect-square bg-primary ">
-                            <h4 className="text-xl">4.</h4>
+                            <h4 className="text-xl">4</h4>
                         </div>
                         <h4>Calculate the best showtime!</h4>
                     </li>
@@ -67,12 +67,12 @@ function Home() {
 
 
             {/* Overlapping Image Section */}
-            <div className="relative w-full mt-32">
+            <div className="relative w-full mt-15 sm:mt-50">
                 {/* Top black spacer */}
                 <div className="h-40" />
 
                 {/* Bottom colored background */}
-                <div className="relative z-0 pb-10 pt-30 md:pt-60 bg-primary">
+                <div className="relative z-0 pb-10 pt-30 md:pt-80 bg-primary">
                     {/* Overlapping image */}
                     <img 
                     src={ListImage}

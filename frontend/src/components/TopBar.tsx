@@ -15,7 +15,7 @@ const TopBar: React.FC<TopBarProps> = ({handleCreateShowtimeClick}) => {
                 <Button 
                     onClick={() => navigate('/')}
                     className='flex items-center gap-2 text-xl sm:text-2xl text-text-primary'>
-                    <SvgComponent className='size-8 sm:size-10'/> <span className='hidden sm:inline'>showtime</span>
+                    <SvgComponent className='size-8 sm:size-10'/>
                 </Button>
                 <h2 className="text-2xl text-text-primary">showtime</h2>
             </div>
@@ -25,16 +25,6 @@ const TopBar: React.FC<TopBarProps> = ({handleCreateShowtimeClick}) => {
                     className='items-center gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap'>
                     Create a Showtime
                 </Button>
-                {
-                    /*
-                        <Button className='items-center hidden gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap sm:inline-flex'>
-                            Give feedback
-                        </Button>
-                        <Button className='items-center gap-2 text-sm sm:text-base md:text-l data-hover:text-primary-soft text-text-primary whitespace-nowrap'>
-                            Sign in
-                        </Button>
-                    */
-                }
             </div>
 
         </div>
