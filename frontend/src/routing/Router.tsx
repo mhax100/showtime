@@ -2,7 +2,6 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
   import Layout from "../Layout";
-  import App from "../App";
   import Home from "../pages/Home";
   import { newShowtimeAction } from "./actions/movieFormAction";
 import ErrorPage from "../pages/ErrorPage";
@@ -15,8 +14,7 @@ import { eventPageLoader } from "./loaders/eventPageLoader";
       element: <Layout />,
       errorElement: <ErrorPage />,
       children: [
-        { path: "/", element: <App />},
-        { path: "/home", element: <Home />},
+        { path: "/", element: <Home />},
         { path: "/showtime/:eventID", 
           element: <EventPage />,
           loader: eventPageLoader,

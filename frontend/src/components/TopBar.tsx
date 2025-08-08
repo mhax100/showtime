@@ -11,12 +11,13 @@ const TopBar: React.FC<TopBarProps> = ({handleCreateShowtimeClick}) => {
     const navigate = useNavigate()
     return (
         <div className='flex items-center justify-between w-full p-4 px-4 mx-auto overflow-x-hidden sm:px-6 md:px-10 bg-background'>
-            <div className='shrink-0'>
+            <div className='flex items-center gap-2 shrink-0'>
                 <Button 
-                    onClick={() => navigate('/home')}
+                    onClick={() => navigate('/')}
                     className='flex items-center gap-2 text-xl sm:text-2xl text-text-primary'>
                     <SvgComponent className='size-8 sm:size-10'/> <span className='hidden sm:inline'>showtime</span>
                 </Button>
+                <h2 className="text-2xl text-text-primary">showtime</h2>
             </div>
             <div className='flex justify-between gap-2 sm:gap-4 md:gap-8'>
                 <Button 
