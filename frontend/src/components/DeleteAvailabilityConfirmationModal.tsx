@@ -48,19 +48,34 @@ const DeleteAvailabilityConfirmationModal: React.FC<DeleteAvailabilityConfirmati
                   <fetcher.Form 
                     method='delete' 
                     className='flex flex-col p-5 lg:p-10 rounded-md min-w-[200px] bg-surface gap-2'>
-                        <h2 className='text-2xl text-text-primary'>{`Please confirm you would like to delete availability for ${name}`}</h2>
+                        <h2 className='text-2xl text-text-primary'>
+                          {`Are you sure?`}
+                        </h2>
+                        <h4 className="text-text-secondary">
+                          {`${name}'s availability will be deleted.`}
+                        </h4>
                         <Fieldset className='w-full'>
                             <Input type='hidden' name='event_id' value={eventID}/>
                             <Input type='hidden' name='user_id' value={userID}/>
                             <Input type='hidden' name='action_type' value='delete'/>
                         </Fieldset>
-                        <Button
-                            type='submit' 
+                        <div className="flex self-end gap-2">
+                          <Button
+                            onClick={onClose}
+                            type='reset' 
                             disabled={fetcher.state === "submitting"}
-                            className='self-end w-auto px-4 py-2 text-center rounded bg-primary text-text-primary disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap'
-                        >
-                            {fetcher.state === "submitting" ? "Deleting..." : "Confirm"}
-                        </Button>
+                            className='w-auto px-4 py-2 text-center border rounded border-text-secondary text-text-secondary disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap'
+                          >
+                              {"Cancel"}
+                          </Button>
+                          <Button
+                              type='submit' 
+                              disabled={fetcher.state === "submitting"}
+                              className='self-end w-auto px-4 py-2 text-center rounded bg-primary-shift-red text-text-primary disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap'
+                          >
+                              {fetcher.state === "submitting" ? "Deleting..." : "Confirm"}
+                          </Button>
+                        </div>
                     </fetcher.Form>
                 </DialogPanel>
               </div>
