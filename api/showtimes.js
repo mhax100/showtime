@@ -242,6 +242,7 @@ const extractShowtimes = async (serpApiResponse, event_id) => {
 
       const eventTimezone = event_data.timezone || 'UTC'
 
+
       serpApiResponse.forEach(dayData => {
         const date = dayData.day // e.g., "TodayJul 8"
         
@@ -251,13 +252,13 @@ const extractShowtimes = async (serpApiResponse, event_id) => {
             showing.time.forEach(time => {
               // Convert time like "5:00pm" to full ISO string in UTC
               const showtimeDateTime = convertTimeToUTC(time, date, eventTimezone)
-              
+
               showtimes.push({
                 theater_name: theater.name,
                 theater_address: theater.address,
                 theater_distance: theater.distance,
                 start_time: showtimeDateTime,
-                showing_type: showing.type, // "Standard", "IMAX", etc.
+                showing_type: showing.type || "Standard", // "Standard", "IMAX", etc.
                 day: date,
                 time: time
               })
