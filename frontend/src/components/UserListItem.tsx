@@ -10,9 +10,10 @@ type UserListItemProps  = {
     onChange: (id: string, checked: boolean) => void;
     onEdit?: (userId: string) => void;
     onDelete?: (userId: string) => void;
+    selectedTab: "Calendar" | "List"
 }
 
-const UserListItem: React.FC<UserListItemProps> = ({id, name, checked, onChange, onEdit, onDelete}) => {
+const UserListItem: React.FC<UserListItemProps> = ({id, name, checked, onChange, onEdit, onDelete, selectedTab}) => {
 
     return (
         <div 
@@ -35,7 +36,8 @@ const UserListItem: React.FC<UserListItemProps> = ({id, name, checked, onChange,
                 {onEdit && (
                     <Button
                         onClick={() => onEdit(id)}
-                        className="p-1 rounded text-text-secondary hover:text-primary hover:bg-primary-soft/25"
+                        className="p-1 rounded text-text-secondary hover:text-primary hover:bg-primary-soft/25 disabled:opacity-50"
+                        disabled={selectedTab == "List"}
                     >
                         <PencilIcon className="w-4 h-4" />
                     </Button>

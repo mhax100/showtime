@@ -211,7 +211,8 @@ function EventPage() {
                             (
                                 <Button 
                                     onClick={onAddClick}
-                                    className='px-4 py-2 text-sm text-white rounded-md sm:text-base bg-primary hover:bg-primary-soft'
+                                    className='px-4 py-2 text-sm text-white rounded-md sm:text-base bg-primary hover:bg-primary-soft disabled:opacity-50 disabled:cursor-not-allowed'
+                                    disabled={selectedTabIndex == 1}
                                 >
                                     Add availability
                                 </Button>
@@ -257,6 +258,7 @@ function EventPage() {
                         onUserSelectionChange={handleUserSelectionChange}
                         onEditUser={handleEditUser}
                         onDeleteUser={handleDeleteUser}
+                        selectedTab={selectedTabIndex === 0 ? "Calendar" : "List"}
                     />
                 </TabPanels>
             </TabGroup>
